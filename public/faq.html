@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frequently asked questions &mdash; elabftw 5.1.15 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=6d288cbf"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Features" href="features.html" />
+    <link rel="prev" title="Contributing" href="contributing.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            elabftw
+          </a>
+              <div class="version">
+                5.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install on a GNU/Linux server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-cloud.html">Install in the cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nas.html">Install on a NAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nolinux.html">Install on Mac or Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="generalities.html">Generalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin-guide.html">Admin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin-guide.html">Sysadmin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import-export.html">Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="backup.html">How to backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-update.html">How to update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Frequently asked questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#but-how-is-it-better-than-something-i-can-buy">But how is it better than something I can buy?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-about-patents-and-intellectual-property">What about patents and intellectual property?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#trusted-timestamping">Trusted timestamping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blockchain-timestamping">Blockchain timestamping</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#why-use-elabftw">Why use eLabFTW?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#is-this-system-stable-can-i-trust-my-data-with-it">Is this system stable? Can I trust my data with it?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#who-else-is-using-it">Who else is using it?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#is-the-data-encrypted">Is the data encrypted?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#is-elabftw-still-maintained">Is eLabFTW still maintained?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#will-i-be-able-to-import-my-plasmids-antibodies-whatever-in-the-database-from-a-excel-file">Will I be able to import my plasmids/antibodies/whatever in the database from a Excel file?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#can-i-try-it-before-i-install-it">Can I try it before I install it?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-are-the-technical-requirements">What are the technical requirements?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#requirements-for-the-server">Requirements for the server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#requirements-for-the-clients-users">Requirements for the clients (users)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#what-about-data-retention-traceability">What about data retention/traceability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#is-it-compliant-to-21cfr-part-11">Is it compliant to 21CFR Part 11?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-about-compliance-to-standards">What about compliance to standards?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-change-the-team-of-a-user">How to change the team of a user?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#is-there-a-plugin-system">Is there a plugin system?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#is-it-totally-free">Is it totally free?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-the-meaning-of-ftw">What is the meaning of ‘FTW’?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker-doc.html">About Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade-to-docker.html">Upgrade a normal install to a Docker install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ldap.html">Configure LDAP authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="saml.html">Configure SAML2 authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thanks.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">elabftw</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Frequently asked questions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/faq.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="frequently-asked-questions">
+<span id="faq"></span><h1>Frequently asked questions<a class="headerlink" href="#frequently-asked-questions" title="Link to this heading"></a></h1>
+<section id="but-how-is-it-better-than-something-i-can-buy">
+<h2>But how is it better than something I can buy?<a class="headerlink" href="#but-how-is-it-better-than-something-i-can-buy" title="Link to this heading"></a></h2>
+<p>The difference is huge. Because eLabFTW is not only free (as in beer), but it is free (as in speech). This means that you can have a look at the code (and improve it) and you can also redistribute the code with your improvements.</p>
+<p>But more importantly, you cannot trust your data with something that acts like a <strong>black box</strong>. What if the data you upload on the server of a company can be read by someone else? With eLabFTW, you install it on your own server, and you are the master of your data at all time.</p>
+</section>
+<section id="what-about-patents-and-intellectual-property">
+<h2>What about patents and intellectual property?<a class="headerlink" href="#what-about-patents-and-intellectual-property" title="Link to this heading"></a></h2>
+<p>Since March 2013, the USA modified their law (see <a class="reference external" href="https://www.uspto.gov/patent/laws-and-regulations/leahy-smith-america-invents-act-implementation">America Invents Act</a>) to switch from first-to-invent to first-inventor-to-file. This means that proving that you did this experiment before someone else has become less critical. It is only needed if you invented something, before someone put a patent on it (and you can prove it), and you want to keep using it as <strong>prior user</strong>.</p>
+<p>Fortunately, eLabFTW allows rock solid timestamping of your experiments. With just one click of a mouse, you can timestamp your work. There are currently two strategies available for timestamping: Trusted Timestamping and Blockchain Timestamping.</p>
+<section id="trusted-timestamping">
+<h3>Trusted timestamping<a class="headerlink" href="#trusted-timestamping" title="Link to this heading"></a></h3>
+<p>This is the protocol defined by <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3161.html"><strong>RFC 3161</strong></a>, here is how it works:</p>
+<ol class="arabic simple">
+<li><p>we first generate a JSON export of the entity, containing all the data relevant to that entry</p></li>
+<li><p>we pass it through a cryptographic hash function to get its fingerprint</p></li>
+<li><p>we request a timestamp token from the Time Stamping Authority (TSA)</p></li>
+<li><p>we store the JSON file along with the token in an immutable ZIP archive (visible if you display archived attachments of a timestamped entry)</p></li>
+</ol>
+<p>A TSA is a trusted timestamping service that will be used to request a token. Several TSA are already configured in eLabFTW:</p>
+<ul class="simple">
+<li><p>DFN.de (free academic service, default TSA)</p></li>
+<li><p>Universign (eIDAS qualified, paid service)</p></li>
+<li><p>Digicert (free)</p></li>
+<li><p>Sectigo (free)</p></li>
+<li><p>GlobalSign (free)</p></li>
+<li><p>Custom: you can define your own service if necessary</p></li>
+</ul>
+</section>
+<section id="blockchain-timestamping">
+<h3>Blockchain timestamping<a class="headerlink" href="#blockchain-timestamping" title="Link to this heading"></a></h3>
+<p>This timestamping method uses the <a class="reference external" href="https://bloxberg.org">Bloxberg consortium</a> blockchain to timestamp your data. Here is how it works:</p>
+<ol class="arabic simple">
+<li><p>we first generate a JSON export of the entity, containing all the data relevant to that entry</p></li>
+<li><p>we pass it through a cryptographic hash function to get its fingerprint</p></li>
+<li><p>we add it to the Ethereum based blockchain</p></li>
+<li><p>we store the JSON file along with a PDF certifying our data in an immutable ZIP archive (visible if you display archived attachments of a timestamped entry)</p></li>
+</ol>
+</section>
+</section>
+<section id="why-use-elabftw">
+<h2>Why use eLabFTW?<a class="headerlink" href="#why-use-elabftw" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>It’s free and open source software</strong></p></li>
+<li><p>It improves the value of your experiments by allowing you to keep a good track of it</p></li>
+<li><p>It makes searching your data as easy as a google search</p></li>
+<li><p>Everything can be organized in your lab</p></li>
+<li><p>It makes it easy to share information between co-workers or collaborators</p></li>
+<li><p>It is simple to install and to keep up to date</p></li>
+<li><p><strong>It works for Windows, Mac OS X, Linux, BSD, Solaris, etc…</strong></p></li>
+<li><p>Protected access with login/password (password is very securely stored as salted SHA-512 sum)</p></li>
+<li><p>It can be used by multiple users at the same time</p></li>
+<li><p><strong>It can be used by multiple teams</strong></p></li>
+<li><p>You can have templates for experiments you do often</p></li>
+<li><p><strong>You can export an experiment as a PDF</strong></p></li>
+<li><p><strong>You can timestamp an experiment so it is legally strong</strong></p></li>
+<li><p>You can export one or several experiments as a ZIP archive</p></li>
+<li><p>You can duplicate experiments in one click</p></li>
+<li><p>There is advanced search capabilities</p></li>
+<li><p>You can write in Markdown</p></li>
+<li><p>The tagging system allows you to keep track of family of experiments</p></li>
+<li><p>Experiments can have color coded statuses (that you can edit at will)</p></li>
+<li><p>You can link an experiment with an item from the database to retrieve in a click the plasmid/sirna/antibody/chemical you used</p></li>
+<li><p>And it works the other way around, you can find all experiments done with a particular item from the database!</p></li>
+<li><p>blockchain blockchain blockchain</p></li>
+<li><p>There is a locking mechanism preventing further edition</p></li>
+<li><p>You can comment on an experiment (if it’s not your experiment)</p></li>
+<li><p>You can import your old database stored in an excel file</p></li>
+<li><p>You can use it in your language</p></li>
+<li><p><a class="reference internal" href="features.html"><span class="doc">and much more…</span></a></p></li>
+</ul>
+<p>You also have to consider the fact that installing eLabFTW on your own server means that no one will be able to snoop on your data. If you have ever used Evernote or basically any online ELN that says «Free», read carefully the privacy policy, you might be surprised what they allow themselves to do under the cover of «to improve your experience»…</p>
+</section>
+<section id="is-this-system-stable-can-i-trust-my-data-with-it">
+<h2>Is this system stable? Can I trust my data with it?<a class="headerlink" href="#is-this-system-stable-can-i-trust-my-data-with-it" title="Link to this heading"></a></h2>
+<p>Yes. It is used in numerous research centers all over the world since a few years now and if an issue is found it is quickly reported and fixed.</p>
+<p>However, having an automated <a class="reference internal" href="backup.html#backup"><span class="std std-ref">backup</span></a> strategy is mandatory in order to be sure <strong>nothing will be lost</strong>.</p>
+<p>Being able to do backups is yet another advantage over paper (you can’t backup paper!).</p>
+</section>
+<section id="who-else-is-using-it">
+<h2>Who else is using it?<a class="headerlink" href="#who-else-is-using-it" title="Link to this heading"></a></h2>
+<p>We do not maintain a list of institutions using it anymore. There are just too many. Consider that there are thousands of eLabFTW instances worldwide.</p>
+<p>In France, it’s the ELN of choice for the CNRS, the 3rd largest research organization in the world, along with many other universities and research institutes. It is also useful to startups and companies.</p>
+<p>In Germany, it is ubiquitous. Installed in many universities and private companies.</p>
+<p>In Europe, it is often seen being used in universities and research centers.</p>
+<p>In the rest of the world, it is also used, because its interface is translated in 17 languages, including many asian languages.</p>
+</section>
+<section id="is-the-data-encrypted">
+<h2>Is the data encrypted?<a class="headerlink" href="#is-the-data-encrypted" title="Link to this heading"></a></h2>
+<p>The data is encrypted when travelling from your browser to the server with the highest quality encryption currently available (TLSv1.2/1.3 with modern ciphers).</p>
+<p>The passwords are not recoverable in case of a breach and are hashed using state of the art algorithms.</p>
+<p>Only manually validated accounts can interact with the software. It is secure by default.</p>
+<p>If you wish to have data at rest encryption, it needs to be done during the web server installation, and is not the concern of the software itself.</p>
+</section>
+<section id="is-elabftw-still-maintained">
+<h2>Is eLabFTW still maintained?<a class="headerlink" href="#is-elabftw-still-maintained" title="Link to this heading"></a></h2>
+<p>Not only it is maintained, but it is actively being worked on, with major new features and improvements being added regularly.</p>
+<p>Since 2019, the company <a class="reference external" href="https://www.deltablot.com">Deltablot</a> exists to provide support and hosting to eLabFTW users around the world. This company will allow funding further development of the software thanks to an original business model: the software itself is entirely free, but the individual support, custom features development and hosting are paid options.</p>
+<p>If you are interested in such options, please visit this page: <a class="reference external" href="https://www.deltablot.com/elabftw/">Deltablot’s elabftw page</a>.</p>
+</section>
+<section id="will-i-be-able-to-import-my-plasmids-antibodies-whatever-in-the-database-from-a-excel-file">
+<h2>Will I be able to import my plasmids/antibodies/whatever in the database from a Excel file?<a class="headerlink" href="#will-i-be-able-to-import-my-plasmids-antibodies-whatever-in-the-database-from-a-excel-file" title="Link to this heading"></a></h2>
+<p>Yes, see <a class="reference internal" href="import-export.html#csvimport"><span class="std std-ref">Import CSV Documentation</span></a>.</p>
+</section>
+<section id="can-i-try-it-before-i-install-it">
+<h2>Can I try it before I install it?<a class="headerlink" href="#can-i-try-it-before-i-install-it" title="Link to this heading"></a></h2>
+<p>Sure, there is a demo online here: <a class="reference external" href="https://demo.elabftw.net">eLabFTW live DEMO</a>.</p>
+</section>
+<section id="what-are-the-technical-requirements">
+<h2>What are the technical requirements?<a class="headerlink" href="#what-are-the-technical-requirements" title="Link to this heading"></a></h2>
+<p>eLabFTW is a server software that should be installed on a server.</p>
+<section id="requirements-for-the-server">
+<h3>Requirements for the server<a class="headerlink" href="#requirements-for-the-server" title="Link to this heading"></a></h3>
+<p>The following specification has been shown to perform well for an instance of several hundred daily users. The more users using the instance, the more CPU and RAM you’ll need.</p>
+<p><strong>Hardware</strong></p>
+<p>At least 2Gb of RAM, a decent processor (&gt; 2GHz), preferably multi-core and an SSD disk with at least a few Gb free.</p>
+<p><strong>Software</strong></p>
+<p>The operating system of the server must be a flavor of GNU/Linux. We recommend Rocky Linux or RHEL.</p>
+<p>The service runs in containers (<a class="reference external" href="https://www.docker.com">Docker</a> or <a class="reference external" href="https://podman.io">Podman</a>), which are a Linux specific technology.</p>
+<p>A <strong>MySQL</strong> database service is required. You can deploy a MySQL service with Docker by following the standard installation procedure, or use an existing separate MySQL server. Only <strong>MySQL</strong> is supported. Not PostgreSQL, not MariaDB, not SQLite.</p>
+</section>
+<section id="requirements-for-the-clients-users">
+<h3>Requirements for the clients (users)<a class="headerlink" href="#requirements-for-the-clients-users" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Any operating system with either Firefox, or Chrome based browser (Chrome, Chromium, Edge, Brave, Opera). Safari is known to cause issues and is not officially supported. Internet Explorer is not supported.</p></li>
+<li><p>An internet connection.</p></li>
+</ul>
+</section>
+</section>
+<section id="what-about-data-retention-traceability">
+<h2>What about data retention/traceability<a class="headerlink" href="#what-about-data-retention-traceability" title="Link to this heading"></a></h2>
+<p>When a user is making a change to an experiment, a copy of the previous version is kept in the database. This copy cannot be altered by anyone. The admin can also prevent users from deleting experiments, and the creation date is kept in memory, even if the date field is changed later on.</p>
+<p>When an entry is deleted, it is not completely removed from the database, but instead marked as deleted. Same with attached files: overwriting a file will mark the previous version as “Archived”.</p>
+</section>
+<section id="is-it-compliant-to-21cfr-part-11">
+<h2>Is it compliant to 21CFR Part 11?<a class="headerlink" href="#is-it-compliant-to-21cfr-part-11" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Closed system: eLabFTW requires unique credentials to access the system. A system of permissions and roles allow fine control of what can be seen by whom.</p></li>
+<li><p>Experiments and resources (protocols, reagents, cell lines…) can be signed with cryptographic signatures, verifiable outside the system, and stored in an immutable archive.</p></li>
+<li><p>Trusted timestamping: RFC3161 Trusted Timestamping is available for experiments. When using a qualified TSA such as Universign, this makes the process compliant with ETSI EN 319 42 (eIDAS european regulation).</p></li>
+<li><p>Audit trail: changes to entries are internally recorded and cannot be tampered with by users. A version history is available, with adjustable granularity.</p></li>
+<li><p>Retention of records: a soft-delete mechanism prevents destructive actions on data.</p></li>
+<li><p>Copies of records: you can export your data in PDF, ZIP archives or CSV files very easily. This can also be automated via the API.</p></li>
+<li><p>Password policy: passwords are securely stored in the database and security mechanisms such as preventing too many authentication tries are in place. Password policies can also be enforced, and centralized authentication mechanisms can be setup.</p></li>
+</ol>
+</section>
+<section id="what-about-compliance-to-standards">
+<h2>What about compliance to standards?<a class="headerlink" href="#what-about-compliance-to-standards" title="Link to this heading"></a></h2>
+<p>eLabFTW tries to comply to the following standards :</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/CFRSearch.cfm?CFRPart=11">Code of Federal Regulations Title 21, paragraph 11</a></p></li>
+<li><p><a class="reference external" href="http://www2.ed.gov/policy/gen/guid/fpco/ferpa/index.html">FERPA</a></p></li>
+<li><p><a class="reference external" href="http://www.hhs.gov/ocr/privacy/">HIPAA</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Federal_Information_Security_Management_Act_of_2002#Compliance_framework_defined_by_FISMA_and_supporting_standards">FISMA</a></p></li>
+</ul>
+<p>The timestamping is based on RFC3161 standardized protocol and fits with the eIDAS european regulation (910/2014).</p>
+</section>
+<section id="how-to-change-the-team-of-a-user">
+<h2>How to change the team of a user?<a class="headerlink" href="#how-to-change-the-team-of-a-user" title="Link to this heading"></a></h2>
+<p>There is two ways to do that:</p>
+<ul class="simple">
+<li><p>if the user registered in the wrong team, the Sysadmin can simply change the team from the Sysadmin panel</p></li>
+<li><p>if the user switched team, old team needs to Archive the user (from the Admin panel), and user needs to register a new account (same email can be used) in the new team</p></li>
+</ul>
+</section>
+<section id="is-there-a-plugin-system">
+<h2>Is there a plugin system?<a class="headerlink" href="#is-there-a-plugin-system" title="Link to this heading"></a></h2>
+<p>No, eLabFTW has no plugins and no plan to add support for it. This decision is motivated by several factors:</p>
+<ul class="simple">
+<li><p>security of the application: a badly written plugin might compromise an instance (this happens daily with Wordpress plugins)</p></li>
+<li><p>a stable plugin API has to be maintained, which is a heavy burden on development, as plugins will hook into internals, and it opens the door to a never ending stream of requests about adding hooks here and there</p></li>
+<li><p>our vision is about a single coherent codebase, not a morcellated software</p></li>
+</ul>
+<p>If you wish to add functionality to eLabFTW, the best is to discuss it in an issue, and eventually create a pull request with the code you want to merge, rather than planning on plugins.</p>
+</section>
+<section id="is-it-totally-free">
+<h2>Is it totally free?<a class="headerlink" href="#is-it-totally-free" title="Link to this heading"></a></h2>
+<p>YES. eLabFTW is free/libre software, so it is totally free of charge and always will be. <a class="reference external" href="https://www.gnu.org/philosophy/free-sw.html">Read more about the free software philosophy</a>.</p>
+</section>
+<section id="what-is-the-meaning-of-ftw">
+<h2>What is the meaning of ‘FTW’?<a class="headerlink" href="#what-is-the-meaning-of-ftw" title="Link to this heading"></a></h2>
+<p>One of those:</p>
+<ul class="simple">
+<li><p>For The World</p></li>
+<li><p>For Those Wondering</p></li>
+<li><p>For The Worms</p></li>
+<li><p>Forever Two Wheels</p></li>
+<li><p>Free The Wookies</p></li>
+<li><p>Forward The Word</p></li>
+<li><p>Forever Together Whenever</p></li>
+<li><p>Face The World</p></li>
+<li><p>Forget The World</p></li>
+<li><p>Free To Watch</p></li>
+<li><p>Feed The World</p></li>
+<li><p>Feel The Wind</p></li>
+<li><p>Feel The Wrath</p></li>
+<li><p>Fight To Win</p></li>
+<li><p>Find The Waldo</p></li>
+<li><p>Finding The Way</p></li>
+<li><p>Flying Training Wing</p></li>
+<li><p>Follow The Way</p></li>
+<li><p>For The Wii</p></li>
+<li><p>For The Win</p></li>
+<li><p>For The Wolf</p></li>
+<li><p>Free The Weed</p></li>
+<li><p>Free The Whales</p></li>
+<li><p>From The Wilderness</p></li>
+<li><p>Freedom To Work</p></li>
+<li><p>For The Warriors</p></li>
+<li><p>Full Time Workers</p></li>
+<li><p>Fabricated To Win</p></li>
+<li><p>Furiously Taunted Wookies</p></li>
+<li><p>Flash The Watch</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="contributing.html" class="btn btn-neutral float-left" title="Contributing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="features.html" class="btn btn-neutral float-right" title="Features" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012, Nicolas CARPi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+  <a href='https://creativecommons.org/licenses/by-sa/4.0/'><img src='_images/by-sa.png' alt='cc-by-sa' /></a>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

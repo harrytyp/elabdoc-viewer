@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Install in the cloud &mdash; elabftw 5.1.15 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=6d288cbf"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Install on a NAS" href="install-nas.html" />
+    <link rel="prev" title="Install on a GNU/Linux server" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            elabftw
+          </a>
+              <div class="version">
+                5.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install on a GNU/Linux server</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Install in the cloud</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-note-about-backups">A note about backups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-your-droplet">Create your droplet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-elabftw">Install eLabFTW</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install-nas.html">Install on a NAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nolinux.html">Install on Mac or Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="generalities.html">Generalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin-guide.html">Admin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin-guide.html">Sysadmin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import-export.html">Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backup.html">How to backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-update.html">How to update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker-doc.html">About Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade-to-docker.html">Upgrade a normal install to a Docker install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ldap.html">Configure LDAP authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="saml.html">Configure SAML2 authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thanks.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">elabftw</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Install in the cloud</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/install-cloud.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="install-in-the-cloud">
+<span id="install-cloud"></span><h1>Install in the cloud<a class="headerlink" href="#install-in-the-cloud" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>If you do not wish to opt for the hosted solution (<a class="reference external" href="https://www.deltablot.com/elabftw">PRO Hosting from Deltablot</a>), you can install and manage your own eLabFTW instance on a Virtual Private Server (VPS).</p>
+<p>A VPS is a shared server which looks like a dedicated server to you. Meaning you get root level access and can do what you want with it.</p>
+<p><strong>Pros</strong>:</p>
+<ul class="simple">
+<li><p>you have complete control on your server and thus your data</p></li>
+<li><p>it will only cost you the price of the server, which can be as low as 5$ a month + the domain name (a few $ per year)</p></li>
+<li><p>you’ll improve your GNU/Linux administrator skills and knowledge</p></li>
+<li><p>on the same server you can install other software, like a wiki, a forge, a chat app, etc…</p></li>
+<li><p>you can run your own fork with your customizations</p></li>
+<li><p>you’ll unleash your inner geek</p></li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul class="simple">
+<li><p>if you mess up you can only blame yourself</p></li>
+<li><p>you’ll have to keep your instance updated and read the release notes</p></li>
+<li><p>you’ll have to manage your own backups (and test them!)</p></li>
+<li><p>you’ll be exposed to malicious actors trying to break into your server constantly</p></li>
+<li><p>managing correctly a GNU/Linux server requires administration skills and knowledge</p></li>
+<li><p>when you get hit by a ransomware malware, you’ll realize your backups are encrypted too :/</p></li>
+</ul>
+<p>Your eLabFTW installation will run in a <a class="reference external" href="https://www.docker.com">Docker</a> container. Learn more about eLabFTW in Docker <a class="reference internal" href="docker-doc.html#docker-doc"><span class="std std-ref">here</span></a>.</p>
+<p>If you don’t have a domain name already, you can get one from <a class="reference external" href="https://www.ovh.com">OVH</a>, <a class="reference external" href="https://www.gandi.net">Gandi</a>, <a class="reference external" href="https://www.1and1.com">1&amp;1</a> or any other domain name registrar. You can get one for half a dollar per year. It is required to have a domain name to run eLabFTW.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you don’t want to deal with server maintenance, TLS certificates renewal, backups and updates, have a look at <a class="reference external" href="https://www.deltablot.com/elabftw">PRO Hosting from Deltablot</a></p>
+</div>
+</section>
+<section id="a-note-about-backups">
+<h2>A note about backups<a class="headerlink" href="#a-note-about-backups" title="Link to this heading"></a></h2>
+<p><strong>Making reliable backups is hard</strong>. Even IT companies can get it wrong. See the <em>postmortem</em> of an <a class="reference external" href="https://about.gitlab.com/blog/2017/02/10/postmortem-of-database-outage-of-january-31/">incident at Gitlab</a>. It is a very interesting article, illustrating how even if you have several restoration options, they might all fail. And that was before ransomware malware was prevalent! Now if you don’t have immutable snapshots on your filesystem where the backups live, you might have your backups encrypted too!</p>
+<p>The point I’m trying to make is that a lot of things can go wrong, and if you care about your data, it might be a good option to look into the <a class="reference external" href="https://www.deltablot.com/elabftw">PRO Hosting offering</a> or let a professional systems administrator take care of it.</p>
+</section>
+<section id="create-your-droplet">
+<h2>Create your droplet<a class="headerlink" href="#create-your-droplet" title="Link to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A proper subdomain is required. Subfolder install is not supported!</p>
+</div>
+<ul class="simple">
+<li><p>Create an account on <a class="reference external" href="https://m.do.co/c/c2ce8f861e0e">DigitalOcean</a>. Use this referral link to have 100$ offered!</p></li>
+<li><p>Alternatively, you can use <a class="reference external" href="https://www.vultr.com/?ref=7164540">Vultr</a>. Use this referral link to register an account! The rest of this tutorial is for DigitalOcean.</p></li>
+</ul>
+<img alt="digitalocean logo" class="align-center" src="_images/digitalocean.png" />
+<ul class="simple">
+<li><p>Create a droplet with Docker (from the One-click Apps tab), select a size and a region.</p></li>
+<li><p>Optional: enable backups (might be a good idea)</p></li>
+<li><p>Optional but highly recommended: add your SSH key (<a class="reference external" href="https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/">documentation</a>)</p></li>
+<li><p>Create the droplet (it takes less than a minute)</p></li>
+<li><p>Copy the IP address</p></li>
+<li><p>Go to the control panel of your domain name provider. Point your domain (or subdomain) to the IP address of your drop. It might take a bit of time for the DNS to propagate (a few hours).</p></li>
+</ul>
+</section>
+<section id="install-elabftw">
+<h2>Install eLabFTW<a class="headerlink" href="#install-elabftw" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Open a terminal and connect to your new server:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>root@&lt;DROPLET_IP_ADDRESS&gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Follow the <a class="reference internal" href="install.html#normal-install"><span class="std std-ref">steps for a normal install</span></a>.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install.html" class="btn btn-neutral float-left" title="Install on a GNU/Linux server" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="install-nas.html" class="btn btn-neutral float-right" title="Install on a NAS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012, Nicolas CARPi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+  <a href='https://creativecommons.org/licenses/by-sa/4.0/'><img src='_images/by-sa.png' alt='cc-by-sa' /></a>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

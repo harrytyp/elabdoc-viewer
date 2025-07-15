@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to backup &mdash; elabftw 5.1.15 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=6d288cbf"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="How to update" href="how-to-update.html" />
+    <link rel="prev" title="API" href="api.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            elabftw
+          </a>
+              <div class="version">
+                5.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install on a GNU/Linux server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-cloud.html">Install in the cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nas.html">Install on a NAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nolinux.html">Install on Mac or Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="generalities.html">Generalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin-guide.html">Admin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin-guide.html">Sysadmin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import-export.html">Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to backup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-backup-a-docker-installation">How to backup a Docker installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#important-note">Important note</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#with-elabctl">With elabctl</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#test">Test</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#without-elabctl">Without elabctl</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#making-it-automatic-using-cron">Making it automatic using cron</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#with-a-cronjob">With a cronjob</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#with-a-systemd-timer">With a systemd timer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-restore-a-backup">How to restore a backup</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-update.html">How to update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker-doc.html">About Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade-to-docker.html">Upgrade a normal install to a Docker install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ldap.html">Configure LDAP authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="saml.html">Configure SAML2 authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thanks.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">elabftw</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">How to backup</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/backup.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="how-to-backup">
+<span id="backup"></span><h1>How to backup<a class="headerlink" href="#how-to-backup" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>This page documents how to backup an existing eLabFTW installation. It is important that you take the time to make sure that your backups are working properly.</p>
+<img alt="_images/didyoubackup.jpg" src="_images/didyoubackup.jpg" />
+<p>There is basically three things to backup :</p>
+<ul class="simple">
+<li><p>the MySQL database (by default in <cite>/var/elabftw/mysql</cite>)</p></li>
+<li><p>the uploaded files (by default in <cite>/var/elabftw/web</cite>)</p></li>
+<li><p>your configuration file (by default <cite>/etc/elabftw.yml</cite>): not really required if you use provisioning tools like Ansible and store your config/secrets somewhere else</p></li>
+</ul>
+</section>
+<section id="how-to-backup-a-docker-installation">
+<h2>How to backup a Docker installation<a class="headerlink" href="#how-to-backup-a-docker-installation" title="Link to this heading"></a></h2>
+<section id="important-note">
+<h3>Important note<a class="headerlink" href="#important-note" title="Link to this heading"></a></h3>
+<p>The instructions below are merely a suggestion on how to proceed. If you are familiar with different tools or procedures to backup data, use them. At the end of the day, eLabFTW’s data is a very classical MySQL database and even more classical files. The important points are:</p>
+<ul class="simple">
+<li><p>test your backups</p></li>
+<li><p>ensure if they fail you get a notification by email somehow</p></li>
+<li><p>test your backups regularly</p></li>
+<li><p>bonus: test your backups automatically</p></li>
+</ul>
+<p>Another point is: you <strong>never</strong> have too many backups. So use a full VM backup + mysqldump + copy files here and there + do a filesystem snapshot. Use all the tools at your disposal. Read this <em>postmortem</em> about a <a class="reference external" href="https://about.gitlab.com/blog/2017/02/10/postmortem-of-database-outage-of-january-31">Gitlab.com outage and how they discovered how broken their backup procedures were</a>.</p>
+</section>
+<section id="with-elabctl">
+<h3>With elabctl<a class="headerlink" href="#with-elabctl" title="Link to this heading"></a></h3>
+<p>Using the backup function of <cite>elabctl</cite> is the recommended approach. The MySQL database will be dumped thanks to <cite>mysqldump</cite> present in the <cite>mysql</cite> container. The uploaded files will be copied with <a class="reference external" href="https://www.borgbackup.org/">borgbackup</a> and you need to install it first and then configure it.</p>
+<section id="configuration">
+<h4>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h4>
+<p>Start by figuring out where you want the borg repository to live. It can be local or remote folder (remote is better but requires ssh correctly setup to access it). It can also be local but on a network-mounted path, which makes it remote.</p>
+<p>After installing borg, initialize a new repository with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># for a local path</span>
+borg<span class="w"> </span>init<span class="w"> </span>-e<span class="w"> </span>repokey-blake2<span class="w"> </span>/path/to/elabftw-borg-repo
+<span class="c1"># for a remote (ssh) path</span>
+borg<span class="w"> </span>init<span class="w"> </span>-e<span class="w"> </span>repokey-blake2<span class="w"> </span>someserver:/path/to/elabftw-borg-repo
+</pre></div>
+</div>
+<p>It is necessary to use the <cite>elabctl.conf</cite> configuration file (available <a class="reference external" href="https://raw.githubusercontent.com/elabftw/elabctl/master/elabctl.conf">here</a>). Place this file in <cite>/root/.config/elabctl.conf</cite> and make sure to specify the settings correctly.</p>
+</section>
+<section id="test">
+<h4>Test<a class="headerlink" href="#test" title="Link to this heading"></a></h4>
+<p>Try the backup with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>elabctl<span class="w"> </span>backup
+</pre></div>
+</div>
+<p>You can also use <cite>mysql-backup</cite> to only backup the MySQL database:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>elabctl<span class="w"> </span>mysql-backup
+</pre></div>
+</div>
+<p>You can also use <cite>borg-backup</cite> to only backup the uploaded files:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>elabctl<span class="w"> </span>borg-backup
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Important: verify that all the files are correctly created and that you will be able to restore from a backup!</p>
+</div>
+</section>
+</section>
+<section id="without-elabctl">
+<h3>Without elabctl<a class="headerlink" href="#without-elabctl" title="Link to this heading"></a></h3>
+<p>You’re on your own. Use your favorite tools to backup the MySQL database and uploaded files.</p>
+</section>
+</section>
+<section id="making-it-automatic-using-cron">
+<h2>Making it automatic using cron<a class="headerlink" href="#making-it-automatic-using-cron" title="Link to this heading"></a></h2>
+<p>A good backup is automatic. Use a cronjob or a systemd timer job to trigger the backup job regularly (ideally daily).</p>
+<section id="with-a-cronjob">
+<h3>With a cronjob<a class="headerlink" href="#with-a-cronjob" title="Link to this heading"></a></h3>
+<p>If you have the traditional cron service running, try:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">crontab</span> <span class="o">-</span><span class="n">e</span>
+</pre></div>
+</div>
+<p>This will open the cronjob file in edit mode.</p>
+<p>Add this line at the bottom:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">00</span> <span class="mi">04</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">elabctl</span> <span class="n">backup</span>
+</pre></div>
+</div>
+<p>This will run the script everyday at 4am. Make sure to write the full path to <cite>elabctl</cite> as it might not be in the <cite>$PATH</cite> for cron.</p>
+</section>
+<section id="with-a-systemd-timer">
+<h3>With a systemd timer<a class="headerlink" href="#with-a-systemd-timer" title="Link to this heading"></a></h3>
+<p>Some systems don’t use the traditional cron service, so instead of installing it, you should use a systemd timer (provided systemd is your init system, which is quite likely).</p>
+<p>You will need to create two files, one <cite>.service</cite> and one <cite>.timer</cite>.</p>
+<p>Content of <cite>/etc/systemd/system/elabftw-backup.service</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Unit</span><span class="p">]</span>
+<span class="n">Description</span><span class="o">=</span><span class="n">Backup</span> <span class="n">eLabFTW</span> <span class="n">data</span>
+<span class="n">Wants</span><span class="o">=</span><span class="n">elabftw</span><span class="o">-</span><span class="n">backup</span><span class="o">.</span><span class="n">timer</span>
+
+<span class="p">[</span><span class="n">Service</span><span class="p">]</span>
+<span class="n">Type</span><span class="o">=</span><span class="n">oneshot</span>
+<span class="c1"># make sure to edit the path below</span>
+<span class="n">ExecStart</span><span class="o">=/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">elabctl</span> <span class="n">backup</span>
+<span class="c1"># Make sure to use a user with enough rights</span>
+<span class="n">User</span><span class="o">=</span><span class="n">root</span>
+
+<span class="p">[</span><span class="n">Install</span><span class="p">]</span>
+<span class="n">WantedBy</span><span class="o">=</span><span class="n">multi</span><span class="o">-</span><span class="n">user</span><span class="o">.</span><span class="n">target</span>
+</pre></div>
+</div>
+<p>Content of <cite>/etc/systemd/system/elabftw-backup.timer</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Unit</span><span class="p">]</span>
+<span class="n">Description</span><span class="o">=</span><span class="n">Backup</span> <span class="n">eLabFTW</span> <span class="n">data</span>
+
+<span class="p">[</span><span class="n">Timer</span><span class="p">]</span>
+<span class="n">OnCalendar</span><span class="o">=*-*-*</span> <span class="mi">4</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>
+<span class="n">Persistent</span><span class="o">=</span><span class="n">true</span>
+
+<span class="p">[</span><span class="n">Install</span><span class="p">]</span>
+<span class="n">WantedBy</span><span class="o">=</span><span class="n">timers</span><span class="o">.</span><span class="n">target</span>
+</pre></div>
+</div>
+<p>Now activate it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="n">enable</span> <span class="n">elabftw</span><span class="o">-</span><span class="n">backup</span>
+<span class="n">systemctl</span> <span class="n">start</span> <span class="n">elabftw</span><span class="o">-</span><span class="n">backup</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="how-to-restore-a-backup">
+<span id="restore-backup"></span><h2>How to restore a backup<a class="headerlink" href="#how-to-restore-a-backup" title="Link to this heading"></a></h2>
+<p>You should have three files/folders to start with:</p>
+<ul class="simple">
+<li><p>A MySQL dump (file ending in .sql or .sql.gz)</p></li>
+<li><p>Your uploaded files as a borg archive</p></li>
+<li><p>Possibly your configuration file</p></li>
+</ul>
+<p>To extract your uploaded files from a borg backup:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">BORG_REPO</span><span class="o">=</span>/path/to/borg/repo
+<span class="nb">export</span><span class="w"> </span><span class="nv">BORG_PASSPHRASE</span><span class="o">=</span><span class="s2">&quot;your passphrase&quot;</span>
+borg<span class="w"> </span>list
+borg<span class="w"> </span>extract<span class="w"> </span><span class="s2">&quot;::example-2022-07-14_13-37&quot;</span>
+</pre></div>
+</div>
+<p>See documentation on how to manage your borg repository: <a class="reference external" href="https://borgbackup.readthedocs.io/en/stable/usage/extract.html">Borg extract documentation</a>.</p>
+<p>Then we move the uploaded files and config file at the correct place (adjust the paths to your case):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mv<span class="w"> </span>/path/to/uploaded-files-backup/*<span class="w"> </span>/var/elabftw/web
+mv<span class="w"> </span>/path/to/configuration-backup-elabftw.yml<span class="w"> </span>/etc/elabftw.yml
+<span class="c1"># now fix the permissions</span>
+chown<span class="w"> </span>-R<span class="w"> </span><span class="m">101</span>:101<span class="w"> </span>/var/elabftw/web
+chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>/etc/elabftw.yml
+</pre></div>
+</div>
+<p>Now we import the SQL database (the mysql container must be running):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gunzip<span class="w"> </span>mysql_dump-YYYY-MM-DD.sql.gz<span class="w"> </span><span class="c1"># uncompress the file</span>
+docker<span class="w"> </span>cp<span class="w"> </span>mysql_dump-YYYY-MM-DD.sql<span class="w"> </span>mysql:/<span class="w"> </span><span class="c1"># copy it inside the mysql container</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>mysql<span class="w"> </span>bash<span class="w"> </span><span class="c1"># spawn a shell in the mysql container</span>
+mysql<span class="w"> </span>-uroot<span class="w"> </span>-p<span class="nv">$MYSQL_ROOT_PASSWORD</span><span class="w"> </span><span class="c1"># login to mysql prompt</span>
+Mysql&gt;<span class="w"> </span>drop<span class="w"> </span>database<span class="w"> </span>elabftw<span class="p">;</span><span class="w"> </span><span class="c1"># delete the brand new database</span>
+Mysql&gt;<span class="w"> </span>create<span class="w"> </span>database<span class="w"> </span>elabftw<span class="w"> </span>character<span class="w"> </span><span class="nb">set</span><span class="w"> </span>utf8mb4<span class="w"> </span>collate<span class="w"> </span>utf8mb4_0900_ai_ci<span class="p">;</span><span class="w"> </span><span class="c1"># create a new one</span>
+Mysql&gt;<span class="w"> </span>use<span class="w"> </span>elabftw<span class="p">;</span><span class="w"> </span><span class="c1"># select it</span>
+Mysql&gt;<span class="w"> </span><span class="nb">set</span><span class="w"> </span>names<span class="w"> </span>utf8mb4<span class="p">;</span><span class="w"> </span><span class="c1"># make sure you import in utf8 (don&#39;t do this if you are in latin1)</span>
+Mysql&gt;<span class="w"> </span><span class="nb">source</span><span class="w"> </span>mysql_dump-YYYY-MM-DD.sql<span class="p">;</span><span class="w"> </span><span class="c1"># import the backup</span>
+Mysql&gt;<span class="w"> </span>exit<span class="p">;</span>
+</pre></div>
+</div>
+<p>Now you should have your old install back :)</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="api.html" class="btn btn-neutral float-left" title="API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="how-to-update.html" class="btn btn-neutral float-right" title="How to update" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012, Nicolas CARPi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+  <a href='https://creativecommons.org/licenses/by-sa/4.0/'><img src='_images/by-sa.png' alt='cc-by-sa' /></a>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contributing &mdash; elabftw 5.1.15 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=6d288cbf"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Frequently asked questions" href="faq.html" />
+    <link rel="prev" title="How to update" href="how-to-update.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            elabftw
+          </a>
+              <div class="version">
+                5.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install on a GNU/Linux server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-cloud.html">Install in the cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nas.html">Install on a NAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nolinux.html">Install on Mac or Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="generalities.html">Generalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin-guide.html">Admin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin-guide.html">Sysadmin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import-export.html">Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="backup.html">How to backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-update.html">How to update</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-can-you-do-to-help-this-project">What can you do to help this project?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#non-code-contributions">Non-code contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reporting-a-security-issue">Reporting a security issue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#translating">Translating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contributing-to-the-code">Contributing to the code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#word-of-caution">Word of caution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#note-about-repositories">Note about repositories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#note-about-branches">Note about branches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#environment-installation">Environment installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#docker-install">Docker install</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dev-directory-setup">Dev directory setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#forking-the-repo">Forking the repo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-elabctl">Install elabctl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-compose-file">Install compose file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-dependencies">Install dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-the-database">Install the database</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#finishing-up">Finishing up</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#code-organization">Code organization</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#working-with-javascript">Working with JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#miscellaneous">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#glossary">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build">Build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tests">Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exceptions-handling">Exceptions handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#making-a-pull-request">Making a pull request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-a-lang">Adding a lang</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-a-new-term-for-js-i18n">Adding a new term for js i18n</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#accessing-docker-mysql-database-with-phpmyadmin">Accessing Docker MySQL database with phpmyadmin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-a-trusted-certificate-for-local-dev">Using a trusted certificate for local dev</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#step-1-use-a-real-domain-name">Step 1: use a real domain name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-2-get-certs">Step 2: get certs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-3-edit-config-to-use-certificates">Step 3: edit config to use certificates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-4-restart-containers">Step 4: restart containers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-test-external-auth">How to test external auth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-test-ldap">How to test ldap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-a-pre-commit-hook">Install a pre-commit hook</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker-doc.html">About Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade-to-docker.html">Upgrade a normal install to a Docker install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ldap.html">Configure LDAP authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="saml.html">Configure SAML2 authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thanks.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">elabftw</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Contributing</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/contributing.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="contributing">
+<span id="id1"></span><h1>Contributing<a class="headerlink" href="#contributing" title="Link to this heading"></a></h1>
+<a class="reference external image-reference" href="http://mimiandeunice.com/"><img alt="contributing" class="align-center" src="_images/contributing.png" />
+</a>
+<section id="what-can-you-do-to-help-this-project">
+<h2>What can you do to help this project?<a class="headerlink" href="#what-can-you-do-to-help-this-project" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/elabftw/elabftw">Star it on GitHub</a></p></li>
+<li><p>Talk about it to your colleagues, spread the word!</p></li>
+<li><p>Have a look at <a class="reference external" href="https://github.com/elabftw/elabftw/issues">the current issues</a></p></li>
+<li><p>Help with the translations (see Translating below)</p></li>
+<li><p>Open GitHub issues to report bugs or suggest new features</p></li>
+<li><p><a class="reference external" href="https://github.com/elabftw/elabftw">Star it on GitHub really</a></p></li>
+</ul>
+</section>
+<section id="non-code-contributions">
+<h2>Non-code contributions<a class="headerlink" href="#non-code-contributions" title="Link to this heading"></a></h2>
+<p>Contributions are not necessarily programming related. There are multiple things outside of code contributions. Have a look at this article listing them: <a class="reference external" href="https://navendu.me/posts/non-code-contributions-to-open-source/">Non code contributions to open-source</a>.</p>
+</section>
+<section id="reporting-a-security-issue">
+<h2>Reporting a security issue<a class="headerlink" href="#reporting-a-security-issue" title="Link to this heading"></a></h2>
+<p>If you’ve found a security issue, please contact me securely through <a class="reference external" href="https://keybase.io/nicolascarpi">Keybase</a>.</p>
+<p>While there is not (yet) an official bug bounty program, responsible disclosure of a security vulnerability might be compensated.</p>
+</section>
+<section id="translating">
+<h2>Translating<a class="headerlink" href="#translating" title="Link to this heading"></a></h2>
+<img alt="_images/i18n.png" class="align-right" src="_images/i18n.png" />
+<p>Do you know several languages? Are you willing to help localize eLabFTW? You’re in the right place.</p>
+<p>How to translate?</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://poeditor.com/join/project?hash=aeeef61cdad663825bfe49bb7cbccb30">Join the project on poeditor.com</a></p></li>
+<li><p>Select elabftw</p></li>
+<li><p>Select one or several languages (open a GitHub issue if your language is not present)</p></li>
+<li><p>Start translating</p></li>
+<li><p>Ignore things like <cite>&lt;strong&gt;, &lt;br&gt;, %s, %d</cite> and keep the punctuation like it was!</p></li>
+</ul>
+<p>Translations are merged in the code before a release. You must not try and edit the .po/.mo files directly in the source code.</p>
+</section>
+<section id="contributing-to-the-code">
+<h2>Contributing to the code<a class="headerlink" href="#contributing-to-the-code" title="Link to this heading"></a></h2>
+<section id="word-of-caution">
+<h3>Word of caution<a class="headerlink" href="#word-of-caution" title="Link to this heading"></a></h3>
+<p>It is possible that the gap between the current development version and the current stable version will render this documentation obsolete in parts. It is highly recommended to use the <cite>next</cite> branch of <cite>elabftw/elabdoc</cite>, which is published here: <a class="reference external" href="https://doc.elabftw.net/next">https://doc.elabftw.net/next</a>.</p>
+<p>=&gt; Read this page on the <cite>next</cite> branch: <a class="reference external" href="https://doc.elabftw.net/next/contributing.html#contributing-to-the-code">https://doc.elabftw.net/next/contributing.html#contributing-to-the-code</a></p>
+<p>Another thing is that this documentation is targeted towards GNU/Linux users. If you are on Windows or MacOS, you will need to adapt some things. We currently do not provide detailed documentation for Windows or MacOS users, as we are avid open source software aficionados, and consider these operating systems as malware.</p>
+</section>
+<section id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h3>
+<p>Depending on your background, the eLabFTW project might seem daunting at first, because it uses a lot of different technologies: Docker, Yarn, Webpack, Composer, TypeScript, Scss, …</p>
+<p>But fear not, because there is a whole documentation about getting started, and you’re already reading it ;)</p>
+</section>
+<section id="note-about-repositories">
+<h3>Note about repositories<a class="headerlink" href="#note-about-repositories" title="Link to this heading"></a></h3>
+<p>The eLabFTW project is split in different repositories. The main one with the actual PHP code is <a class="reference external" href="https://github.com/elabftw/elabftw">elabftw/elabftw</a>. The present document is generated from reStructuredText files in <a class="reference external" href="https://github.com/elabftw/elabdoc">elabftw/elabdoc</a>. So if you need to change the documentation, it will be in there.</p>
+<p>The Docker image is built from the code at <a class="reference external" href="https://github.com/elabftw/elabimg">elabftw/elabimg</a>.</p>
+<p>Other interesting repositories are:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/elabftw/elabctl">elabftw/elabctl</a> for the elabctl tool</p></li>
+<li><p><a class="reference external" href="https://github.com/elabftw/elabapi-python">elabftw/elabapi-python</a> for the python API library</p></li>
+</ul>
+<p>The rest of this documentation is about elabftw/elabftw.</p>
+</section>
+<section id="note-about-branches">
+<h3>Note about branches<a class="headerlink" href="#note-about-branches" title="Link to this heading"></a></h3>
+<p>The repository contains (at least) 3 branches:</p>
+<ul class="simple">
+<li><p>The <cite>master</cite> branch points to the latest released version and should always be in working state. It can contain alpha, beta or rc versions.</p></li>
+<li><p>The <cite>next</cite> is used to work on bugfixes for the stable release. If you wish to make a bugfix PR, this is the branch that you should target (if hypernext is far from it).</p></li>
+<li><p>The <cite>hypernext</cite> branch is the dev branch, it might contain bugs and unfinished work, never use it in production! It is the latest version of the code and the one you should work against for new features or non critical bugfixes. It is a very active branch, so make sure to pull from upstream often so your fork doesn’t stray too far.</p></li>
+</ul>
+</section>
+<section id="environment-installation">
+<h3>Environment installation<a class="headerlink" href="#environment-installation" title="Link to this heading"></a></h3>
+<p>So the dev environment for eLab is an hybrid between Docker and a local install. The files will be served by the webserver in Docker but the source code (<cite>elabftw</cite> folder) will be on your computer. This allows you to run the app as it would run in production, but still see your changes in the code immediately because the source is on your computer. In this setup, we will put everything in the same folder for simplicity.</p>
+<p>Ready?</p>
+<section id="docker-install">
+<h4>Docker install<a class="headerlink" href="#docker-install" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Make sure that you can run “docker” and “docker compose” commands. Install them:</p>
+<ul>
+<li><p><a class="reference external" href="https://www.docker.com">Docker</a></p></li>
+<li><p><a class="reference external" href="https://docs.docker.com/compose/">Docker Compose</a></p></li>
+</ul>
+</li>
+</ul>
+<p>Make sure your user is in the <cite>docker</cite> group so you can execute docker commands without sudo (see <a class="reference external" href="https://docs.docker.com/install/linux/linux-postinstall/">documentation</a>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some issues may occur when using Docker Desktop to manage your containers. It is highly recommended to use the system’s native Docker daemon instead.</p>
+</div>
+</section>
+<section id="dev-directory-setup">
+<h4>Dev directory setup<a class="headerlink" href="#dev-directory-setup" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Next let’s define a directory for dev (adapt to your needs):</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># this folder can be anywhere you like</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">dev</span><span class="o">=</span><span class="s1">&#39;/home/&lt;YOUR USERNAME&gt;/elabdev&#39;</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$dev</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$dev</span>
+</pre></div>
+</div>
+</section>
+<section id="forking-the-repo">
+<h4>Forking the repo<a class="headerlink" href="#forking-the-repo" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Go on <a class="reference external" href="https://github.com/elabftw/elabftw">the repository on GitHub</a></p></li>
+<li><p>Click the Star button (it helps with visibility of the project)</p></li>
+<li><p>Click the Fork button in the top right of the screen</p></li>
+<li><p>Uncheck the box “Copy only the master branch” (we will work on another branch)</p></li>
+<li><p>From your fork page, clone it with SSH on your machine:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:&lt;YOUR<span class="w"> </span>USERNAME&gt;/elabftw.git
+<span class="c1"># checkout the hypernext branch because this is where dev happens</span>
+<span class="nb">cd</span><span class="w"> </span>elabftw
+git<span class="w"> </span>checkout<span class="w"> </span>hypernext
+<span class="nb">cd</span><span class="w"> </span>..
+</pre></div>
+</div>
+</section>
+<section id="install-elabctl">
+<h4>Install elabctl<a class="headerlink" href="#install-elabctl" title="Link to this heading"></a></h4>
+<p><cite>elabctl</cite> is a tool to manage your installation. It is not strictly required but it’s a “nice to have”.</p>
+<ul class="simple">
+<li><p>Get <cite>elabctl</cite> and the configuration files:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># get elabctl</span>
+curl<span class="w"> </span>-sLo<span class="w"> </span>elabctl<span class="w"> </span>https://get.elabftw.net<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>elabctl
+<span class="c1"># get elabctl configuration file</span>
+curl<span class="w"> </span>-so<span class="w"> </span>elabctl.conf<span class="w"> </span>https://raw.githubusercontent.com/elabftw/elabctl/master/elabctl.conf
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Edit <cite>elabctl.conf</cite>, change BACKUP_DIR to <cite>$dev/backup</cite> or any other directory (write full paths of course, not aliases)</p></li>
+<li><p>Change CONF_FILE to <cite>$dev/docker-compose.yml</cite>. Again, write the full path, not the alias!</p></li>
+<li><p>Change DATA_DIR to <cite>$dev/elabftw</cite>. Again, write the full path, not the alias!</p></li>
+</ul>
+</section>
+<section id="install-compose-file">
+<h4>Install compose file<a class="headerlink" href="#install-compose-file" title="Link to this heading"></a></h4>
+<p>The <cite>docker-compose.yml</cite> file is the main configuration file for eLabFTW. It defines what containers to start, and how you want them configured.</p>
+<p>Get the <cite>docker-compose.yml</cite> configuration file, it will automatically be filled with random passwords and a new SECRET_KEY:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-so<span class="w"> </span>docker-compose.yml<span class="w"> </span><span class="s2">&quot;https://get.elabftw.net/?config&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Edit the <cite>docker-compose.yml</cite> configuration file</p></li>
+<li><p>For the web container, use “image: elabftw/elabimg:hypernext” so you are using the latest container image for dev</p></li>
+<li><p>Set <cite>DEV_MODE</cite> to <cite>true</cite></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <cite>DEV_MODE</cite> relaxes the content security policy slightly, and turns off the extra safety net of a somewhat restrictive <a class="reference external" href="https://www.php.net/manual/en/ini.core.php#ini.open-basedir">open_basedir</a> directive (values found in <a class="reference external" href="https://github.com/elabftw/elabimg/blob/master/src/init/prepare.sh">prepare.sh</a>). Avoid having this enabled in production systems.</p>
+</div>
+<ul class="simple">
+<li><p>Change the <cite>ports:</cite> line so the container runs on port 3148 (you can choose whatever port you want, or leave it on 443). It should look like this:</p></li>
+</ul>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;3148:443&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>set <cite>SITE_URL</cite> to <cite>https://localhost:3148</cite> or whatever port you chose in the previous step.</p></li>
+<li><dl class="simple">
+<dt>Change the <cite>volumes:</cite> lines to bind mount the container to the source code. Paths are formatted as <cite>SOURCE:DESTINATION</cite>, in which the source path is the path located on the local file directory and the destination path is the path located on the Docker container.</dt><dd><ul>
+<li><p>For the elabftw container: Adjust the source path to point to <cite>$dev/elabftw</cite>. Adjust the destination path to <cite>/elabftw</cite>.</p></li>
+<li><p>For the mysql container: Adjust the source to point to <cite>$dev/mysql</cite>. Keep the destination path as <cite>/var/lib/mysql</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>The lines should look like this:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">web</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/elabdev/elabftw:/elabftw</span>
+<span class="w">    </span><span class="nt">mysql</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/elabdev/mysql:/var/lib/mysql</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Start the containers:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./elabctl<span class="w"> </span>start
+</pre></div>
+</div>
+</section>
+<section id="install-dependencies">
+<h4>Install dependencies<a class="headerlink" href="#install-dependencies" title="Link to this heading"></a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>PHP dependencies are managed through <a class="reference external" href="https://getcomposer.org/">Composer</a>. It’ll read the <cite>composer.lock</cite> file and install packages (see <cite>composer.json</cite>). Javascript dependencies are managed through <a class="reference external" href="https://yarnpkg.com/">Yarn</a>. It’ll read the <cite>yarn.lock</cite> file and install packages (see <cite>package.json</cite>). The <cite>yarn install</cite> command will populate the <cite>node_modules</cite> directory, and the <cite>buildall</cite> command will use <a class="reference external" href="https://webpack.js.org/">Webpack</a> to create bundles (see <cite>builder.js</cite> file).</p>
+</div>
+<ul class="simple">
+<li><p>Now install the JavaScript and PHP dependencies using <cite>yarn</cite> and <cite>composer</cite> shipped with the container:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="nv">$dev</span>/elabftw
+<span class="c1"># javascript dependencies (node_modules/ directory)</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>elabftw<span class="w"> </span>yarn<span class="w"> </span>install
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>elabftw<span class="w"> </span>yarn<span class="w"> </span>buildall
+<span class="c1"># php dependencies (vendor/ directory)</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>elabftw<span class="w"> </span>composer<span class="w"> </span>install
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It can be a good idea to define an alias such as “alias elabc=docker exec -it elabftw”. So you can use “elabc” to run commands in the container directly.</p>
+</div>
+<p>It is important to run <cite>yarn</cite> before <cite>composer</cite> because <cite>yarn</cite> will generate a PHP class that needs to be picked up by composer.</p>
+</section>
+<section id="install-the-database">
+<h4>Install the database<a class="headerlink" href="#install-the-database" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Initialize the database structure with:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>elabftw<span class="w"> </span>bin/init<span class="w"> </span>db:install
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Enable debug mode to disable the caching of Twig templates</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># go back to where elabctl is present</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$dev</span>
+./elabctl<span class="w"> </span>mysql
+<span class="c1"># you are now on the mysql command line</span>
+mysql&gt;<span class="w"> </span>update<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="nv">conf_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="w"> </span>where<span class="w"> </span><span class="nv">conf_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;debug&#39;</span><span class="p">;</span>
+exit<span class="p">;</span>
+<span class="nb">exit</span>
+</pre></div>
+</div>
+</section>
+<section id="finishing-up">
+<h4>Finishing up<a class="headerlink" href="#finishing-up" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Now head to <a class="reference external" href="https://localhost:3148">https://localhost:3148</a></p></li>
+<li><p>You now should have a running local eLabFTW, and changes made to the code will be immediately visible</p></li>
+</ul>
+<p>It is possible to populate your dev database with fake generated data. See the <cite>db:populate</cite> command of <cite>bin/init</cite>.</p>
+</section>
+</section>
+<section id="code-organization">
+<h3>Code organization<a class="headerlink" href="#code-organization" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Real accessible pages are in the web/ directory (experiments.php, database.php, login.php, etc…)</p></li>
+<li><p>The rest is in app/ or src/ for PHP classes</p></li>
+<li><p>src/models will contain classes with CRUD (Create, Read, Update, Destroy)</p></li>
+<li><p>src/classes will contain services or utility classes</p></li>
+<li><p>A new class will be loaded automagically thanks to the use of PSR-4 with composer (namespace Elabftw\Elabftw)</p></li>
+<li><p>app/controllers will contain pages that send actions to models (like destroy something), and generally output json for an ajax request, or redirect the user.</p></li>
+<li><p>Check out the scripts in <cite>src/tools</cite> too</p></li>
+</ul>
+</section>
+</section>
+<section id="working-with-javascript">
+<h2>Working with JavaScript<a class="headerlink" href="#working-with-javascript" title="Link to this heading"></a></h2>
+<p>All JavaScript code is written in <a class="reference external" href="https://www.typescriptlang.org/">TypeScript</a> in <cite>src/ts</cite>. During build, it is converted in JS by <cite>tsc</cite>. It is then bundled by <a class="reference external" href="https://webpack.js.org/">Webpack</a>. A full build can be quite time consuming, especially on hardware with limited CPU power.</p>
+<p>When working on some JS, what you want is to be able to save the file and immediately see the changes. For that, use <cite>yarn watchjs</cite> to build the JS and watch for changes. Now changes will take a very small time to compile and be visible.</p>
+<p>You’ll also want to configure your favorite text editor to display TypeScript errors when writing the code.</p>
+<p>Use vanilla JS and ban the use of jQuery selectors or functions.</p>
+</section>
+<section id="miscellaneous">
+<h2>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>if you make a change to the SQL structure, you need to add a schema file in <cite>src/sql</cite>. See the existing files for an example. Then increment the required version in <cite>src/classes/Update</cite>. Modify <cite>src/sql/structure.sql</cite> so new installs will get the correct structure. See also <cite>dev:genschema</cite> command.</p></li>
+<li><p>comment your code wisely, what is important is the why, not the what</p></li>
+<li><p>your code must follow <a class="reference external" href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md">the PSR standards</a></p></li>
+<li><p>add a plugin to your editor to show trailing whitespaces in red</p></li>
+<li><p>add a plugin to your editor to show PSR-1 errors</p></li>
+<li><p>see <a class="reference external" href="https://editorconfig.org/">editorconfig.org</a> and configure your editor to follow the settings from <cite>.editorconfig</cite></p></li>
+<li><p>remove BOM</p></li>
+<li><p>if you want to work on the documentation, clone the <a class="reference external" href="https://github.com/elabftw/elabdoc">elabdoc repo</a></p></li>
+<li><p>if you want to make backups of your dev install, you’ll need to edit <cite>elabctl.conf</cite> to point to the correct folders/config files. See <a class="reference external" href="https://github.com/elabftw/elabctl/blob/master/elabctl.conf">example</a></p></li>
+<li><p>in php camelCase; in html, dash separation for CSS stuff, camelCase for JS</p></li>
+<li><p>check the commands in the “scripts” part of the <cite>package.json</cite> file, a lot of nice things in there ;)</p></li>
+</ul>
+</section>
+<section id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Experiments + Database items + Experiments Templates = Entities. So when you see Entity it means it can be an experiment/template or a database item.</p></li>
+</ul>
+</section>
+<section id="build">
+<h2>Build<a class="headerlink" href="#build" title="Link to this heading"></a></h2>
+<p>The javascript and css files are stored unminified in the source code. But the app uses the minified versions, so if you make a change to the javascript or css files, you need to rebuild them.</p>
+<ul class="simple">
+<li><p>To minify files:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install the packages first</span>
+yarn<span class="w"> </span>install
+yarn<span class="w"> </span>buildall
+</pre></div>
+</div>
+<p>Other commands exist, see <cite>builder.js</cite> (webpack), the <cite>scripts</cite> part of <cite>package.json</cite> (yarn). If you just want to rebuild the CSS, use <cite>yarn buildcss</cite>.</p>
+<p>When working on the code, it is best to have <cite>yarn watchjs</cite> and <cite>yarn watchcss</cite> running so changes are immediately picked up.</p>
+</section>
+<section id="tests">
+<h2>Tests<a class="headerlink" href="#tests" title="Link to this heading"></a></h2>
+<p>The tests run on the Codeception framework for unit and api tests. End to end testing is done with Cypress.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>yarn<span class="w"> </span>unit<span class="w"> </span><span class="c1"># will run the unit tests</span>
+$<span class="w"> </span>yarn<span class="w"> </span><span class="nb">test</span><span class="w"> </span><span class="c1"># will run the full test suite</span>
+</pre></div>
+</div>
+<p>A good contribution you can make would be adding Cypress tests.</p>
+<p>In order for the tests to run successfully, you’ll want to have a file in <cite>tests/elabftw-user.env</cite> with the following content:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">ELABFTW_USER</span><span class="o">=</span>sam
+<span class="nv">ELABFTW_GROUP</span><span class="o">=</span>wheel
+<span class="nv">ELABFTW_USERID</span><span class="o">=</span><span class="m">1000</span>
+<span class="nv">ELABFTW_GROUPID</span><span class="o">=</span><span class="m">1000</span>
+</pre></div>
+</div>
+<p>In the example above, the user is <cite>sam</cite> and the main group is <cite>wheel</cite>. Find out this info with <cite>id</cite> command. This file will make the test container run as your user and prevent permissions issues.</p>
+</section>
+<section id="exceptions-handling">
+<h2>Exceptions handling<a class="headerlink" href="#exceptions-handling" title="Link to this heading"></a></h2>
+<p>Here are some ground rules for exceptions thrown in the code:</p>
+<ul class="simple">
+<li><p>Code should not throw a generic Exception, but one of ElabftwExceptions</p></li>
+<li><p>ImproperActionException when something forbidden happens but it’s not suspicious. Error is not logged, and message is shown to user</p></li>
+<li><p>DatabaseErrorException when a SQL query failed, the error is logged and message is shown to user</p></li>
+<li><p>IllegalActionException when something should not happen in normal conditions unless someone is poking around by editing the requests. Error is logged and generic permission error is shown</p></li>
+<li><p>FilesystemErrorException, same as DatabaseErrorException but for file operations</p></li>
+<li><p>For the rest, the error is logged and a generic error message is shown to user</p></li>
+<li><p>Code should throw an Exception as soon as something goes wrong</p></li>
+<li><p>Exceptions should not be caught in the code (models), only in the controllers</p></li>
+<li><p>Instead of returning bool, functions should throw exception if something goes wrong. This removes the need to check for return value in consuming code (something often forgotten!)</p></li>
+</ul>
+</section>
+<section id="making-a-pull-request">
+<h2>Making a pull request<a class="headerlink" href="#making-a-pull-request" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Before working on a feature, it’s a good idea to open an issue first to discuss its implementation</p></li>
+<li><p>Create a branch from <strong>hypernext</strong></p></li>
+<li><p>Work on a feature</p></li>
+<li><p>Make sure <cite>yarn full</cite> exits with no errors</p></li>
+<li><p>Make a pull request on GitHub to include it in <strong>hypernext</strong></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="nv">$dev</span>/elabftw
+<span class="c1"># create your feature branch from the hypernext branch</span>
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>my-feature
+<span class="c1"># modify the code, commit and push to your fork</span>
+<span class="c1"># go to github.com and create a pull request</span>
+</pre></div>
+</div>
+</section>
+<section id="adding-a-lang">
+<h2>Adding a lang<a class="headerlink" href="#adding-a-lang" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Add lang on poeditor.com</p></li>
+<li><p>Get .po</p></li>
+<li><p>Open with poeditor and fix issues</p></li>
+<li><p>Save the .mo</p></li>
+<li><p>Upload .po fixed to poeditor</p></li>
+<li><p>Add the files in src/langs</p></li>
+<li><p>Edit Tools to add lang to menu</p></li>
+<li><p>Get the tinymce translation</p></li>
+<li><p>Rename file to 4 letters code</p></li>
+<li><p>Edit first line of file to match code</p></li>
+</ul>
+</section>
+<section id="adding-a-new-term-for-js-i18n">
+<h2>Adding a new term for js i18n<a class="headerlink" href="#adding-a-new-term-for-js-i18n" title="Link to this heading"></a></h2>
+<p>These steps are overly complicated and should be made automatically ideally.</p>
+<ul class="simple">
+<li><p>Add the new term to src/langs/js-strings.php and give it an identifier</p></li>
+<li><p>Open all files in <cite>src/ts/langs/*.ts</cite> and add it there with translation for all</p></li>
+<li><p>Import i18next in the corresponding ts file and use <cite>i18next.t(‘string-id’)</cite></p></li>
+</ul>
+</section>
+<section id="accessing-docker-mysql-database-with-phpmyadmin">
+<h2>Accessing Docker MySQL database with phpmyadmin<a class="headerlink" href="#accessing-docker-mysql-database-with-phpmyadmin" title="Link to this heading"></a></h2>
+<p>You might be used to access your local MySQL dev database with PHPMyadmin. Just uncomment the part related to phpmyadmin in the config file and <cite>elabctl restart</cite>.</p>
+<p>This will launch a docker container with phpmyadmin that you can reach on port 8080. Go to <a class="reference external" href="http://localhost:8080">localhost:8080</a>. Login with your mysql user (elabftw by default) and your mysql password found in the .yml configuration file. You should see the <cite>elabftw</cite> database now.</p>
+</section>
+<section id="using-a-trusted-certificate-for-local-dev">
+<h2>Using a trusted certificate for local dev<a class="headerlink" href="#using-a-trusted-certificate-for-local-dev" title="Link to this heading"></a></h2>
+<p>When working locally, the docker image will generate a self-signed TLS certificate. This will show a warning in the browser address bar and multiple warnings in the console (when you press F12). To fix this, it is possible to generate certificates that are trusted by your local browser.</p>
+<p>We’ll use <a class="reference external" href="https://github.com/FiloSottile/mkcert">FiloSottile/mkcert</a> project to achieve this.</p>
+<section id="step-1-use-a-real-domain-name">
+<h3>Step 1: use a real domain name<a class="headerlink" href="#step-1-use-a-real-domain-name" title="Link to this heading"></a></h3>
+<p>I like to use elab.local on port 3148. Edit <cite>/etc/hosts</cite> and add a line with elab.local pointing to localhost like this:</p>
+<p>127.0.0.1 elab.local</p>
+</section>
+<section id="step-2-get-certs">
+<h3>Step 2: get certs<a class="headerlink" href="#step-2-get-certs" title="Link to this heading"></a></h3>
+<p>Install <a class="reference external" href="https://github.com/FiloSottile/mkcert">mkcert</a> and generate certificates for <cite>elab.local</cite>. Create a new folder somewhere to hold them:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$dev</span>/certs/live/elab.local
+$<span class="w"> </span>mv<span class="w"> </span>elab.local+3.pem<span class="w"> </span><span class="nv">$dev</span>/certs/live/elab.local/fullchain.pem
+$<span class="w"> </span>mv<span class="w"> </span>elab.local+3-key.pem<span class="w"> </span><span class="nv">$dev</span>/certs/live/elab.local/privkey.pem
+</pre></div>
+</div>
+</section>
+<section id="step-3-edit-config-to-use-certificates">
+<h3>Step 3: edit config to use certificates<a class="headerlink" href="#step-3-edit-config-to-use-certificates" title="Link to this heading"></a></h3>
+<p>Edit the .yml file for elabftw, change <cite>ENABLE_LETSENCRYPT</cite> to <cite>true</cite>. Uncomment the volume line with <cite>/ssl</cite> and make it point to where you have the certs.</p>
+<p>Example:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/home/user/.dev/elabftw:/elabftw</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/home/user/.dev/certs:/ssl</span>
+</pre></div>
+</div>
+</section>
+<section id="step-4-restart-containers">
+<h3>Step 4: restart containers<a class="headerlink" href="#step-4-restart-containers" title="Link to this heading"></a></h3>
+<p><cite>elabctl restart</cite>, and you should now have a valid certificate on your local dev install of elabftw :)</p>
+</section>
+</section>
+<section id="how-to-test-external-auth">
+<h2>How to test external auth<a class="headerlink" href="#how-to-test-external-auth" title="Link to this heading"></a></h2>
+<p>To easily test external authentication, edit in the container <cite>/etc/php8/php-fpm.d/elabpool.conf</cite> and at the end add:</p>
+<div class="highlight-proto notranslate"><div class="highlight"><pre><span></span><span class="n">env</span><span class="p">[</span><span class="n">auth_user</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ntesla</span>
+<span class="n">env</span><span class="p">[</span><span class="n">auth_username</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Nicolas</span>
+<span class="n">env</span><span class="p">[</span><span class="n">auth_lastname</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Tesla</span>
+<span class="n">env</span><span class="p">[</span><span class="n">auth_email</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;nico@example.com&quot;</span>
+<span class="n">env</span><span class="p">[</span><span class="n">auth_team</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Alpha&quot;</span>
+</pre></div>
+</div>
+<p>Restart the php process with: <cite>s6-svc -r /var/run/s6/services/php</cite>.</p>
+<p>Next, configure the correct keys in the Sysconfig panel and external authentication should be working as expected.</p>
+</section>
+<section id="how-to-test-ldap">
+<h2>How to test ldap<a class="headerlink" href="#how-to-test-ldap" title="Link to this heading"></a></h2>
+<p>Uncomment the ldap and ldap-admin containers definitions in the config file. Then use the ldap-admin (running on port 6443 by default) to login with “cn=admin,dc=example,dc=org” and password “admin”. Then click the “dc=example,dc=org” in the left menu and “Create a child entry”. Create a “Generic: Posix Group”. We don’t care about the name but it is necessary to have one before creating our test user.</p>
+<p>Click again the “dc=example,dc=org” in the left to be at the root, “Create a child entry” and select “Generic: User Account”. In GID Number you can assign the previously created group. Once the user is created, go select it in the left menu and “Add new attribute”: Email. And add the email for that user. Now you should be able to login with that user after activating ldap from the sysconfig menu. Default values from the populate script should be good to go without changes.</p>
+</section>
+<section id="install-a-pre-commit-hook">
+<h2>Install a pre-commit hook<a class="headerlink" href="#install-a-pre-commit-hook" title="Link to this heading"></a></h2>
+<p>It is a good idea to use a pre-commit hook to run linters before the commit is actually done. It prevents doing another commit afterwards for “fix phpcs” or “fix linting”. Go into <cite>.git/hooks</cite>. And <cite>cp pre-commit.sample pre-commit</cite>. Edit it and before the last line with the “exec”, add this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># eLabFTW linting pre-commit hook</span>
+<span class="nv">reset</span><span class="o">=</span><span class="s2">&quot;\e[0m&quot;</span>
+<span class="nv">red</span><span class="o">=</span><span class="s2">&quot;\e[0;31m&quot;</span>
+<span class="nb">set</span><span class="w"> </span>-e
+<span class="k">if</span><span class="w"> </span>!<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>elabftw<span class="w"> </span>yarn<span class="w"> </span>pre-commit
+<span class="k">then</span>
+<span class="w">    </span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">red</span><span class="si">}</span><span class="s2">error</span><span class="si">${</span><span class="nv">reset</span><span class="si">}</span><span class="s2"> Pre-commit script found a problem!.\n&quot;</span>
+<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>Now when you commit it should run this script and prevent the commit if there are errors.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="how-to-update.html" class="btn btn-neutral float-left" title="How to update" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="faq.html" class="btn btn-neutral float-right" title="Frequently asked questions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012, Nicolas CARPi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+  <a href='https://creativecommons.org/licenses/by-sa/4.0/'><img src='_images/by-sa.png' alt='cc-by-sa' /></a>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

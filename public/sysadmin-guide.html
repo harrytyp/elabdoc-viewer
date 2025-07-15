@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sysadmin guide &mdash; elabftw 5.1.15 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=6d288cbf"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Import / Export" href="import-export.html" />
+    <link rel="prev" title="Admin guide" href="admin-guide.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            elabftw
+          </a>
+              <div class="version">
+                5.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install on a GNU/Linux server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-cloud.html">Install in the cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nas.html">Install on a NAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nolinux.html">Install on Mac or Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="generalities.html">Generalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin-guide.html">Admin guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sysadmin guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-overview">General overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-sysadmin">The Sysadmin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#account-creation">Account creation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-email-required">Setting up email (required)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-up-backup">Set up backup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configure-teams-optional">Configure teams <sup>(optional)</sup></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configure-authentication-optional">Configure authentication <sup>(optional)</sup></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-up-timestamping-optional">Set up timestamping <sup>(optional)</sup></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configure-automatic-timestamping">Configure automatic timestamping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configure-keeex">Configure Keeex</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configure-storage-optional">Configure storage <sup>(optional)</sup></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-up-a-cronjob-to-renew-tls-certificates-optional">Set up a cronjob to renew TLS certificates <sup>(optional)</sup></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#update-often">Update often</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sysadmin-panel">Sysadmin Panel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#server-tab">Server tab</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#settings">Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remote-directory-configuration">Remote directory configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#users-tab">Users tab</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#monitoring">Monitoring</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#healthchecks">Healthchecks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#metrics">Metrics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#logging">Logging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#access-and-error-logs">Access and error logs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#audit-logs">Audit logs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#staging-instance">Staging instance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-create-a-staging-instance">How to create a staging instance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="import-export.html">Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backup.html">How to backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-update.html">How to update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker-doc.html">About Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade-to-docker.html">Upgrade a normal install to a Docker install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ldap.html">Configure LDAP authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="saml.html">Configure SAML2 authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thanks.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">elabftw</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Sysadmin guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/sysadmin-guide.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sysadmin-guide">
+<span id="id1"></span><h1>Sysadmin guide<a class="headerlink" href="#sysadmin-guide" title="Link to this heading"></a></h1>
+<section id="general-overview">
+<h2>General overview<a class="headerlink" href="#general-overview" title="Link to this heading"></a></h2>
+<section id="the-sysadmin">
+<h3>The Sysadmin<a class="headerlink" href="#the-sysadmin" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Is the first registered user</p></li>
+<li><p>Has access to the Sysconfig Panel with general settings impacting every team hosted on the server</p></li>
+<li><p>Can create/edit/delete teams</p></li>
+<li><p>Can send a mass email to all users</p></li>
+<li><p>Can set the default language</p></li>
+<li><p>Can configure timestamping (if another TSA is wanted)</p></li>
+<li><p>Can change security settings (number of login attempts, manual validation of new users)</p></li>
+<li><p>It is possible to have multiple ‘Sysadmin’ accounts</p></li>
+</ul>
+</section>
+<section id="account-creation">
+<h3>Account creation<a class="headerlink" href="#account-creation" title="Link to this heading"></a></h3>
+<p>New users need to register an account on the register page, accessible from the login page. They need to choose a team from the list.</p>
+<p>By default, newly created accounts are disabled. The admin of the team needs to validate them by going into the admin panel and activate new users.
+This guide assumes you already have a working installation of eLabFTW on a server.
+The Sysadmin has access to core settings of the eLabFTW instance like email configuration or security preferences.</p>
+</section>
+</section>
+<section id="setting-up-email-required">
+<h2>Setting up email (required)<a class="headerlink" href="#setting-up-email-required" title="Link to this heading"></a></h2>
+<p>If there is only one thing to do after an install, it’s setting up email. Otherwise users will not be able to reset their password nor receive notifications!</p>
+<p>In order to configure eLabFTW to send emails, you will need credentials to a SMTP service. If you are using a SMTP service without authentication, it works, too.</p>
+<p>Go to the Sysadmin panel. You will see this warning:</p>
+<img alt="email warning" class="align-center" src="_images/sysconfig-email-warning.png" />
+<p>Click the tab “Email” and add the requested information to connect to your SMTP server.</p>
+<p>If you don’t know what to do, I highly recommend using <a class="reference external" href="https://get.smtp2go.com/xj1zy4rvle6v">SMTP2GO</a> (use this referral link), they provide a free plan that will probably be enough for your use case.</p>
+<img alt="smtp2go logo" class="align-center" src="_images/smtp2go.jpg" />
+<p>Register an account using this link: <a class="reference external" href="https://get.smtp2go.com/xj1zy4rvle6v">SMTP2GO</a>. Once logged in, add an SMTP User: it will provide you with a login and password to connect to the SMTP server “mail.smtp2go.com”. Input these credentials on the Sysadmin panel and test sending an email.</p>
+</section>
+<section id="set-up-backup">
+<h2>Set up backup<a class="headerlink" href="#set-up-backup" title="Link to this heading"></a></h2>
+<p>See the dedicated <a class="reference internal" href="backup.html#backup"><span class="std std-ref">backup</span></a> page.</p>
+</section>
+<section id="configure-teams-optional">
+<span id="configure-teams"></span><h2>Configure teams <sup>(optional)</sup><a class="headerlink" href="#configure-teams-optional" title="Link to this heading"></a></h2>
+<p>If your instance hosts different research groups/teams, you can create them from the Sysadmin panel (<cite>sysconfig.php</cite>).</p>
+<p>You might also want to edit the Default team name. In the screenshot below, there are four teams. The “Organization ID” is an attribute that you can set in case you wish to use the information sent by an external authentication service (such as SAML or LDAP) to assign a team to a new user. It basically allows you to match a team on eLabFTW with a team in your directory.</p>
+<p>The “Visible” attribute allows you to hide a team from the “Register” page. Use it for the administrative team for instance. Only a completely empty team can be deleted.</p>
+<img alt="teams" class="align-center" src="_images/sysconfig-teams.png" />
+</section>
+<section id="configure-authentication-optional">
+<h2>Configure authentication <sup>(optional)</sup><a class="headerlink" href="#configure-authentication-optional" title="Link to this heading"></a></h2>
+<p>eLabFTW currently supports four authentication mechanisms:</p>
+<ul class="simple">
+<li><p>Local authentication: email + password stored locally, this is the default</p></li>
+<li><p>SAML authentication: use one or several Identity Provider (IDP) to authenticate users. See dedicated <a class="reference internal" href="saml.html#saml"><span class="std std-ref">SAML documentation page</span></a>.</p></li>
+<li><p>LDAP authentication: verify the login with an LDAP service. See dedicated <a class="reference internal" href="ldap.html#ldap"><span class="std std-ref">LDAP documentation page</span></a>.</p></li>
+<li><p>External authentication: use request headers added by your own middleware to authenticate the user (e.g. Apache’s auth_mellon)</p></li>
+</ul>
+<p>It is possible to have several mechanisms at the same time but recommended to only leave one visible to users. So if you configure LDAP or SAML, disable the Local login so Users are not confused.</p>
+<p>If you disabled Local authentication and cannot login back because your other method fails, you’ll want to run this SQL query (<cite>elabctl mysql</cite> will give you a MySQL prompt if you’re using Dockerized MySQL service):</p>
+<div class="highlight-mysql notranslate"><div class="highlight"><pre><span></span><span class="k">update</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">conf_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">conf_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;local_auth_enabled&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="set-up-timestamping-optional">
+<h2>Set up timestamping <sup>(optional)</sup><a class="headerlink" href="#set-up-timestamping-optional" title="Link to this heading"></a></h2>
+<p>eLabFTW provides an easy way to do <a class="reference external" href="https://en.wikipedia.org/wiki/Trusted_timestamping">Trusted Timestamping</a> for your experiments, so you can have strong legal value for your lab notebook.</p>
+<p>By default, it is setup to use <a class="reference external" href="https://www.pki.dfn.de/zeitstempeldienst/">pki.dfn.de</a> as <abbr title="TimeStampingAuthority">TSA</abbr>. It is free for researchers. The only problem, is that they don’t have ETSI certification for this service (although their PKI infrastructure is certified ETSI TS 102 042).</p>
+<p>So if you need a stronger certification, you should go with a commercial solution providing an <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3161.html"><strong>RFC 3161</strong></a> way of timestamping documents. We recommend <a class="reference external" href="https://www.universign.com">Universign.com</a>, as they are one of the most serious and recognized <abbr title="TimeStampingAuthority">TSA</abbr> out there, but feel free to use the one you prefer.</p>
+<p>You can select from the list of pre-configured TSA or use a custom one by providing the URL and login/password.</p>
+<p>Remember: no data is sent to the <cite>TSA (TimeStampingAuthority)</cite>, only the hash of the data is sent, so no information can leak!</p>
+<section id="configure-automatic-timestamping">
+<h3>Configure automatic timestamping<a class="headerlink" href="#configure-automatic-timestamping" title="Link to this heading"></a></h3>
+<p>You might want to automate the timestamping of experiments, and not rely on users triggering the action manually. For that, you need to setup a recurrent task (cronjob or systemd timer) that will call a console command.</p>
+<p>The command is: <cite>bin/console experiments:timestamp –help</cite>. It requires an argument which is the id of the user doing the timestamp. In most cases, using <cite>1</cite> will work fine. Alternatively you can create a specific user for this purpose.</p>
+<p>By default, all experiments modified in the past week will be timestamped. So you’ll want to adjust your recurrent task periodicity to align with the <cite>–modified-since / -m</cite> setting. Use english terms like “1 month” or “2 weeks” for this option.</p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># timestamp all the modified experiments from past week</span>
+<span class="c1"># run on every Saturday at 3AM</span>
+<span class="m">0</span><span class="w"> </span><span class="m">3</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span><span class="m">6</span><span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>elabftw<span class="w"> </span>bin/console<span class="w"> </span>experiments:timestamp<span class="w"> </span><span class="m">1</span>
+
+<span class="c1"># timestamp all the modified experiments of past month</span>
+<span class="c1"># run the first day of the month at 3AM, in verbose mode</span>
+<span class="m">0</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>*<span class="w"> </span>*<span class="w">  </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>elabftw<span class="w"> </span>bin/console<span class="w"> </span>experiments:timestamp<span class="w"> </span><span class="m">1</span><span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;1 month&quot;</span><span class="w"> </span>-v
+</pre></div>
+</div>
+</section>
+<section id="configure-keeex">
+<h3>Configure Keeex<a class="headerlink" href="#configure-keeex" title="Link to this heading"></a></h3>
+<p>eLabFTW provides a way to use a <a class="reference external" href="https://keeex.me/">Keeex</a> service during the timestamp action. It is a technology that allows to guarantee integrity and authenticity of files, autonomously and without third party.</p>
+<p>When enabled, the generated pdf for timestamping will be sent over to a Keeex Fusion service running on your network in http mode for keeex/timestamping of the pdf, before being timestamped via your RFC3161 provider.</p>
+<p>If you would like to use this service, please <a class="reference external" href="https://www.deltablot.com/contact">contact us</a>.</p>
+</section>
+</section>
+<section id="configure-storage-optional">
+<h2>Configure storage <sup>(optional)</sup><a class="headerlink" href="#configure-storage-optional" title="Link to this heading"></a></h2>
+<p>By default, uploaded files are stored in the <cite>uploads/</cite> folder that is mounted outside the container for persistence. You can choose instead to use an S3 compatible service (buckets) to store these files. The “Uploads” tab allows you to configure this storage.</p>
+<p>To use S3 storage, set <cite>ELAB_AWS_ACCESS_KEY</cite> and <cite>ELAB_AWS_SECRET_KEY</cite> in your config file. You can use <cite>bin/console uploads:migrate</cite> to migrate existing locally uploaded files to S3 storage.</p>
+</section>
+<section id="set-up-a-cronjob-to-renew-tls-certificates-optional">
+<h2>Set up a cronjob to renew TLS certificates <sup>(optional)</sup><a class="headerlink" href="#set-up-a-cronjob-to-renew-tls-certificates-optional" title="Link to this heading"></a></h2>
+<p>It is important to consider already how the TLS certificates will be renewed. Let’s Encrypt certificates are valid only 3 months, which is a good thing, because it will allow you to find out much quicker if your setup works.</p>
+<p>You will find the documentation for renewal with <cite>certbot</cite> here: <a class="reference external" href="https://eff-certbot.readthedocs.io/en/stable/using.html#renewing-certificates">certbot renew certificates</a>.</p>
+<p>If you’re encountering issues, do not hesitate to join the eLabFTW chat room to find help: <a class="reference external" href="https://gitter.im/elabftw/elabftw">gitter chat (matrix room)</a>.</p>
+</section>
+<section id="update-often">
+<h2>Update often<a class="headerlink" href="#update-often" title="Link to this heading"></a></h2>
+<p>It is important to keep your install up to date with the latest bug fixes and new features.</p>
+<p><a class="reference external" href="http://eepurl.com/bTjcMj">Subscribe to the newsletter</a> to be warned when a new release is out or select “Releases only” from GitHub’s Watch button on the <a class="reference external" href="https://github.com/elabftw/elabftw">repo page</a>.</p>
+<p>See instructions on updating eLabFTW on <a class="reference internal" href="how-to-update.html#how-to-update"><span class="std std-ref">How to update</span></a>.</p>
+</section>
+<section id="sysadmin-panel">
+<h2>Sysadmin Panel<a class="headerlink" href="#sysadmin-panel" title="Link to this heading"></a></h2>
+<section id="server-tab">
+<h3>Server tab<a class="headerlink" href="#server-tab" title="Link to this heading"></a></h3>
+<section id="settings">
+<h4>Settings<a class="headerlink" href="#settings" title="Link to this heading"></a></h4>
+<p>Note about “Allow the base permission setting «Only me»”: if you wish to prevent users from using this Base Permission, select No here.</p>
+<p>In order to go over existing entries and change all entries with the Base Permission “Only me” and set it to “Only me + Admins”, you can execute these SQL requests:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- experiments read permissions</span>
+<span class="k">update</span><span class="w"> </span><span class="n">experiments</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">canread</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json_set</span><span class="p">(</span><span class="n">canread</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;$.base&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">where</span>
+<span class="n">json_extract</span><span class="p">(</span><span class="n">canread</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;$.base&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+
+<span class="c1">-- experiments write permissions</span>
+<span class="k">update</span><span class="w"> </span><span class="n">experiments</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">canwrite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json_set</span><span class="p">(</span><span class="n">canwrite</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;$.base&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">where</span>
+<span class="n">json_extract</span><span class="p">(</span><span class="n">canwrite</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;$.base&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="remote-directory-configuration">
+<h4>Remote directory configuration<a class="headerlink" href="#remote-directory-configuration" title="Link to this heading"></a></h4>
+<p>Ignore this if you are not a CNRS lab.</p>
+<p>This allows to query an external endpoint to get a list of users that can be added to the eLabFTW local users database.</p>
+</section>
+</section>
+<section id="users-tab">
+<h3>Users tab<a class="headerlink" href="#users-tab" title="Link to this heading"></a></h3>
+<p>The Sysadmin can manage Users the same way Admins can manage Users from their Team, but with more options, such as changing the password or attributes, and manage the teams for users.</p>
+<p>To make a user part of multiple teams, search for a user, and click the three vertical dot button on the right to open a menu, and select “Manage teams for user”. A modal window will allow you to add teams to this user. A user can be admin in a team and not admin in another.</p>
+<img alt="sysadmin user team management" class="align-center" src="_images/sysadmin-manage-teams.png" />
+<p>The attribute “is owner” allows you to determine which of the Admins in a Team are the “owner” of the team. It has no impact anywhere and is purely an informational attribute.</p>
+</section>
+</section>
+<section id="monitoring">
+<h2>Monitoring<a class="headerlink" href="#monitoring" title="Link to this heading"></a></h2>
+<section id="healthchecks">
+<h3>Healthchecks<a class="headerlink" href="#healthchecks" title="Link to this heading"></a></h3>
+<p>To monitor the nginx service, use <code class="docutils literal notranslate"><span class="pre">/healthcheck</span></code> endpoint, which replies with status code <code class="docutils literal notranslate"><span class="pre">204</span></code> if nginx is working.</p>
+<p>To monitor the php-fpm service, use <code class="docutils literal notranslate"><span class="pre">/php-ping</span></code>, which replies with status code <code class="docutils literal notranslate"><span class="pre">200</span></code> if php-fpm is working.</p>
+<p>To monitor the nginx, the php-fpm and the MySQL connection, use <code class="docutils literal notranslate"><span class="pre">/healthcheck.php</span></code>, which replies with status code <code class="docutils literal notranslate"><span class="pre">200</span></code> and <code class="docutils literal notranslate"><span class="pre">ok</span></code> in the body of the response if everything is working.</p>
+</section>
+<section id="metrics">
+<h3>Metrics<a class="headerlink" href="#metrics" title="Link to this heading"></a></h3>
+<p>To gather metrics from the php-fpm service, use <code class="docutils literal notranslate"><span class="pre">/php-status</span></code>, which replies with information about php-fpm processes. See the <a class="reference external" href="https://www.php.net/manual/en/fpm.status.php">PHP FPM Status page documentation</a> for more details.</p>
+<p>To gather metrics from the nginx service, use <code class="docutils literal notranslate"><span class="pre">/nginx-status</span></code>, which replies with information about nginx processes. See the <a class="reference external" href="https://nginx.org/en/docs/http/ngx_http_stub_status_module.html">Nginx status module documentation</a> for more details.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">/php-status</span></code> and <code class="docutils literal notranslate"><span class="pre">/nginx-status</span></code> pages are protected with <strong>Basic authentication</strong>:</p>
+<ul class="simple">
+<li><p>user: <code class="docutils literal notranslate"><span class="pre">elabftw</span></code></p></li>
+<li><p>password: the value of <code class="docutils literal notranslate"><span class="pre">STATUS_PASSWORD</span></code> environment variable</p></li>
+</ul>
+<p>If this variable is not set (default), then a random unknown password will be generated but never displayed, effectively disabling access to these pages.</p>
+<p>All of the above endpoints will not produce an access log entry.</p>
+</section>
+</section>
+<section id="logging">
+<h2>Logging<a class="headerlink" href="#logging" title="Link to this heading"></a></h2>
+<section id="access-and-error-logs">
+<h3>Access and error logs<a class="headerlink" href="#access-and-error-logs" title="Link to this heading"></a></h3>
+<p>Logs produced by eLabFTW, nginx or PHP-FPM are redirected to <code class="docutils literal notranslate"><span class="pre">/dev/stdout</span></code> and <code class="docutils literal notranslate"><span class="pre">/dev/stderr</span></code> of the container. They appear with the command <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">logs</span> <span class="pre">elabftw</span></code>. By default, the logging driver is <code class="docutils literal notranslate"><span class="pre">local</span></code>, which means it will create files on the host.</p>
+<p>It is recommended to emit logs to a centralized service, by using a different logging driver, such as <code class="docutils literal notranslate"><span class="pre">syslog</span></code> or <code class="docutils literal notranslate"><span class="pre">graylog</span></code> or <code class="docutils literal notranslate"><span class="pre">loki</span></code> (by grafana). For this, change the compose file configuration to include the correct settings for your infrastructure.</p>
+</section>
+<section id="audit-logs">
+<h3>Audit logs<a class="headerlink" href="#audit-logs" title="Link to this heading"></a></h3>
+<p>It is possible to configure Audit Logs to be emitted in the general logs, in addition to being stored in the database. It might be important to you to keep a trace of these actions in a centralized, deported service. To enable this behavior, go to the Audit Logs tab of the Sysconfig Panel and enable “Emit audit logs with PHP error log”. The message of the event is is JSON, and has this structure:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w"> </span><span class="nx">category_value</span><span class="o">:</span><span class="w"> </span><span class="nx">number</span><span class="p">,</span>
+<span class="w"> </span><span class="nx">category_name</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span><span class="p">,</span>
+<span class="w"> </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span><span class="p">,</span>
+<span class="w"> </span><span class="nx">requester_userid</span><span class="o">:</span><span class="w"> </span><span class="nx">number</span><span class="p">,</span>
+<span class="w"> </span><span class="nx">target_userid</span><span class="o">:</span><span class="w"> </span><span class="nx">number</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;category_value&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;category_name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Login&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;message&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;User logged in&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;requester_userid&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;target_userid&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You can then configure your centralized login system to interpret these messages to build advanced queries.</p>
+</section>
+</section>
+<section id="staging-instance">
+<h2>Staging instance<a class="headerlink" href="#staging-instance" title="Link to this heading"></a></h2>
+<p>A staging instance, sometimes called “pre-production”, is another eLabFTW instance running alongside the production instance, and used to test upgrades or configuration changes without impacting the production instance.</p>
+<p>It is highly recommended to setup a staging instance.</p>
+<section id="how-to-create-a-staging-instance">
+<h3>How to create a staging instance<a class="headerlink" href="#how-to-create-a-staging-instance" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Copy the configuration file of the production instance (<cite>/etc/elabftw.yml</cite>) into another folder (<cite>/path/to/elabftw-staging/docker-compose.yml</cite>)</p></li>
+<li><p>Change the <cite>SITE_URL</cite> value: for example from elab.uni.de to elab-test.uni.de</p></li>
+<li><p>Similarly, change the <cite>SERVER_NAME</cite> value</p></li>
+<li><p>Modify the <cite>volumes</cite> so it points to another folder than the production one, for both containers</p></li>
+</ol>
+<p>Of course, adjust these instructions relative to your setup. Try and have the most similar setup between both. If one is using NFS storage with external MySQL server, do the same for staging instance.</p>
+<p>Start your staging instance with: <cite>docker compose up -d</cite>. Make sure to adjust DNS, certificates, load balancers, reverse proxies accordingly.</p>
+<p>Use the <a class="reference internal" href="backup.html#restore-backup"><span class="std std-ref">Restore backup</span></a> instructions to copy your production data into the staging instance. It is recommended to do that regularly, especially before updates, so the staging data is the same as production data and you will not have surprises. It’s also a good opportunity to test your backups, if this has not been automated.</p>
+<p>Before a major release, update the staging instance, optionally asking users if everything looks good on this instance, and once everything is validated, you can upgrade the production instance.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is recommended to post a general announcement from the Communications tab in the Sysconfig Panel to inform users that this is a test instance, preventing them from mistakenly entering data.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="admin-guide.html" class="btn btn-neutral float-left" title="Admin guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="import-export.html" class="btn btn-neutral float-right" title="Import / Export" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012, Nicolas CARPi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+  <a href='https://creativecommons.org/licenses/by-sa/4.0/'><img src='_images/by-sa.png' alt='cc-by-sa' /></a>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

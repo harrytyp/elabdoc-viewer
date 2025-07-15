@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Install on a NAS &mdash; elabftw 5.1.15 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=6d288cbf"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Install on Mac or Windows" href="install-nolinux.html" />
+    <link rel="prev" title="Install in the cloud" href="install-cloud.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            elabftw
+          </a>
+              <div class="version">
+                5.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install on a GNU/Linux server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-cloud.html">Install in the cloud</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Install on a NAS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-the-config-file">Get the config file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#edit-the-config-file">Edit the config file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#starting-the-containers">Starting the containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#importing-the-database-structure">Importing the database structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#accessing-elabftw">Accessing elabftw</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#post-install">Post install</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install-nolinux.html">Install on Mac or Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="generalities.html">Generalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin-guide.html">Admin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin-guide.html">Sysadmin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import-export.html">Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backup.html">How to backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-update.html">How to update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker-doc.html">About Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade-to-docker.html">Upgrade a normal install to a Docker install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ldap.html">Configure LDAP authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="saml.html">Configure SAML2 authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thanks.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">elabftw</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Install on a NAS</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/install-nas.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="install-on-a-nas">
+<span id="install-nas"></span><h1>Install on a NAS<a class="headerlink" href="#install-on-a-nas" title="Link to this heading"></a></h1>
+<img alt="qnap" class="align-center" src="_images/qnap.png" />
+<p>This page describes the installation of eLabFTW on a Qnap or Synology NAS. The procedure is slightly different than on a normal GNU/Linux server.</p>
+<p>The following instructions are for a Qnap NAS but if you have a Synology, it’s not much different.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here I’m using the command line but it is also completely possible to do it via the graphical interface</p>
+</div>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
+<p>We will use the Docker container technology, so you need to install the Container Station app from the AppCenter.</p>
+<img alt="container-app" class="align-center" src="_images/container-app.png" />
+<p>Once it is installed, open it. It will create a /Container folder. Connect with SSH to the NAS and create subfolders for storing eLabFTW files:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/share/CACHEDEV1_DATA<span class="w"> </span><span class="c1"># path might be different on your system</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span>Container/elabftw/mysql
+mkdir<span class="w"> </span>Container/elabftw/web
+</pre></div>
+</div>
+</section>
+<section id="get-the-config-file">
+<h2>Get the config file<a class="headerlink" href="#get-the-config-file" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/share/CACHEDEV1_DATA/Container/elabftw
+curl<span class="w"> </span>-so<span class="w"> </span>docker-compose.yml<span class="w"> </span><span class="s2">&quot;https://get.elabftw.net/?config&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="edit-the-config-file">
+<h2>Edit the config file<a class="headerlink" href="#edit-the-config-file" title="Link to this heading"></a></h2>
+<p>To edit the file we just downloaded, you can use “vim” or just download it on your computer instead, edit it with your favorite text editor and upload it back.</p>
+<p>You need to edit the port binding of the elabftw container. So change ‘443:443’ to ‘3148:443’ of the “ports” section of the “web” service.</p>
+<p>You also need to edit the “volumes” bindings so that persistent files (MySQL database and uploaded files) are stored there. In the example below, the paths are relative because the “docker-compose.yml” file is in the folder where we expect to store the files, but you can also put an absolute path:</p>
+<img alt="nas config" class="align-center" src="_images/nas-1.png" />
+<img alt="nas config" class="align-center" src="_images/nas-2.png" />
+</section>
+<section id="starting-the-containers">
+<h2>Starting the containers<a class="headerlink" href="#starting-the-containers" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+</pre></div>
+</div>
+</section>
+<section id="importing-the-database-structure">
+<h2>Importing the database structure<a class="headerlink" href="#importing-the-database-structure" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>elabftw<span class="w"> </span>bin/init<span class="w"> </span>db:install
+</pre></div>
+</div>
+<p>Replace “elabftw” in the command above by the name of the elabftw container if yours is different (for instance if you have several containers running with redis as session handler). You can check this with <cite>elabctl status</cite>.</p>
+</section>
+<section id="accessing-elabftw">
+<h2>Accessing elabftw<a class="headerlink" href="#accessing-elabftw" title="Link to this heading"></a></h2>
+<p>Go to <a class="reference external" href="https://YOUR.NAS.IP:3148">https://YOUR.NAS.IP:3148</a>. You can should see the login page and you can go to the register page to create a sysadmin account.</p>
+</section>
+<section id="post-install">
+<h2>Post install<a class="headerlink" href="#post-install" title="Link to this heading"></a></h2>
+<p>Don’t forget to setup <a class="reference internal" href="backup.html#backup"><span class="std std-ref">backup</span></a>, and subscribe to <a class="reference external" href="http://elabftw.us12.list-manage1.com/subscribe?u=61950c0fcc7a849dbb4ef1b89&amp;id=04086ba197">the newsletter</a>!</p>
+<p>The next step is to read the <a class="reference internal" href="sysadmin-guide.html#sysadmin-guide"><span class="std std-ref">Sysadmin guide</span></a>.</p>
+<p>To update, you can do “docker compose pull” and “docker compose up -d”.</p>
+<p>It’s a good idea to subscribe to <a class="reference external" href="http://elabftw.us12.list-manage1.com/subscribe?u=61950c0fcc7a849dbb4ef1b89&amp;id=04086ba197">the newsletter</a>, to know when new releases are out (you can also see that from the Sysadmin panel).</p>
+<p>~Thank you for using <a class="reference external" href="https://www.elabftw.net">eLabFTW</a> :)</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install-cloud.html" class="btn btn-neutral float-left" title="Install in the cloud" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="install-nolinux.html" class="btn btn-neutral float-right" title="Install on Mac or Windows" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012, Nicolas CARPi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+  <a href='https://creativecommons.org/licenses/by-sa/4.0/'><img src='_images/by-sa.png' alt='cc-by-sa' /></a>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

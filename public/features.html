@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features &mdash; elabftw 5.1.15 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=6d288cbf"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="About Docker" href="docker-doc.html" />
+    <link rel="prev" title="Frequently asked questions" href="faq.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            elabftw
+          </a>
+              <div class="version">
+                5.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install on a GNU/Linux server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-cloud.html">Install in the cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nas.html">Install on a NAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nolinux.html">Install on Mac or Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="generalities.html">Generalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin-guide.html">Admin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin-guide.html">Sysadmin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import-export.html">Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="backup.html">How to backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-update.html">How to update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#for-sysadmins">For Sysadmins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#experiments-and-resources">Experiments and Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#intellectual-property-integrity-and-imputability">Intellectual property, integrity and imputability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#user-experience">User experience</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docker-doc.html">About Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade-to-docker.html">Upgrade a normal install to a Docker install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ldap.html">Configure LDAP authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="saml.html">Configure SAML2 authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thanks.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">elabftw</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Features</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/features.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="features">
+<span id="id1"></span><h1>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h1>
+<section id="general">
+<h2>General<a class="headerlink" href="#general" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Free as in speech</p></li>
+<li><p>Free as in beer</p></li>
+<li><p>Web application: accessible to users like any other website through their web browser</p></li>
+<li><p>Multiple teams: one eLabFTW instance can host several teams, each composed of users, that can belong to multiple teams</p></li>
+<li><p>Supported software: development and maintenance is ensured by the <a class="reference external" href="https://www.deltablot.com/">Deltablot</a> company</p></li>
+</ul>
+</section>
+<section id="for-sysadmins">
+<h2>For Sysadmins<a class="headerlink" href="#for-sysadmins" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Dockerized service: containerization technology facilitates deployments and updates, by ensuring a specific application environment</p></li>
+<li><p>Centralized authentication with SAML2 or LDAP</p></li>
+<li><p>S3 compatible object storage for uploaded files</p></li>
+<li><p>Several options to configure the user provisioning workflow</p></li>
+<li><p>Possibility to restrict email domains</p></li>
+</ul>
+</section>
+<section id="experiments-and-resources">
+<h2>Experiments and Resources<a class="headerlink" href="#experiments-and-resources" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Status, Categories, Tags</p></li>
+<li><p>Rich text editor (WYSIWYG) or Markdown editor</p></li>
+<li><p>Advanced permission system</p></li>
+<li><p>Upload multiple files of any kind</p></li>
+<li><p>Insert images into text</p></li>
+<li><p>Steps list</p></li>
+<li><p>Templates</p></li>
+<li><p>Duplicate entries</p></li>
+<li><p>Supported export formats: PDF, PDF/A, JSON, ZIP, ELN, CSV</p></li>
+<li><p>Advanced export and import functions for entries, users or teams</p></li>
+<li><p>Supported import formats: CSV, ELN</p></li>
+<li><p>Lock the experiment</p></li>
+<li><p>Request reviews or actions from other users</p></li>
+<li><p>Support for various file types that will render in 2D or 3D (.mol, .sdf, .pdb, etc…)</p></li>
+<li><p>Links between entities</p></li>
+<li><p>Molecule editor</p></li>
+<li><p>User groups to restrict read access among a team</p></li>
+<li><p>Doodle canvas</p></li>
+<li><p>Rating system</p></li>
+</ul>
+</section>
+<section id="security">
+<h2>Security<a class="headerlink" href="#security" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>HTTPS</p></li>
+<li><p>CSRF protection</p></li>
+<li><p>Secure headers</p></li>
+<li><p>Automated vulnerability scans on Docker images</p></li>
+<li><p>Secure PHP settings</p></li>
+<li><p>Anti bruteforce system</p></li>
+<li><p>Secure storage of password (bcrypt)</p></li>
+<li><p>Secure password reset mechanism</p></li>
+<li><p>Option for new account admin validation</p></li>
+<li><p>Two-factor authentication (TOTP)</p></li>
+<li><p>Password policies with complexity and expiration</p></li>
+</ul>
+</section>
+<section id="intellectual-property-integrity-and-imputability">
+<h2>Intellectual property, integrity and imputability<a class="headerlink" href="#intellectual-property-integrity-and-imputability" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3161.html"><strong>RFC 3161</strong></a> compliant Trusted Timestamping</p></li>
+<li><p>Blockchain timestamping</p></li>
+<li><p>Audit logs</p></li>
+<li><p>Revisions and Changelog systems to track changes</p></li>
+<li><p>Cryptographic signatures (ed25519)</p></li>
+<li><p>Support for Keeex (see <a class="reference external" href="https://keeex.me/">https://keeex.me/</a>)</p></li>
+</ul>
+</section>
+<section id="user-experience">
+<h2>User experience<a class="headerlink" href="#user-experience" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Lovely design (by &#64;manonstripes)</p></li>
+<li><p>Internationalization (several languages available)</p></li>
+<li><p>Optimized code/assets for speed and correctness</p></li>
+<li><p>WCAG 2.1 accessibility compliance</p></li>
+<li><p>Various configuration options for Sysadmins, Admins or Users</p></li>
+<li><p>Customizable keyboard shortcuts</p></li>
+<li><p>TODOlist</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="faq.html" class="btn btn-neutral float-left" title="Frequently asked questions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="docker-doc.html" class="btn btn-neutral float-right" title="About Docker" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012, Nicolas CARPi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+  <a href='https://creativecommons.org/licenses/by-sa/4.0/'><img src='_images/by-sa.png' alt='cc-by-sa' /></a>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

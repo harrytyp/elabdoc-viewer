@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configure LDAP authentication &mdash; elabftw 5.1.15 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=6d288cbf"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Configure SAML2 authentication" href="saml.html" />
+    <link rel="prev" title="Upgrade a normal install to a Docker install" href="upgrade-to-docker.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            elabftw
+          </a>
+              <div class="version">
+                5.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install on a GNU/Linux server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-cloud.html">Install in the cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nas.html">Install on a NAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nolinux.html">Install on Mac or Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="generalities.html">Generalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin-guide.html">Admin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin-guide.html">Sysadmin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import-export.html">Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="backup.html">How to backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-update.html">How to update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker-doc.html">About Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade-to-docker.html">Upgrade a normal install to a Docker install</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Configure LDAP authentication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-does-elabftw-query-ldap-servers">How does eLabFTW query LDAP servers?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sysadmin-ldap-settings">Sysadmin LDAP settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#toggle-ldap-login">Toggle LDAP login</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ldap-scheme">LDAP Scheme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ldap-host">LDAP Host</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ldap-port">LDAP Port</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ldap-base-dn">LDAP Base DN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ldap-username">LDAP Username</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ldap-password">LDAP Password</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-tls">Use TLS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#by-which-ldap-attribute-the-user-will-be-found">By which LDAP attribute the user will be found</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-attribute-to-look-for-the-team-name">What attribute to look for the team name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-team-sent-by-server-if-it-doesn-t-exist-already">Create team sent by server if it doesn’t exist already</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#if-no-team-attribute-is-found-to-which-team-user-is-assigned">If no team attribute is found, to which team user is assigned?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-attribute-to-look-for">What attribute to look for …</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#using-a-custom-cert-file">Using a custom cert file</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="saml.html">Configure SAML2 authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thanks.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">elabftw</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Configure LDAP authentication</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ldap.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="configure-ldap-authentication">
+<span id="ldap"></span><h1>Configure LDAP authentication<a class="headerlink" href="#configure-ldap-authentication" title="Link to this heading"></a></h1>
+<p>This page describes the configuration of LDAP authentication for an eLabFTW instance.</p>
+<img alt="authentication" class="align-center" src="_images/auth.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>It is possible to configure your LDAP instance to authenticate users through an LDAP service. Various settings are possible, to adapt to the different cases of LDAP servers.</p>
+</section>
+<section id="how-does-elabftw-query-ldap-servers">
+<h2>How does eLabFTW query LDAP servers?<a class="headerlink" href="#how-does-elabftw-query-ldap-servers" title="Link to this heading"></a></h2>
+<p>The overall schematic for each query with the options set in the sysadmin menu looks like this:</p>
+<ol class="arabic simple">
+<li><p>Connect to the LDAP server (-&gt; TLS?, host, port)</p></li>
+<li><p>Bind (login) with username and password, or anonymously (-&gt; username, password)</p></li>
+<li><p>Search for users within a certain region of the LDAP world directory (-&gt; base DN) and extract certain properties/fields (-&gt; filter attribute, team name, email, firstname, lastname)</p></li>
+<li><p>Unbind (log out)</p></li>
+</ol>
+<p>For this to work, eLabFTW needs information from you, which is what the LDAP configuration options documented in the next section are for.</p>
+</section>
+<section id="sysadmin-ldap-settings">
+<h2>Sysadmin LDAP settings<a class="headerlink" href="#sysadmin-ldap-settings" title="Link to this heading"></a></h2>
+<p>The LDAP settings are found on the LDAP tab of the Sysconfig Panel.</p>
+<section id="toggle-ldap-login">
+<h3>Toggle LDAP login<a class="headerlink" href="#toggle-ldap-login" title="Link to this heading"></a></h3>
+<p>This is your general ON/OFF switch to toggle LDAP authentication from the login page. Note that if local login is left available, a radio button will allow users to select local/ldap login, and ldap will be selected by default. Generally, you’ll want to disable local login once LDAP login is working (see setting for local login in first tab of sysconfig panel).</p>
+</section>
+<section id="ldap-scheme">
+<h3>LDAP Scheme<a class="headerlink" href="#ldap-scheme" title="Link to this heading"></a></h3>
+<p>This setting allows you to override the scheme (<code class="docutils literal notranslate"><span class="pre">ldap</span></code> or <code class="docutils literal notranslate"><span class="pre">ldaps</span></code>) used when connecting. This is because different LDAP implementations will require a different protocol depending on the use of TLS/StartTLS and the port. This setting is present to make sure we can cover all cases.</p>
+</section>
+<section id="ldap-host">
+<h3>LDAP Host<a class="headerlink" href="#ldap-host" title="Link to this heading"></a></h3>
+<p>Enter the domain name or IP address of the LDAP server.
+This should <strong>not</strong> include the protocol or the port, <em>i.e.</em> not <code class="docutils literal notranslate"><span class="pre">ldaps://my.ldap.server:636</span></code>, but only <code class="docutils literal notranslate"><span class="pre">my.ldap.server</span></code>.
+For selecting the protocol and port, use the dedicated “LDAP Port” and “Use TLS” options.</p>
+</section>
+<section id="ldap-port">
+<h3>LDAP Port<a class="headerlink" href="#ldap-port" title="Link to this heading"></a></h3>
+<p>The port the LDAP server listens on, <cite>389</cite> by default.
+Use port <cite>636</cite> for LDAPS or any custom port you might have configured.</p>
+</section>
+<section id="ldap-base-dn">
+<h3>LDAP Base DN<a class="headerlink" href="#ldap-base-dn" title="Link to this heading"></a></h3>
+<p>This is the “Distinguished Name” for the search, <em>i.e.</em> which part of the (global) LDAP tree you want to find the users in.
+It is probably something like <code class="docutils literal notranslate"><span class="pre">dc=example,dc=org</span></code>, but might also include “Organizational Units”, so something like <code class="docutils literal notranslate"><span class="pre">ou=myinstitute,dc=example,dc=org</span></code>.
+Importantly, this is something completely different from the LDAP username, even though the notation might be similar.</p>
+</section>
+<section id="ldap-username">
+<h3>LDAP Username<a class="headerlink" href="#ldap-username" title="Link to this heading"></a></h3>
+<p>This is the DN or username that connects (binds) to the LDAP server.
+Examples include <code class="docutils literal notranslate"><span class="pre">myuser</span></code> or <code class="docutils literal notranslate"><span class="pre">cn=AnAdminOf,ou=MyUnit,dc=example,dc=org</span></code>.
+The user must have permission to query other users.</p>
+</section>
+<section id="ldap-password">
+<h3>LDAP Password<a class="headerlink" href="#ldap-password" title="Link to this heading"></a></h3>
+<p>This password is needed for the authentication on the LDAP server with the username specified above.</p>
+</section>
+<section id="use-tls">
+<h3>Use TLS<a class="headerlink" href="#use-tls" title="Link to this heading"></a></h3>
+<p>Select this if using LDAPS (= LDAP with TLS).</p>
+</section>
+<section id="by-which-ldap-attribute-the-user-will-be-found">
+<h3>By which LDAP attribute the user will be found<a class="headerlink" href="#by-which-ldap-attribute-the-user-will-be-found" title="Link to this heading"></a></h3>
+<p>This is the “filter attribute” from above.
+Common choices include <code class="docutils literal notranslate"><span class="pre">cn</span></code>, <code class="docutils literal notranslate"><span class="pre">uid</span></code> and the default <code class="docutils literal notranslate"><span class="pre">mail</span></code>.
+This is the LDAP field that holds the information you want users to enter into the “login” field on the start page.</p>
+</section>
+<section id="what-attribute-to-look-for-the-team-name">
+<h3>What attribute to look for the team name<a class="headerlink" href="#what-attribute-to-look-for-the-team-name" title="Link to this heading"></a></h3>
+<p>The LDAP server will reply with the information associated with the user trying to authenticate.
+Which field will be the one used to determine the team in which to create the user?</p>
+</section>
+<section id="create-team-sent-by-server-if-it-doesn-t-exist-already">
+<h3>Create team sent by server if it doesn’t exist already<a class="headerlink" href="#create-team-sent-by-server-if-it-doesn-t-exist-already" title="Link to this heading"></a></h3>
+<p>If the team found doesn’t exist already, do you want to create one?</p>
+</section>
+<section id="if-no-team-attribute-is-found-to-which-team-user-is-assigned">
+<h3>If no team attribute is found, to which team user is assigned?<a class="headerlink" href="#if-no-team-attribute-is-found-to-which-team-user-is-assigned" title="Link to this heading"></a></h3>
+<p>Use this to add users to this team by default.
+Useful if the LDAP server doesn’t answer with a team attribute that can be used for eLabFTW.</p>
+</section>
+<section id="what-attribute-to-look-for">
+<h3>What attribute to look for …<a class="headerlink" href="#what-attribute-to-look-for" title="Link to this heading"></a></h3>
+<p>The last three fields are to specify the fields to look for for the user email, firstname and lastname.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you encounter difficulties, make sure to get a useful log message before opening an issue, <a class="reference internal" href="debug.html"><span class="doc">see debug documentation</span></a>.</p>
+</div>
+</section>
+</section>
+<section id="using-a-custom-cert-file">
+<h2>Using a custom cert file<a class="headerlink" href="#using-a-custom-cert-file" title="Link to this heading"></a></h2>
+<p>When authenticating with a LDAPS server, a custom certfile might be needed.
+It can easily be added by modifying the web/volumes part of <code class="docutils literal notranslate"><span class="pre">elabftw.yml</span></code> like so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">services</span><span class="p">:</span>
+  <span class="n">web</span><span class="p">:</span>
+    <span class="o">...</span>
+    <span class="n">volumes</span><span class="p">:</span>
+      <span class="o">...</span>
+      <span class="o">-</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">eLabFTW</span><span class="o">/</span><span class="n">certpath</span><span class="p">:</span><span class="o">/</span><span class="n">custom_certs</span>
+      <span class="o">-</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">eLabFTW</span><span class="o">/</span><span class="n">openldap</span><span class="p">:</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">openldap</span>
+  <span class="o">...</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>Then, add your custom cert file to <code class="docutils literal notranslate"><span class="pre">/path/to/eLabFTW/certpath</span></code> and at <code class="docutils literal notranslate"><span class="pre">/path/to/eLabFTW/openldap/</span></code> add a new file <code class="docutils literal notranslate"><span class="pre">ldap.conf</span></code> with the content</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TLS_CACERT</span> <span class="o">/</span><span class="n">custom_certs</span><span class="o">/&lt;</span><span class="n">certname</span><span class="o">&gt;.</span><span class="n">pem</span>
+<span class="n">TLS_REQCERT</span> <span class="n">hard</span>
+</pre></div>
+</div>
+<p>where you substitute <code class="docutils literal notranslate"><span class="pre">&lt;certname&gt;</span></code> for the name of the cert file for authenticating against the LDAP server.
+This informs <code class="docutils literal notranslate"><span class="pre">openldap</span></code> of the cert file and instructs it to always require a valid certificate from servers.</p>
+<p>After (re)starting using <code class="docutils literal notranslate"><span class="pre">elabctl</span> <span class="pre">restart</span></code>, the LDAP server should now be reachable from inside the container.
+You can check this via searching for a known user (like yourself?) via</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">exec</span> <span class="n">elabftw</span> <span class="n">bash</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;apk add openldap openldap-back-mdb openldap-clients &amp;&amp; </span><span class="se">\</span>
+<span class="s2">   ldapsearch -v -LLL </span><span class="se">\</span>
+<span class="s2">     -H &#39;ldaps://&lt;LDAP Host&gt;&#39; </span><span class="se">\</span>
+<span class="s2">     -b &#39;&lt;LDAP Base DN&gt;&#39; </span><span class="se">\</span>
+<span class="s2">     -D &#39;&lt;LDAP Username&gt;&#39; </span><span class="se">\</span>
+<span class="s2">     -w &#39;&lt;LDAP Password&gt;&#39; </span><span class="se">\</span>
+<span class="s2">     &#39;&lt;filter&gt;&#39;&quot;</span>
+</pre></div>
+</div>
+<p>where you might need to use <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">docker</span></code> if you are not <code class="docutils literal notranslate"><span class="pre">root</span></code>.
+Be sure to substitute the <code class="docutils literal notranslate"><span class="pre">&lt;...&gt;</span></code> fields with your values.
+The command above installs the needed <code class="docutils literal notranslate"><span class="pre">openldap</span></code> packages in the <code class="docutils literal notranslate"><span class="pre">elabftw</span></code> container using Alpine Linux’s package manager <code class="docutils literal notranslate"><span class="pre">apk</span></code> and then launches a ldap search query.
+<code class="docutils literal notranslate"><span class="pre">&lt;filter&gt;</span></code> can for example be <code class="docutils literal notranslate"><span class="pre">cn=MyOwnName</span></code>, or <code class="docutils literal notranslate"><span class="pre">uid=5</span></code>.
+If trying to connect to a LDAP server that listens on a port other than 636, specify it like <code class="docutils literal notranslate"><span class="pre">-H</span> <span class="pre">'ldaps://&lt;host&gt;:&lt;port&gt;'</span></code>.</p>
+<p>For more information on the <code class="docutils literal notranslate"><span class="pre">ldapsearch</span></code> command, consider</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">exec</span> <span class="n">elabftw</span> <span class="n">ldapsearch</span> <span class="o">--</span><span class="n">help</span>
+</pre></div>
+</div>
+<p>after installing the <code class="docutils literal notranslate"><span class="pre">openldap</span></code> packages.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="upgrade-to-docker.html" class="btn btn-neutral float-left" title="Upgrade a normal install to a Docker install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="saml.html" class="btn btn-neutral float-right" title="Configure SAML2 authentication" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012, Nicolas CARPi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+  <a href='https://creativecommons.org/licenses/by-sa/4.0/'><img src='_images/by-sa.png' alt='cc-by-sa' /></a>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

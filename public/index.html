@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to the documentation for eLabFTW! &mdash; elabftw 5.1.15 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=6d288cbf"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Install on a GNU/Linux server" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            elabftw
+          </a>
+              <div class="version">
+                5.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install on a GNU/Linux server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-cloud.html">Install in the cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nas.html">Install on a NAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nolinux.html">Install on Mac or Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="generalities.html">Generalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin-guide.html">Admin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin-guide.html">Sysadmin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import-export.html">Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backup.html">How to backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-update.html">How to update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker-doc.html">About Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade-to-docker.html">Upgrade a normal install to a Docker install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ldap.html">Configure LDAP authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="saml.html">Configure SAML2 authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thanks.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">elabftw</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Welcome to the documentation for eLabFTW!</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="welcome-to-the-documentation-for-elabftw">
+<h1>Welcome to the documentation for eLabFTW!<a class="headerlink" href="#welcome-to-the-documentation-for-elabftw" title="Link to this heading"></a></h1>
+<img alt="elabftw logo" class="align-center" src="_images/elabftw-logo.png" />
+<dl class="field-list simple">
+<dt class="field-odd">Website<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://www.elabftw.net">https://www.elabftw.net</a></p>
+</dd>
+<dt class="field-even">Live demo<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://demo.elabftw.net">https://demo.elabftw.net</a></p>
+</dd>
+</dl>
+<hr class="docutils" />
+<section id="how-to-use-this-site">
+<h2>How to use this site<a class="headerlink" href="#how-to-use-this-site" title="Link to this heading"></a></h2>
+<p>This website contains both the technical documentation for installation, configuration and maintenance of the application, and the user documentation. Look at the menu on the left and select where you want to go:</p>
+<img alt="doc info" class="align-center" src="_images/doc-info.png" />
+</section>
+<hr class="docutils" />
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>eLabFTW is a web application, running in a linux container and using a MySQL database to store data persistently. Once installed on a server, users can register an account and start using their electronic lab notebook.</p>
+<p>Several teams can be hosted on the same install. Ideally, it is installed at the institution/company level. But individual teams can install it for themselves, too. Or you can run it locally on your computer, though this is not advised.</p>
+<p>It is distributed through Docker images, ensuring portability and added security through containerization. See the <a class="reference internal" href="docker-doc.html"><span class="doc">Docker documentation</span></a> for more information about the containerization technology.</p>
+<p>If you’re looking into what eLabFTW can do before installing it, you might be interested in the <a class="reference internal" href="features.html"><span class="doc">list of features</span></a>.</p>
+<section id="start-the-installation">
+<h3>Start the installation<a class="headerlink" href="#start-the-installation" title="Link to this heading"></a></h3>
+<p>See <a class="reference internal" href="install.html"><span class="doc">this page</span></a> to install it on your server.</p>
+<p>See <a class="reference internal" href="install-cloud.html"><span class="doc">this page</span></a> if you don’t have access to a server already.</p>
+<p>Join the <a class="reference external" href="https://gitter.im/elabftw/elabftw">chat room</a> if you want to ask a question or require help.</p>
+<blockquote>
+<div><img alt="cc-by-sa" class="align-center" src="_images/by-sa.png" />
+</div></blockquote>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install on a GNU/Linux server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#prerequisites">Prerequisites</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="install.html#dependencies">Dependencies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="install.html#absolutely-required-dependencies">Absolutely required dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="install.html#strongly-recommended-dependencies">Strongly recommended dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#notes">Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#configure-elabftw">Configure eLabFTW</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="install.html#with-elabctl-recommended">With elabctl (recommended)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#note-about-tls-certificates">Note about TLS certificates</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="install.html#option-a-http-mode">Option A: HTTP mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="install.html#option-b-https-mode-with-let-s-encrypt-certificates">Option B: HTTPS mode with Let’s Encrypt certificates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="install.html#option-c-https-mode-with-custom-certificates">Option C: HTTPS mode with custom certificates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="install.html#option-d-https-mode-with-self-signed-certificate">Option D: HTTPS mode with self-signed certificate</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#using-apache-nginx-haproxy-or-traefik-as-a-reverse-proxy">Using Apache, nginx, HAProxy or traefik as a reverse proxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#start-elabftw">Start eLabFTW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#without-elabctl-advanced-users">Without elabctl (advanced users)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#initialize-your-database">Initialize your database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#register-a-sysadmin-account">Register a Sysadmin account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#post-install">Post install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#advanced-configurations">Advanced configurations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="install.html#inserting-locally-trusted-root-certificate-authority">Inserting locally trusted root Certificate Authority</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#changing-the-userid-groupid-of-uploaded-files">Changing the userid/groupid of uploaded files</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install-cloud.html">Install in the cloud</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install-cloud.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install-cloud.html#a-note-about-backups">A note about backups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install-cloud.html#create-your-droplet">Create your droplet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install-cloud.html#install-elabftw">Install eLabFTW</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install-nas.html">Install on a NAS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install-nas.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install-nas.html#get-the-config-file">Get the config file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install-nas.html#edit-the-config-file">Edit the config file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install-nas.html#starting-the-containers">Starting the containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install-nas.html#importing-the-database-structure">Importing the database structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install-nas.html#accessing-elabftw">Accessing elabftw</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install-nas.html#post-install">Post install</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install-nolinux.html">Install on Mac or Windows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install-nolinux.html#unsupported-operating-systems">Unsupported operating systems</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="generalities.html">Generalities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="generalities.html#lexicon">Lexicon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generalities.html#general-principles">General principles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generalities.html#teams">Teams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generalities.html#entities-and-permissions">Entities and permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generalities.html#user-accounts">User accounts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user-guide.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide.html#experiments">Experiments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html#show-mode">Show mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html#edit-mode">Edit mode</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#toolbar">Toolbar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#date-started-on">Date (Started on)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#id">ID</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#custom-id">Custom ID</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#title">Title</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#category">Category</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#status">Status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#tags">Tags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#permissions">Permissions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#experiment-body">Experiment (body)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="user-guide.html#inserting-an-image">Inserting an image</a></li>
+<li class="toctree-l5"><a class="reference internal" href="user-guide.html#importing-templates">Importing templates</a></li>
+<li class="toctree-l5"><a class="reference internal" href="user-guide.html#using-markdown">Using markdown</a></li>
+<li class="toctree-l5"><a class="reference internal" href="user-guide.html#tables">Tables</a></li>
+<li class="toctree-l5"><a class="reference internal" href="user-guide.html#using-latex">Using LaTeX</a></li>
+<li class="toctree-l5"><a class="reference internal" href="user-guide.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#steps">Steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#linked-items">Linked items</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#linked-experiments">Linked experiments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#attach-a-file">Attach a file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#ellipsis-menu-the-three-dots-on-the-top-right">Ellipsis menu (the three dots on the top right)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html#view-mode-of-experiment">View mode of experiment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#go-back">1. Go back</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#edit">2. Edit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#duplicate">3. Duplicate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#timestamp">4. Timestamp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#blockchain-timestamp">5. Blockchain timestamp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#export-button">6. Export button</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#toggle-pin">7. Toggle pin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#toggle-lock">8. Toggle lock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#ellipsis-menu">9. Ellipsis menu</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html#elabid">elabid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html#comments">Comments</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide.html#templates">Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide.html#resources">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide.html#booking-resources">Booking resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html#making-a-resource-bookable">Making a resource bookable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html#adjusting-permissions">Adjusting permissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html#using-the-scheduler">Using the scheduler</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide.html#user-panel">User panel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html#preferences-tab">Preferences tab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html#account-tab">Account tab</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#what-is-two-factor-authentication">What is two factor authentication?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html#templates-tab">Templates tab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html#api-keys-tab">Api keys tab</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide.html#how-to-have-folders-or-projects-grouping-experiments">How to have folders or projects grouping experiments?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide.html#id2">Tags</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html#favorite-tags">Favorite tags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html#using-projects">Using Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html#using-categories">Using Categories</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide.html#id3">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide.html#signatures">Signatures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html#handwritten-signatures">Handwritten signatures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html#simple-signatures">Simple signatures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html#advanced-cryptographic-signatures">Advanced cryptographic signatures</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user-guide.html#how-does-it-work">How does it work?</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="user-guide.html#at-a-high-level">At a high level</a></li>
+<li class="toctree-l5"><a class="reference internal" href="user-guide.html#low-level-overview">Low level overview</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide.html#tracking-changes">Tracking changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide.html#sharing-with-external-collaborators">Sharing with external collaborators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html#option-1-export-and-send">Option 1: Export and send</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html#option-2-allow-anonymous-access">Option 2: Allow anonymous access</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="admin-guide.html">Admin guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="admin-guide.html#how-to-become-an-admin">How to become an Admin?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admin-guide.html#general-overview">General overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admin-guide.html#validating-accounts">Validating accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admin-guide.html#team-tab">TEAM tab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admin-guide.html#groups-tab">GROUPS tab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admin-guide.html#users-tab">USERS tab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admin-guide.html#categories-tab">CATEGORIES tab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admin-guide.html#status-tab">STATUS tab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admin-guide.html#export-tab">EXPORT tab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="admin-guide.html#tag-manager-tab">TAG MANAGER tab</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin-guide.html">Sysadmin guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin-guide.html#general-overview">General overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sysadmin-guide.html#the-sysadmin">The Sysadmin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sysadmin-guide.html#account-creation">Account creation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin-guide.html#setting-up-email-required">Setting up email (required)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin-guide.html#set-up-backup">Set up backup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin-guide.html#configure-teams-optional">Configure teams <sup>(optional)</sup></a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin-guide.html#configure-authentication-optional">Configure authentication <sup>(optional)</sup></a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin-guide.html#set-up-timestamping-optional">Set up timestamping <sup>(optional)</sup></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sysadmin-guide.html#configure-automatic-timestamping">Configure automatic timestamping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sysadmin-guide.html#configure-keeex">Configure Keeex</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin-guide.html#configure-storage-optional">Configure storage <sup>(optional)</sup></a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin-guide.html#set-up-a-cronjob-to-renew-tls-certificates-optional">Set up a cronjob to renew TLS certificates <sup>(optional)</sup></a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin-guide.html#update-often">Update often</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin-guide.html#sysadmin-panel">Sysadmin Panel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sysadmin-guide.html#server-tab">Server tab</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="sysadmin-guide.html#settings">Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sysadmin-guide.html#remote-directory-configuration">Remote directory configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="sysadmin-guide.html#users-tab">Users tab</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin-guide.html#monitoring">Monitoring</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sysadmin-guide.html#healthchecks">Healthchecks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sysadmin-guide.html#metrics">Metrics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin-guide.html#logging">Logging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sysadmin-guide.html#access-and-error-logs">Access and error logs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sysadmin-guide.html#audit-logs">Audit logs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmin-guide.html#staging-instance">Staging instance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sysadmin-guide.html#how-to-create-a-staging-instance">How to create a staging instance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="import-export.html">Import / Export</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="import-export.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import-export.html#importing-data">Importing data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="import-export.html#importing-a-eln-archive">Importing a .eln archive</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="import-export.html#importing-through-web-interface">Importing through web interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="import-export.html#importing-through-cli">Importing through CLI</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="import-export.html#importing-a-csv-file">Importing a .csv file</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="import-export.html#preparing-the-file">1. Preparing the file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="import-export.html#importing-the-file">2. Importing the file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="import-export.html#using-the-api-to-control-how-things-are-imported">Using the API to control how things are imported</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="import-export.html#exporting-data">Exporting data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="import-export.html#exporting-through-web-interface">Exporting through web interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="import-export.html#exporting-through-cli">Exporting through CLI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="metadata.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metadata.html#getting-started">Getting started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="metadata.html#example-with-dropdown-menu">Example with dropdown menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metadata.html#example-with-number-and-units">Example with number and units</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="metadata.html#advanced-use">Advanced use</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="metadata.html#positions">Positions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metadata.html#removing-an-input">Removing an input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metadata.html#masking-the-main-text">Masking the main text</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="metadata.html#example-code">Example code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metadata.html#usage-example">Usage example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metadata.html#schema-description">Schema description</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="metadata.html#extra-fields-objects">Extra_fields objects</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="metadata.html#value-required">value (required)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata.html#type-optional">type (optional)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="metadata.html#checkbox">checkbox</a></li>
+<li class="toctree-l5"><a class="reference internal" href="metadata.html#date">date</a></li>
+<li class="toctree-l5"><a class="reference internal" href="metadata.html#datetime-local">datetime-local</a></li>
+<li class="toctree-l5"><a class="reference internal" href="metadata.html#email">email</a></li>
+<li class="toctree-l5"><a class="reference internal" href="metadata.html#number">number</a></li>
+<li class="toctree-l5"><a class="reference internal" href="metadata.html#radio">radio</a></li>
+<li class="toctree-l5"><a class="reference internal" href="metadata.html#select">select</a></li>
+<li class="toctree-l5"><a class="reference internal" href="metadata.html#text">text</a></li>
+<li class="toctree-l5"><a class="reference internal" href="metadata.html#time">time</a></li>
+<li class="toctree-l5"><a class="reference internal" href="metadata.html#url">url</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="metadata.html#options-for-type-select">options (for type = select)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata.html#allow-multi-values-for-type-select">allow_multi_values (for type = select)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata.html#required">required</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata.html#id2">description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata.html#units-for-type-number">units (for type = number)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata.html#unit">unit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata.html#position">position</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata.html#blank-value-on-duplicate">blank_value_on_duplicate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata.html#group-id">group_id</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="metadata.html#elabftw-object">elabftw object</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="metadata.html#display-main-text">display_main_text</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata.html#extra-fields-groups">extra_fields_groups</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#what-s-that">What’s that?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#getting-started">Getting started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#generating-a-key">Generating a key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#basic-request">Basic request</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#read-the-doc">Read the doc</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backup.html">How to backup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="backup.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backup.html#how-to-backup-a-docker-installation">How to backup a Docker installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backup.html#important-note">Important note</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backup.html#with-elabctl">With elabctl</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backup.html#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="backup.html#test">Test</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backup.html#without-elabctl">Without elabctl</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backup.html#making-it-automatic-using-cron">Making it automatic using cron</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backup.html#with-a-cronjob">With a cronjob</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backup.html#with-a-systemd-timer">With a systemd timer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backup.html#how-to-restore-a-backup">How to restore a backup</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-update.html">How to update</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="how-to-update.html#step-0-before-the-update">STEP 0: Before the update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how-to-update.html#step-1-specify-which-version-you-want">STEP 1: Specify which version you want</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how-to-update.html#step-2-launch-a-new-container">STEP 2: Launch a new container</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="how-to-update.html#with-elabctl">With elabctl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="how-to-update.html#without-elabctl">Without elabctl</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="how-to-update.html#step-3-run-the-database-migration">STEP 3: Run the database migration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how-to-update.html#updating-from-incredibly-old-versions">Updating from incredibly old versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#what-can-you-do-to-help-this-project">What can you do to help this project?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#non-code-contributions">Non-code contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#reporting-a-security-issue">Reporting a security issue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#translating">Translating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#contributing-to-the-code">Contributing to the code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#word-of-caution">Word of caution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#note-about-repositories">Note about repositories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#note-about-branches">Note about branches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#environment-installation">Environment installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="contributing.html#docker-install">Docker install</a></li>
+<li class="toctree-l4"><a class="reference internal" href="contributing.html#dev-directory-setup">Dev directory setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="contributing.html#forking-the-repo">Forking the repo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="contributing.html#install-elabctl">Install elabctl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="contributing.html#install-compose-file">Install compose file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="contributing.html#install-dependencies">Install dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="contributing.html#install-the-database">Install the database</a></li>
+<li class="toctree-l4"><a class="reference internal" href="contributing.html#finishing-up">Finishing up</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#code-organization">Code organization</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#working-with-javascript">Working with JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#miscellaneous">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#glossary">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#build">Build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#tests">Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#exceptions-handling">Exceptions handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#making-a-pull-request">Making a pull request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#adding-a-lang">Adding a lang</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#adding-a-new-term-for-js-i18n">Adding a new term for js i18n</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#accessing-docker-mysql-database-with-phpmyadmin">Accessing Docker MySQL database with phpmyadmin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#using-a-trusted-certificate-for-local-dev">Using a trusted certificate for local dev</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#step-1-use-a-real-domain-name">Step 1: use a real domain name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#step-2-get-certs">Step 2: get certs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#step-3-edit-config-to-use-certificates">Step 3: edit config to use certificates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#step-4-restart-containers">Step 4: restart containers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#how-to-test-external-auth">How to test external auth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#how-to-test-ldap">How to test ldap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#install-a-pre-commit-hook">Install a pre-commit hook</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently asked questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#but-how-is-it-better-than-something-i-can-buy">But how is it better than something I can buy?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#what-about-patents-and-intellectual-property">What about patents and intellectual property?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#trusted-timestamping">Trusted timestamping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#blockchain-timestamping">Blockchain timestamping</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#why-use-elabftw">Why use eLabFTW?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#is-this-system-stable-can-i-trust-my-data-with-it">Is this system stable? Can I trust my data with it?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#who-else-is-using-it">Who else is using it?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#is-the-data-encrypted">Is the data encrypted?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#is-elabftw-still-maintained">Is eLabFTW still maintained?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#will-i-be-able-to-import-my-plasmids-antibodies-whatever-in-the-database-from-a-excel-file">Will I be able to import my plasmids/antibodies/whatever in the database from a Excel file?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#can-i-try-it-before-i-install-it">Can I try it before I install it?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#what-are-the-technical-requirements">What are the technical requirements?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#requirements-for-the-server">Requirements for the server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#requirements-for-the-clients-users">Requirements for the clients (users)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#what-about-data-retention-traceability">What about data retention/traceability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#is-it-compliant-to-21cfr-part-11">Is it compliant to 21CFR Part 11?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#what-about-compliance-to-standards">What about compliance to standards?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#how-to-change-the-team-of-a-user">How to change the team of a user?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#is-there-a-plugin-system">Is there a plugin system?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#is-it-totally-free">Is it totally free?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#what-is-the-meaning-of-ftw">What is the meaning of ‘FTW’?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="features.html#general">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="features.html#for-sysadmins">For Sysadmins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="features.html#experiments-and-resources">Experiments and Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="features.html#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="features.html#intellectual-property-integrity-and-imputability">Intellectual property, integrity and imputability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="features.html#user-experience">User experience</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docker-doc.html">About Docker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docker-doc.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker-doc.html#how-does-it-work">How does it work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker-doc.html#about-the-docker-image">About the Docker image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker-doc.html#why-can-t-i-run-it-outside-docker">Why can’t I run it outside Docker</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade-to-docker.html">Upgrade a normal install to a Docker install</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="upgrade-to-docker.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrade-to-docker.html#preparation">Preparation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="upgrade-to-docker.html#install-docker">Install Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="upgrade-to-docker.html#install-elabftw-normally">Install elabftw normally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="upgrade-to-docker.html#export-current-install">Export current install</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="upgrade-to-docker.html#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="upgrade-to-docker.html#editing-the-config-file">Editing the config file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="upgrade-to-docker.html#copy-the-uploaded-files">Copy the uploaded files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="upgrade-to-docker.html#about-https-ssl-tls">About HTTPS (SSL/TLS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="upgrade-to-docker.html#starting-the-containers">Starting the containers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ldap.html">Configure LDAP authentication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ldap.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ldap.html#how-does-elabftw-query-ldap-servers">How does eLabFTW query LDAP servers?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ldap.html#sysadmin-ldap-settings">Sysadmin LDAP settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ldap.html#toggle-ldap-login">Toggle LDAP login</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldap.html#ldap-scheme">LDAP Scheme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldap.html#ldap-host">LDAP Host</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldap.html#ldap-port">LDAP Port</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldap.html#ldap-base-dn">LDAP Base DN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldap.html#ldap-username">LDAP Username</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldap.html#ldap-password">LDAP Password</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldap.html#use-tls">Use TLS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldap.html#by-which-ldap-attribute-the-user-will-be-found">By which LDAP attribute the user will be found</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldap.html#what-attribute-to-look-for-the-team-name">What attribute to look for the team name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldap.html#create-team-sent-by-server-if-it-doesn-t-exist-already">Create team sent by server if it doesn’t exist already</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldap.html#if-no-team-attribute-is-found-to-which-team-user-is-assigned">If no team attribute is found, to which team user is assigned?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldap.html#what-attribute-to-look-for">What attribute to look for …</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ldap.html#using-a-custom-cert-file">Using a custom cert file</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="saml.html">Configure SAML2 authentication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="saml.html#setup-the-service-provider">Setup the Service Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="saml.html#setup-the-identity-provider">Setup the IDentity Provider</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="saml.html#attributes-for-the-idp">Attributes for the IDP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="saml.html#about-the-userid-internal-id">About the Userid / Internal ID</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="saml.html#disable-local-login-register">Disable local login/register</a></li>
+<li class="toctree-l2"><a class="reference internal" href="saml.html#how-does-it-work">How does it work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="saml.html#debugging">Debugging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="debug.html#docker-logs">Docker logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debug.html#php-logs">PHP logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debug.html#accessing-mysql-database">Accessing MySQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debug.html#clean-everything">Clean everything</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debug.html#resetting-a-password-directly-from-mysql">Resetting a password directly from MySQL</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thanks.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-5-1-15">Version 5.1.15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-5-1-14">Version 5.1.14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-5-1-13">Version 5.1.13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-5-1-12">Version 5.1.12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-5-1-11">Version 5.1.11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-5-1-10">Version 5.1.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-5-1-9">Version 5.1.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-5-1-8">Version 5.1.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-5-1-7">Version 5.1.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-5-1-6">Version 5.1.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-5-1-5">Version 5.1.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-5-1-4">Version 5.1.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-5-1-3">Version 5.1.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-5-1-2">Version 5.1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-5-1-1">Version 5.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-5-1-0">Version 5.1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#noteworthy-changes">Noteworthy changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#breaking-api-v2-changes">Breaking API v2 changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#new-features">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#enhancements">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#bugfixes">Bugfixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#dev-stuff">Dev stuff</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-5-0-4">Version 5.0.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-5-0-3">Version 5.0.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-5-0-2">Version 5.0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-5-0-1">Version 5.0.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-5-0-0">Version 5.0.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#note">Note</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#breaking-change">Breaking change</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id2">Noteworthy changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id3">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id4">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#i18n">i18n</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id5">Bugfixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#dev-corner">Dev corner</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-9-0">Version 4.9.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id6">Breaking change</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#deprecation">Deprecation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id7">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id8">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id9">Bugfixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id10">Dev corner</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-8-6">Version 4.8.6</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id11">Breaking change</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id12">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-8-5">Version 4.8.5</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#bugfix">Bugfix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-8-4">Version 4.8.4</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id13">Bugfixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id14">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#dev">Dev</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-8-3">Version 4.8.3</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id15">Bugfixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id16">Enhancements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-8-2">Version 4.8.2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id17">Bugfixes:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id18">Enhancements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id19">Dev</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#misc">Misc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-8-1">Version 4.8.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id20">Bugfixes:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id21">New features:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-8-0">Version 4.8.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#breaking-changes">Breaking changes:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id22">Bugfixes:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id23">New features:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id24">Enhancements:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id25">Dev stuff:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#docker-image-changes">Docker image changes:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-7-0">Version 4.7.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id26">Bugfixes:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id27">New features:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id28">Enhancements:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id29">Dev corner:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-6-1">Version 4.6.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id30">Bugfixes:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#internationalization">Internationalization</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-6-0">Version 4.6.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id31">Breaking changes:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id32">New features:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id33">Enhancements:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id34">Bugfixes:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#container-changes">Container changes:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id35">Dev corner:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-5-14">Version 4.5.14</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id36">Bugfix:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-5-13">Version 4.5.13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-5-12">Version 4.5.12</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id37">Bugfix:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#enhancement">Enhancement:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-5-11">Version 4.5.11</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id38">Bugfixes:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-5-10">Version 4.5.10</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id39">Bugfix:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-5-9">Version 4.5.9</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id40">Bugfixes:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-5-8">Version 4.5.8</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id41">Bugfix:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-5-7">Version 4.5.7</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id42">Bugfix:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-5-6">Version 4.5.6</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id43">Bugfixes:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-5-5">Version 4.5.5</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id44">Bugfix:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id45">Enhancements:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-5-4">Version 4.5.4</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id46">Bugfixes:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-5-3">Version 4.5.3</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id47">Enhancements:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id48">Bugfixes:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id49">Note:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-5-2">Version 4.5.2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id50">New features:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id51">Enhancements:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id52">Bugfixes:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-5-1">Version 4.5.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id53">New features:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id54">Enhancements:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id55">Bugfixes:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-5-0">Version 4.5.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id56">New features:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id57">Enhancements:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id58">Bugfixes:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id59">Dev:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-4-3">Version 4.4.3</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id60">Bugfixes:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id61">Enhancements:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#documentation">Documentation:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-4-2">Version 4.4.2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id62">Bugfixes:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-4-1">Version 4.4.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id63">Bugfix:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-4-0">Version 4.4.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id64">Breaking changes:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id65">Bugfixes:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id66">Enhancements:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id67">New features:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id68">Dev corner:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-3-10">Version 4.3.10</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id69">Bugfix:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-3-9">Version 4.3.9</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id70">Bugfix:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-3-8">Version 4.3.8</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id71">Bugfixes:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id72">Enhancements:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-3-7">Version 4.3.7</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id73">Bugfixes:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id74">Enhancements:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-3-6">Version 4.3.6</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id75">Bugfixes:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id76">Enhancements:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-3-5">Version 4.3.5</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id77">Bugfixes:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-3-4">Version 4.3.4</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id78">Bugfixes:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id79">Enhancements:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-3-3">Version 4.3.3</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id80">Bugfixes:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id81">Enhancements:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id82">i18n:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-3-2">Version 4.3.2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id83">Bugfixes:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-3-1">Version 4.3.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id84">Bugfixes:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-3-0">Version 4.3.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id85">Breaking changes:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#important-changes">Important changes:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id86">New features:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id87">Bugfixes:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id88">Enhancements:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id89">Dev corner:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-2-4">Version 4.2.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-2-3">Version 4.2.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-2-2">Version 4.2.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-2-1">Version 4.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-2-0">Version 4.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-1-0">Version 4.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-0-11">Version 4.0.11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-0-10">Version 4.0.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-0-9">Version 4.0.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-0-8">Version 4.0.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-0-7">Version 4.0.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-0-6">Version 4.0.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-0-5">Version 4.0.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-0-4">Version 4.0.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-0-3">Version 4.0.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-0-2">Version 4.0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-0-1">Version 4.0.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-4-0-0">Version 4.0.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id90">BREAKING CHANGES:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#for-both-docker-and-non-docker-users">For both Docker and non-Docker users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#for-docker-users">For Docker users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#for-non-docker-users">For non-Docker users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id91">Bugfixes:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id92">New features:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id93">Enhancements:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#security">Security:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#id94">Dev stuff:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-6-7">Version 3.6.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-6-6">Version 3.6.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-6-5">Version 3.6.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-6-4">Version 3.6.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-6-3">Version 3.6.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-6-2">Version 3.6.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-6-1">Version 3.6.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-6-0">Version 3.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-5-6">Version 3.5.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-5-5">Version 3.5.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-5-4">Version 3.5.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-5-3">Version 3.5.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-5-2">Version 3.5.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-5-1">Version 3.5.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-5-0">Version 3.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-4-17">Version 3.4.17</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-4-16">Version 3.4.16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-4-15">Version 3.4.15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-4-14">Version 3.4.14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-4-13">Version 3.4.13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-4-12">Version 3.4.12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-4-11">Version 3.4.11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-4-10">Version 3.4.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-4-9">Version 3.4.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-4-8">Version 3.4.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-4-7">Version 3.4.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-4-6">Version 3.4.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-4-5">Version 3.4.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-4-4">Version 3.4.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-4-3">Version 3.4.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-4-2">Version 3.4.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-4-1">Version 3.4.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-4-0">Version 3.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-3-12">Version 3.3.12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-3-11">Version 3.3.11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-3-10">Version 3.3.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-3-9">Version 3.3.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-3-8">Version 3.3.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-3-7">Version 3.3.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-3-6">Version 3.3.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-3-5">Version 3.3.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-3-4">Version 3.3.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-3-3">Version 3.3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-3-2">Version 3.3.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-3-1">Version 3.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-3-0">Version 3.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-2-2">Version 3.2.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-2-1">Version 3.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-2-0">Version 3.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-1-2">Version 3.1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-1-1">Version 3.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-1-0">Version 3.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-0-3">Version 3.0.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-0-2">Version 3.0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-0-1">Version 3.0.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-3-0-0">Version 3.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-2-0-7">Version 2.0.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-2-0-6">Version 2.0.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-2-0-5">Version 2.0.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-2-0-4">Version 2.0.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-2-0-3">Version 2.0.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-2-0-2">Version 2.0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-2-0-1">Version 2.0.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-2-0-0">Version 2.0.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#why-this-update">Why this update?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#what-changed">What changed?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-8-5">Version 1.8.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-8-4">Version 1.8.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-8-3">Version 1.8.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-8-2">Version 1.8.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-8-1">Version 1.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-8-0">Version 1.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-7-8">Version 1.7.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-7-7">Version 1.7.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-7-6">Version 1.7.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-7-5">Version 1.7.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-7-4">Version 1.7.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-7-3">Version 1.7.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-7-2">Version 1.7.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-7-1">Version 1.7.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-7-0">Version 1.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-6-2">Version 1.6.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-6-1">Version 1.6.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-6-0">Version 1.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-5-7">Version 1.5.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-5-6">Version 1.5.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-5-5">Version 1.5.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-5-4">Version 1.5.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-5-3">Version 1.5.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-5-2">Version 1.5.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-5-1">Version 1.5.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-5-0">Version 1.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-4-3">Version 1.4.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-4-2">Version 1.4.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-4-1">Version 1.4.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-4-0">Version 1.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-3-1">Version 1.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-3-0">Version 1.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-2-6">Version 1.2.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-2-5">Version 1.2.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-2-4">Version 1.2.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-2-3">Version 1.2.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-2-2">Version 1.2.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-2-1">Version 1.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-2-0-p3">Version 1.2.0-p3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-2-0-p2">Version 1.2.0-p2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-2-0-p1">Version 1.2.0-p1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-2-0">Version 1.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-1-8-p2">Version 1.1.8-p2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-1-8-p1">Version 1.1.8-p1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-1-8">Version 1.1.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-1-7">Version 1.1.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-1-6">Version 1.1.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-1-5-p2">Version 1.1.5-p2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-1-5-p1">Version 1.1.5-p1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-1-5">Version 1.1.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-1-4-p3">Version 1.1.4-p3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-1-4-p2">Version 1.1.4-p2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-1-4-p1">Version 1.1.4-p1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-1-4">Version 1.1.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-1-3">Version 1.1.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-1-2-p1">Version 1.1.2-p1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-1-2">Version 1.1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-1-1">Version 1.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-1-0">Version 1.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-0-0">Version 1.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-0-0-beta">Version 1.0.0-beta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-0-0-alpha">Version 1.0.0-alpha</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-12-6">Version 0.12.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-12-5">Version 0.12.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-12-4">Version 0.12.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-12-0">Version 0.12.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-11-0">Version 0.11.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-10-2">Version 0.10.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-10-1">Version 0.10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-10-0">Version 0.10.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-9-5">Version 0.9.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-9-4-2">Version 0.9.4.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-9-4-1">Version 0.9.4.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-9-4">Version 0.9.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-9-3">Version 0.9.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-9-2">Version 0.9.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-9-1">Version 0.9.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-9">Version 0.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-8-2">Version 0.8.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-8-1">Version 0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-8">Version 0.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-7-3-2">Version 0.7.3.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-7">Version 0.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-6">Version 0.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-5-8-and-0-5-9">Version 0.5.8 and 0.5.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-5-7">Version 0.5.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-5-6">Version 0.5.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-5-5">Version 0.5.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-5-4">Version 0.5.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-5-3">Version 0.5.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-5-2">Version 0.5.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-5-1">Version 0.5.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-5">Version 0.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-4">Version 0.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-3">Version 0.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-2">Version 0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-1">Version 0.1</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install.html" class="btn btn-neutral float-right" title="Install on a GNU/Linux server" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012, Nicolas CARPi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+  <a href='https://creativecommons.org/licenses/by-sa/4.0/'><img src='_images/by-sa.png' alt='cc-by-sa' /></a>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

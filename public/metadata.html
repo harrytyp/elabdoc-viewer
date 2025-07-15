@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metadata &mdash; elabftw 5.1.15 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=6d288cbf"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API" href="api.html" />
+    <link rel="prev" title="Import / Export" href="import-export.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            elabftw
+          </a>
+              <div class="version">
+                5.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install on a GNU/Linux server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-cloud.html">Install in the cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nas.html">Install on a NAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nolinux.html">Install on Mac or Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="generalities.html">Generalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin-guide.html">Admin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin-guide.html">Sysadmin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import-export.html">Import / Export</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Metadata</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-with-dropdown-menu">Example with dropdown menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-with-number-and-units">Example with number and units</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-use">Advanced use</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#positions">Positions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#removing-an-input">Removing an input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#masking-the-main-text">Masking the main text</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#example-code">Example code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage-example">Usage example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#schema-description">Schema description</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#extra-fields-objects">Extra_fields objects</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#value-required">value (required)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#type-optional">type (optional)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#checkbox">checkbox</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#date">date</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#datetime-local">datetime-local</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#email">email</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#number">number</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#radio">radio</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#select">select</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#text">text</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#time">time</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#url">url</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#options-for-type-select">options (for type = select)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#allow-multi-values-for-type-select">allow_multi_values (for type = select)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#required">required</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#units-for-type-number">units (for type = number)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unit">unit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#position">position</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#blank-value-on-duplicate">blank_value_on_duplicate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#group-id">group_id</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#elabftw-object">elabftw object</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#display-main-text">display_main_text</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#extra-fields-groups">extra_fields_groups</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backup.html">How to backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-update.html">How to update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker-doc.html">About Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade-to-docker.html">Upgrade a normal install to a Docker install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ldap.html">Configure LDAP authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="saml.html">Configure SAML2 authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thanks.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">elabftw</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Metadata</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/metadata.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="metadata">
+<span id="id1"></span><h1>Metadata<a class="headerlink" href="#metadata" title="Link to this heading"></a></h1>
+<p>This page describes the usage of the metadata JSON field attached to experiments or items (and their templates).</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>Since eLabFTW 4.0.0, you can add custom JSON data to your entries, using the <cite>metadata</cite> attribute. You can add arbitrary JSON, or use specific keys to extend the customization of the entry, for instance by adding extra fields. Experiments, Items and their templates all have this attribute.</p>
+</section>
+<section id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
+<p>Let’s try it on an Experiment. Create a new experiment, and scroll down (in edit mode) to the “Extra fields” part.</p>
+<p>Click “Add field”, a modal window will appear.</p>
+<img alt="Extra field builder" class="align-center" src="_images/extra-field-builder.png" />
+<p>If you want your new inputs to appear in groups, you can click the + button next to “Group” to add a new group. Or select an existing group from the dropdown menu.</p>
+<p>Then you can select which type of input you want for your extra field. You are free to add as many as you want, of different types. It is most useful to define them in the Templates, so when creating an entry, all the required inputs are already present.</p>
+<section id="example-with-dropdown-menu">
+<h3>Example with dropdown menu<a class="headerlink" href="#example-with-dropdown-menu" title="Link to this heading"></a></h3>
+<p>Let’s select “Dropdown menu” for our example. Enter a name for this input, optionally a description and at least 2 entries to select from.</p>
+<img alt="Extra field dropdown" class="align-center" src="_images/extra-fields-dropdown.png" />
+<p>Then click save and the new input (extra field) will appear right under the “Save” and “Save and go back” buttons:</p>
+<img alt="Extra field view" class="align-center" src="_images/extra-fields-view.png" />
+</section>
+<section id="example-with-number-and-units">
+<h3>Example with number and units<a class="headerlink" href="#example-with-number-and-units" title="Link to this heading"></a></h3>
+<p>In our second example, we will add an input of type <cite>number</cite> with several choices for the units. This is how it looks like:</p>
+<img alt="Extra field number" class="align-center" src="_images/extra-fields-number.png" />
+<p>Then click save and the generated input will accept only numbers, and a dropdown menu with a list of available units will be appended to the input:</p>
+<img alt="Extra field number view" class="align-center" src="_images/extra-fields-number-view.png" />
+</section>
+</section>
+<section id="advanced-use">
+<h2>Advanced use<a class="headerlink" href="#advanced-use" title="Link to this heading"></a></h2>
+<p>Keep in mind that what the builder menu will do for you is simply create some JSON code and store it in the <cite>metadata</cite> attribute of the entry. You are free to edit this JSON code from the editor.</p>
+<img alt="json-editor-mode" class="align-center" src="_images/json-editor-mode.png" />
+<section id="positions">
+<h3>Positions<a class="headerlink" href="#positions" title="Link to this heading"></a></h3>
+<p>In order to assign a particular position to the inputs, use the <cite>position</cite> key, with a number as value. The inputs will then be ordered based on this value. Lowest value being on top. Groups are shown in the position they are defined.</p>
+</section>
+<section id="removing-an-input">
+<h3>Removing an input<a class="headerlink" href="#removing-an-input" title="Link to this heading"></a></h3>
+<p>If you wish to remove an input, click the trash icon present in edit mode on the right side of the input block.</p>
+</section>
+<section id="masking-the-main-text">
+<h3>Masking the main text<a class="headerlink" href="#masking-the-main-text" title="Link to this heading"></a></h3>
+<p>It is possible to hide the main text input by toggling the “Display main text” in the JSON Editor section.</p>
+<p>This will result in the presence of a special attribute: <cite>display_main_text</cite> with a value of <cite>false</cite> in the <cite>elabftw</cite> key:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;extra_fields&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="s2">&quot;elabftw&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;display_main_text&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="example-code">
+<h2>Example code<a class="headerlink" href="#example-code" title="Link to this heading"></a></h2>
+<p>This will allow you to copy/paste easily the following code block into the editor (once the editor’s mode is set to “Code”):</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;extra_fields&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;End date&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;date&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2021-06-09&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;position&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="s2">&quot;Magnification&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;select&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;20X&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;options&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;10X&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;20X&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;40X&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="s2">&quot;position&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="s2">&quot;Pressure (Pa)&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;number&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;12&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;position&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;blank_value_on_duplicate&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="s2">&quot;Wavelength (nm)&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;radio&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;position&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;405&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;options&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;488&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;405&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;647&quot;</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now click Save and scroll up a bit. Above the Steps you should now see four new inputs under the “Extra fields” header. When they are modified, the change is saved immediately.</p>
+<img alt="extra-fields" class="align-center" src="_images/extra-fields.png" />
+</section>
+<section id="usage-example">
+<h2>Usage example<a class="headerlink" href="#usage-example" title="Link to this heading"></a></h2>
+<p>Have a “Status” and “Quantity” for some items in your database:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;extra_fields&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;Status&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;select&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;In use&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;options&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;Not opened&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;In use&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;Need reorder&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;Out of stock&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="s2">&quot;position&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="s2">&quot;Quantity&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;number&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;12&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;position&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This will produce the following inputs:</p>
+<img alt="metadata-example" class="align-center" src="_images/metadata-example.png" />
+<p>And if you’re looking for all entries that have the status “Need reorder” you can do so from the search page!</p>
+</section>
+<section id="schema-description">
+<h2>Schema description<a class="headerlink" href="#schema-description" title="Link to this heading"></a></h2>
+<p>In order to be processed by eLabFTW, the JSON contained in <cite>metadata</cite> must be in a particular format. It looks like this:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;extra_fields&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;Some extra field name&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;date&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2023-06-23&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="p">...</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="s2">&quot;elabftw&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;display_main_text&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;extra_fields_groups&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Some group&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Another group&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In the <cite>extra_fields</cite> key object, you’ll find all the extra fields. The name is the object key, and then it contains properties (described below).</p>
+<p>The <cite>elabftw</cite> key is a special key to hold the groups or if we want to display the main text.</p>
+<p>The rest will be ignored by eLabFTW, so you can have other things in there, too.</p>
+<section id="extra-fields-objects">
+<h3>Extra_fields objects<a class="headerlink" href="#extra-fields-objects" title="Link to this heading"></a></h3>
+<p>Here is a list and description of the properties that <cite>extra_fields</cite> objects can have:</p>
+<section id="value-required">
+<h4>value (required)<a class="headerlink" href="#value-required" title="Link to this heading"></a></h4>
+<p>The field that will hold the selected/input value. You can set a default value here or leave it empty. It is the only required attribute for an <cite>extra_field</cite>.</p>
+</section>
+<section id="type-optional">
+<h4>type (optional)<a class="headerlink" href="#type-optional" title="Link to this heading"></a></h4>
+<section id="checkbox">
+<h5>checkbox<a class="headerlink" href="#checkbox" title="Link to this heading"></a></h5>
+<p>A box to check. A Step might be a better option here.</p>
+</section>
+<section id="date">
+<h5>date<a class="headerlink" href="#date" title="Link to this heading"></a></h5>
+<p>A date input.</p>
+</section>
+<section id="datetime-local">
+<h5>datetime-local<a class="headerlink" href="#datetime-local" title="Link to this heading"></a></h5>
+<p>A date and time input.</p>
+</section>
+<section id="email">
+<h5>email<a class="headerlink" href="#email" title="Link to this heading"></a></h5>
+<p>An email input: only a valid email address will be accepted.</p>
+</section>
+<section id="number">
+<h5>number<a class="headerlink" href="#number" title="Link to this heading"></a></h5>
+<p>A text input that only accepts a number as value.</p>
+</section>
+<section id="radio">
+<h5>radio<a class="headerlink" href="#radio" title="Link to this heading"></a></h5>
+<p>A radio input similar to select but all options are immediately visible.</p>
+</section>
+<section id="select">
+<h5>select<a class="headerlink" href="#select" title="Link to this heading"></a></h5>
+<p>A dropdown element with options to choose from.</p>
+</section>
+<section id="text">
+<h5>text<a class="headerlink" href="#text" title="Link to this heading"></a></h5>
+<p>The default value if omitted. Use it for a short text.</p>
+</section>
+<section id="time">
+<h5>time<a class="headerlink" href="#time" title="Link to this heading"></a></h5>
+<p>A time input.</p>
+</section>
+<section id="url">
+<h5>url<a class="headerlink" href="#url" title="Link to this heading"></a></h5>
+<p>A text input that only accepts a valid URL. In view mode, the link will be clickable. By default, the link will open in a new tab. Add <cite>“open_in_current_tab” : true</cite> to make it open in the current tab.</p>
+</section>
+</section>
+<section id="options-for-type-select">
+<h4>options (for type = select)<a class="headerlink" href="#options-for-type-select" title="Link to this heading"></a></h4>
+<p>An array of string (<cite>[]</cite>) with different options for the dropdown element.</p>
+</section>
+<section id="allow-multi-values-for-type-select">
+<h4>allow_multi_values (for type = select)<a class="headerlink" href="#allow-multi-values-for-type-select" title="Link to this heading"></a></h4>
+<p>A <cite>boolean</cite> attribute for allowing the selection of multiple values from the dropdown menu (which then becomes a multi select input).</p>
+</section>
+<section id="required">
+<h4>required<a class="headerlink" href="#required" title="Link to this heading"></a></h4>
+<p>A <cite>boolean</cite> attribute to indicate that filling this field is required. Please note that this won’t prevent a user from leaving the page even if the value is empty. It will indicate visually that a value is required but won’t block the workflow.</p>
+</section>
+<section id="id2">
+<h4>description<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
+<p>A <cite>string</cite> attribute that will be displayed under the name of the field.</p>
+</section>
+<section id="units-for-type-number">
+<h4>units (for type = number)<a class="headerlink" href="#units-for-type-number" title="Link to this heading"></a></h4>
+<p>An array (<cite>[]</cite>) with different units for the units dropdown element. Requires a <cite>unit</cite> attribute to store the selected unit.</p>
+</section>
+<section id="unit">
+<h4>unit<a class="headerlink" href="#unit" title="Link to this heading"></a></h4>
+<p>An attribute used to store the selected unit, will be updated with a change from the <cite>units</cite> generated dropdown menu.</p>
+</section>
+<section id="position">
+<h4>position<a class="headerlink" href="#position" title="Link to this heading"></a></h4>
+<p>Add a number as a value to correctly order the extra fields how you want them.</p>
+</section>
+<section id="blank-value-on-duplicate">
+<h4>blank_value_on_duplicate<a class="headerlink" href="#blank-value-on-duplicate" title="Link to this heading"></a></h4>
+<p>Set to <cite>true</cite> for the value to be blanked when the entity is duplicated.</p>
+</section>
+<section id="group-id">
+<h4>group_id<a class="headerlink" href="#group-id" title="Link to this heading"></a></h4>
+<p>A number corresponding to the <cite>id</cite> of a group defined in the <cite>elabftw.extra_fields_groups</cite> object. Groups are defined as an array of objects with <cite>id</cite> and <cite>name</cite> properties.</p>
+</section>
+</section>
+<section id="elabftw-object">
+<h3>elabftw object<a class="headerlink" href="#elabftw-object" title="Link to this heading"></a></h3>
+<p>Another object, with key <cite>elabftw</cite> is used to define some parameters.</p>
+<section id="display-main-text">
+<h4>display_main_text<a class="headerlink" href="#display-main-text" title="Link to this heading"></a></h4>
+<p>A boolean value indicating if we want to display the main text.</p>
+</section>
+<section id="extra-fields-groups">
+<h4>extra_fields_groups<a class="headerlink" href="#extra-fields-groups" title="Link to this heading"></a></h4>
+<p>An array of objects that have an <cite>id</cite> and <cite>name</cite> and corresponds to groups.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="import-export.html" class="btn btn-neutral float-left" title="Import / Export" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="api.html" class="btn btn-neutral float-right" title="API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012, Nicolas CARPi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+  <a href='https://creativecommons.org/licenses/by-sa/4.0/'><img src='_images/by-sa.png' alt='cc-by-sa' /></a>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin guide &mdash; elabftw 5.1.15 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=6d288cbf"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Sysadmin guide" href="sysadmin-guide.html" />
+    <link rel="prev" title="User guide" href="user-guide.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            elabftw
+          </a>
+              <div class="version">
+                5.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install on a GNU/Linux server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-cloud.html">Install in the cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nas.html">Install on a NAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nolinux.html">Install on Mac or Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="generalities.html">Generalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Admin guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-become-an-admin">How to become an Admin?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#general-overview">General overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#validating-accounts">Validating accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#team-tab">TEAM tab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#groups-tab">GROUPS tab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#users-tab">USERS tab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#categories-tab">CATEGORIES tab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#status-tab">STATUS tab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#export-tab">EXPORT tab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tag-manager-tab">TAG MANAGER tab</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin-guide.html">Sysadmin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import-export.html">Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backup.html">How to backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-update.html">How to update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker-doc.html">About Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade-to-docker.html">Upgrade a normal install to a Docker install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ldap.html">Configure LDAP authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="saml.html">Configure SAML2 authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thanks.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">elabftw</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Admin guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/admin-guide.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="admin-guide">
+<span id="id1"></span><h1>Admin guide<a class="headerlink" href="#admin-guide" title="Link to this heading"></a></h1>
+<p>This guide is intended for Admins of Teams. An Admin is a User in a Team with Admin rights, and access to the Admin Panel (accessed via the top right menu or the bottom left link). A Team can have several Admins and must have at least one.</p>
+<section id="how-to-become-an-admin">
+<h2>How to become an Admin?<a class="headerlink" href="#how-to-become-an-admin" title="Link to this heading"></a></h2>
+<p>A User is automatically an Admin if they are the first User in a Team. An Admin can promote another User to the Admin level from the Admin Panel &gt; Users tab. A Sysadmin can promote a User to the Admin level in the same way (from the Sysadmin Panel).</p>
+</section>
+<section id="general-overview">
+<h2>General overview<a class="headerlink" href="#general-overview" title="Link to this heading"></a></h2>
+<p>An Admin:</p>
+<ul class="simple">
+<li><p>Has access to the Admin Panel, where they can change the settings for their entire Team</p></li>
+<li><p>Can validate/archive Users of their Team</p></li>
+<li><p>Can edit available Categories and Status options for Experiments and Resources used by their Team</p></li>
+<li><p>Can edit the default Experiment template</p></li>
+<li><p>Can manage groups of Users within the Team (see below)</p></li>
+<li><p>Can change the rightmost link in the main menu (default is Documentation)</p></li>
+<li><p>Can archive a User, thus disabling login for that account, and locking all Experiments created by that account.</p></li>
+</ul>
+</section>
+<section id="validating-accounts">
+<h2>Validating accounts<a class="headerlink" href="#validating-accounts" title="Link to this heading"></a></h2>
+<p>Unless this setting has been modified by the Sysadmin, or provisioning is done automatically, new accounts will need to be validated by a Team Admin before new Users can connect. The Admin is responsible for validating new User accounts. To validate new Users, head to the Admin panel where you will see a list of Users waiting for validation.</p>
+<img alt="Admin User validation" class="align-center" src="_images/admin-validate-user.png" />
+<p>If you do not wish to validate an account because that User does not belong to your Team, you can either ask the Sysadmin to change the Team associated with that account, or delete the account yourself.</p>
+</section>
+<section id="team-tab">
+<h2>TEAM tab<a class="headerlink" href="#team-tab" title="Link to this heading"></a></h2>
+<p>The first tab in the Admin Panel contains various settings for the Team. This is where you can configure what Users can or cannot do in the Team, and define a default template for Experiments or change the last link in the main menu.</p>
+</section>
+<section id="groups-tab">
+<h2>GROUPS tab<a class="headerlink" href="#groups-tab" title="Link to this heading"></a></h2>
+<p>The Admin can create User Groups from the Admin Panel. Once a User Group is created, the Admin can add Users to this Group by typing their names in the input field and selecting the suggested Users. Users in a Group can set the permissions of a Resource/Experiment for that Group such that only members of the Group can see/edit an entry.</p>
+<p>Note that it is possible to add Users from other Teams to a User Group.</p>
+</section>
+<section id="users-tab">
+<h2>USERS tab<a class="headerlink" href="#users-tab" title="Link to this heading"></a></h2>
+<p>The Users tab allows you to modify User accounts in your Team. From this page, you can reset a password directly or “archive” a User. An “archived” User will no longer be able to login and all of their Experiments will be locked. If a User needs to leave one Team and join a different Team, that User should first be archived in the original Team. Then, a new account (same email) can be created for that User in the new Team. This way, the first Team keeps the data previously inputted by the User, and the User has a fresh account in the new Team using the same email address.</p>
+<p>You can also disable multifactor authentication for a particular User, if needed.</p>
+<p>From this page, you can also directly add a new User to your Team. The new User will need to activate the “Reset password” functionality to access their account.</p>
+</section>
+<section id="categories-tab">
+<h2>CATEGORIES tab<a class="headerlink" href="#categories-tab" title="Link to this heading"></a></h2>
+<p>This menu allows you to define Categories for Experiments. Categories are very similar to status options: they have a name and a color.</p>
+<p>You can also define Categories for Resources. These are similar to Experiment templates because in addition to the name and color, you can define default text/Tags/links/fields.</p>
+<p>You can have as many as you want. For instance:</p>
+<ul class="simple">
+<li><p>Antibody</p></li>
+<li><p>Cell line</p></li>
+<li><p>Microscope (you can make it bookable so it can be accessed in the Scheduler, found in the Team tab)</p></li>
+<li><p>Protocol (or you could use a template for this)</p></li>
+<li><p>Computer</p></li>
+<li><p>Software</p></li>
+<li><p>Project</p></li>
+<li><p>Plasmid</p></li>
+<li><p>…</p></li>
+</ul>
+<p>Select a Category and click “Go” to load it, or click “Create” to add a new Category.</p>
+<img alt="resources categories tab" class="align-right" src="_images/admin-panel-itemstypes.png" />
+<p>When you create a new Category, use the default template of that type of item to add fields. For instance, for a Plasmid category you might want to have:</p>
+<p><strong>Concentration:</strong></p>
+<p><strong>Backbone:</strong></p>
+<p><strong>Resistance bacteria:</strong></p>
+<p><strong>Resistance mammalian:</strong></p>
+<p>You can also use <a class="reference internal" href="metadata.html#metadata"><span class="std std-ref">extra fields</span></a> defined in the metadata json editor so that all items created in that Category will have these supplementary inputs.</p>
+</section>
+<section id="status-tab">
+<h2>STATUS tab<a class="headerlink" href="#status-tab" title="Link to this heading"></a></h2>
+<p>The Status options are editable and customizable. There is one set of Status options for Experiments and another one for Resources.</p>
+</section>
+<section id="export-tab">
+<h2>EXPORT tab<a class="headerlink" href="#export-tab" title="Link to this heading"></a></h2>
+<p>This tab allows you to export Experiments, items, or scheduled bookings in various formats.</p>
+</section>
+<section id="tag-manager-tab">
+<h2>TAG MANAGER tab<a class="headerlink" href="#tag-manager-tab" title="Link to this heading"></a></h2>
+<p>This interface allows an Admin to edit existing Tags. For instance, if you have Tags called “RPE1” and “RPE-1” and you want all of the Tags to be in the form “RPE-1”, find the “RPE1” Tag, click on it to edit it to “RPE-1”, and click the Deduplicate button.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="user-guide.html" class="btn btn-neutral float-left" title="User guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sysadmin-guide.html" class="btn btn-neutral float-right" title="Sysadmin guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012, Nicolas CARPi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+  <a href='https://creativecommons.org/licenses/by-sa/4.0/'><img src='_images/by-sa.png' alt='cc-by-sa' /></a>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generalities &mdash; elabftw 5.1.15 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=6d288cbf"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="User guide" href="user-guide.html" />
+    <link rel="prev" title="Install on Mac or Windows" href="install-nolinux.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            elabftw
+          </a>
+              <div class="version">
+                5.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install on a GNU/Linux server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-cloud.html">Install in the cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nas.html">Install on a NAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nolinux.html">Install on Mac or Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Generalities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#lexicon">Lexicon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#general-principles">General principles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#teams">Teams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#entities-and-permissions">Entities and permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#user-accounts">User accounts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin-guide.html">Admin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin-guide.html">Sysadmin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import-export.html">Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backup.html">How to backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-update.html">How to update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker-doc.html">About Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade-to-docker.html">Upgrade a normal install to a Docker install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ldap.html">Configure LDAP authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="saml.html">Configure SAML2 authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thanks.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">elabftw</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Generalities</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/generalities.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="generalities">
+<span id="id1"></span><h1>Generalities<a class="headerlink" href="#generalities" title="Link to this heading"></a></h1>
+<section id="lexicon">
+<h2>Lexicon<a class="headerlink" href="#lexicon" title="Link to this heading"></a></h2>
+<p>Let’s define a few terms first:</p>
+<ul class="simple">
+<li><p><strong>Instance</strong>: a running eLabFTW service, for example: <a class="reference external" href="https://eln.example.org">https://eln.example.org</a></p></li>
+<li><p><strong>Team</strong>: the main way to compartimentalize users</p></li>
+<li><p><strong>Sysadmin</strong>: a user with Sysadmin rights can modify the Instance configuration and create Teams, it is generally the same person that installed the Instance</p></li>
+<li><p><strong>Admin</strong>: a user with Admin rights for a given team has access to the Admin Panel and can manage settings related to their Team. A given user can be Admin in Team A and User in Team B</p></li>
+<li><p><strong>User</strong>: a user with an account on the Instance, belonging to at least one Team</p></li>
+</ul>
+</section>
+<section id="general-principles">
+<h2>General principles<a class="headerlink" href="#general-principles" title="Link to this heading"></a></h2>
+<p>One eLabFTW instance can host several Teams.</p>
+<p>Every User needs to belong to at least one Team. Every team must have at least one Admin user.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>  ┌────────────────────────┐
+  │                        │
+  │    eLabFTW Instance    │
+  │                        │
+  └────┬───────────┬─────┬─┘       ┌──────────┐
+       │           │     │         │  Team C  │
+       │           │     │         ├──────────┤
+       │           │     └──────►  │ Admin 1  │
+       │           │               │ User 1   │
+       ▼           ▼               │ User 2   │
+┌──────────┐    ┌──────────┐       │ User 3   │
+│  Team A  │    │  Team B  │       │ User 4   │
+├──────────┤    ├──────────┤       └──────────┘
+│ Admin 1  │    │ Admin 1  │
+│ User 1   │    │ Admin 2  │
+│ User 2   │    │ Admin 3  │
+│ User 3   │    │ User 1   │
+└──────────┘    │ User 2   │
+                │ User 3   │
+                └──────────┘
+</pre></div>
+</div>
+</section>
+<section id="teams">
+<h2>Teams<a class="headerlink" href="#teams" title="Link to this heading"></a></h2>
+<p>A Team generally correspond to a real life research group or service. It is not advisable to use Teams as Projects as this doesn’t scale well (and Teamgroups can be used instead for that purpose). A User can belong to several teams if needed, they will then need to select a team upon login.</p>
+<p>Every Team has one or several Admin, who can change many settings affecting users in the team, such as the default experimental template, categories for database items (Items Types), experiments Status, Tags, etc…</p>
+<p>Teams are created by the Sysadmin from the Sysconfig page (<a class="reference internal" href="sysadmin-guide.html#configure-teams"><span class="std std-ref">see documentation</span></a>).</p>
+</section>
+<section id="entities-and-permissions">
+<h2>Entities and permissions<a class="headerlink" href="#entities-and-permissions" title="Link to this heading"></a></h2>
+<p>An Entity is an entry, which can be an Experiment, a Resource or an experiment Template.</p>
+<p>By default, Experiments and Resources are restricted to a team. But users can choose to extend this to all registered users or even anonymous users if enabled by the Sysadmin.</p>
+<p>Experiments belong to a user (owner), while Resources are common to the team and can be edited by anyone from the team (with default permissions).</p>
+</section>
+<section id="user-accounts">
+<h2>User accounts<a class="headerlink" href="#user-accounts" title="Link to this heading"></a></h2>
+<p>There are several ways to manage users, they can be created by a Sysadmin, an Admin, during authentication with centralized directory, or users can create their account directly.</p>
+<p>Users can directly create their account on the register page (<cite>/register.php</cite>), accessible from the login page. They will need to select a team from the list.</p>
+<p>By default, newly created accounts are disabled. The admin of the team needs to validate them by going into the admin panel and activate new users.</p>
+<p>It is also possible to provision users or use an external authentication service such as an Identity Provider (IdP/SAML2) or LDAP directory.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install-nolinux.html" class="btn btn-neutral float-left" title="Install on Mac or Windows" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="user-guide.html" class="btn btn-neutral float-right" title="User guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012, Nicolas CARPi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+  <a href='https://creativecommons.org/licenses/by-sa/4.0/'><img src='_images/by-sa.png' alt='cc-by-sa' /></a>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

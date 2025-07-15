@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to update &mdash; elabftw 5.1.15 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=6d288cbf"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Contributing" href="contributing.html" />
+    <link rel="prev" title="How to backup" href="backup.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            elabftw
+          </a>
+              <div class="version">
+                5.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install on a GNU/Linux server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-cloud.html">Install in the cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nas.html">Install on a NAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nolinux.html">Install on Mac or Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="generalities.html">Generalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin-guide.html">Admin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin-guide.html">Sysadmin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import-export.html">Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="backup.html">How to backup</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to update</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#step-0-before-the-update">STEP 0: Before the update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-specify-which-version-you-want">STEP 1: Specify which version you want</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-launch-a-new-container">STEP 2: Launch a new container</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#with-elabctl">With elabctl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#without-elabctl">Without elabctl</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3-run-the-database-migration">STEP 3: Run the database migration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#updating-from-incredibly-old-versions">Updating from incredibly old versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker-doc.html">About Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade-to-docker.html">Upgrade a normal install to a Docker install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ldap.html">Configure LDAP authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="saml.html">Configure SAML2 authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thanks.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">elabftw</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">How to update</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/how-to-update.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="how-to-update">
+<span id="id1"></span><h1>How to update<a class="headerlink" href="#how-to-update" title="Link to this heading"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be sure to <a class="reference external" href="https://github.com/elabftw/elabftw/releases/latest">read the release notes</a>, they might contain important information. And have a <a class="reference internal" href="backup.html#backup"><span class="std std-ref">backup</span></a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are running out of disk space, you can do “docker system prune -a” to free up some space taken by old images.</p>
+</div>
+<section id="step-0-before-the-update">
+<h2>STEP 0: Before the update<a class="headerlink" href="#step-0-before-the-update" title="Link to this heading"></a></h2>
+<p>Make sure to figure out what version you are running and <strong>read the release notes</strong> for the new version.</p>
+<p>The current running version can be seen in the bottom right of every page.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be sure to <a class="reference external" href="https://github.com/elabftw/elabftw/releases/latest">read the release notes</a>, they might contain important information. And have a <a class="reference internal" href="backup.html#backup"><span class="std std-ref">backup</span></a>.</p>
+</div>
+</section>
+<section id="step-1-specify-which-version-you-want">
+<h2>STEP 1: Specify which version you want<a class="headerlink" href="#step-1-specify-which-version-you-want" title="Link to this heading"></a></h2>
+<p>Start by editing your configuration file (<cite>/etc/elabftw.yml</cite> by default) and change the version of the image (line <cite>image: elabftw/elabimg:X.Y.Z</cite>)</p>
+<p>The latest version can be found on <a class="reference external" href="https://github.com/elabftw/elabftw/releases/latest">this page</a>.</p>
+</section>
+<section id="step-2-launch-a-new-container">
+<h2>STEP 2: Launch a new container<a class="headerlink" href="#step-2-launch-a-new-container" title="Link to this heading"></a></h2>
+<section id="with-elabctl">
+<h3>With elabctl<a class="headerlink" href="#with-elabctl" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>elabctl<span class="w"> </span>update
+</pre></div>
+</div>
+</section>
+<section id="without-elabctl">
+<h3>Without elabctl<a class="headerlink" href="#without-elabctl" title="Link to this heading"></a></h3>
+<p>In the directory where you have the <cite>docker-compose.yml</cite> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker-compose<span class="w"> </span>pull
+docker-compose<span class="w"> </span>down
+docker-compose<span class="w"> </span>up<span class="w"> </span>-d
+</pre></div>
+</div>
+</section>
+</section>
+<section id="step-3-run-the-database-migration">
+<h2>STEP 3: Run the database migration<a class="headerlink" href="#step-3-run-the-database-migration" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># change the name of the container if it is different in your configuration</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>elabftw<span class="w"> </span>bin/console<span class="w"> </span>db:update
+<span class="c1"># Note: for version 3.3 to 3.4 use this instead</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>elabftw<span class="w"> </span>bin/console<span class="w"> </span>db:updateTo34
+<span class="c1"># Note: for version 2.x to 3.x use this instead</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>elabftw<span class="w"> </span>bin/console<span class="w"> </span>db:updateto3
+</pre></div>
+</div>
+<p>Congratulations, you are now running the latest version! Make sure to keep your installation regularly updated!</p>
+<p>If you encounter an issue during the database migration, open a GitHub issue!</p>
+<p>Note that you can use <cite>db:revert XYZ</cite> to revert the changes made by schema <cite>XYZ</cite>, or use <cite>–force</cite> to ignore errors (only do that if you know what you are doing!).</p>
+</section>
+<section id="updating-from-incredibly-old-versions">
+<h2>Updating from incredibly old versions<a class="headerlink" href="#updating-from-incredibly-old-versions" title="Link to this heading"></a></h2>
+<p>If you are running eLabFTW version &lt;3.4.0 (from March 2020), you’ll want to run <code class="docutils literal notranslate"><span class="pre">db:updateto34</span></code> after upgrading to 3.4.0 (again, always read the release notes from the version you’re targeting).</p>
+<p>If you are running eLabFTW version &lt;3.0.0 (from April 2019), you’ll want to run <code class="docutils literal notranslate"><span class="pre">db:updateto3</span></code> after upgrading to 3.0.0.</p>
+<p>If you are running eLabFTW version &lt;2.0.7 (from December 2018), you’ll want to update more often so you’re not stuck with an incredibly outdated software application.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="backup.html" class="btn btn-neutral float-left" title="How to backup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="contributing.html" class="btn btn-neutral float-right" title="Contributing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012, Nicolas CARPi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+  <a href='https://creativecommons.org/licenses/by-sa/4.0/'><img src='_images/by-sa.png' alt='cc-by-sa' /></a>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

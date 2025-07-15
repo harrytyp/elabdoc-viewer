@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Debug &mdash; elabftw 5.1.15 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=6d288cbf"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Acknowledgements" href="thanks.html" />
+    <link rel="prev" title="Configure SAML2 authentication" href="saml.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            elabftw
+          </a>
+              <div class="version">
+                5.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install on a GNU/Linux server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-cloud.html">Install in the cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nas.html">Install on a NAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nolinux.html">Install on Mac or Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="generalities.html">Generalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin-guide.html">Admin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin-guide.html">Sysadmin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import-export.html">Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="backup.html">How to backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-update.html">How to update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker-doc.html">About Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade-to-docker.html">Upgrade a normal install to a Docker install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ldap.html">Configure LDAP authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="saml.html">Configure SAML2 authentication</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Debug</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#docker-logs">Docker logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#php-logs">PHP logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#accessing-mysql-database">Accessing MySQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clean-everything">Clean everything</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#resetting-a-password-directly-from-mysql">Resetting a password directly from MySQL</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thanks.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">elabftw</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Debug</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/debug.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="debug">
+<span id="id1"></span><h1>Debug<a class="headerlink" href="#debug" title="Link to this heading"></a></h1>
+<p>You have an issue with your eLabFTW installation? Here are the things you should check before opening an issue on GitHub ;)</p>
+<section id="docker-logs">
+<h2>Docker logs<a class="headerlink" href="#docker-logs" title="Link to this heading"></a></h2>
+<p>If the server is not responding at all, check the web container logs. If the application cannot connect to MySQL, check the mysql container logs.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># to check if the containers are running</span>
+elabctl<span class="w"> </span>status
+<span class="c1"># or</span>
+docker<span class="w"> </span>ps
+<span class="c1"># for the web container</span>
+docker<span class="w"> </span>logs<span class="w"> </span>elabftw
+<span class="c1"># for the mysql container</span>
+docker<span class="w"> </span>logs<span class="w"> </span>mysql
+</pre></div>
+</div>
+</section>
+<section id="php-logs">
+<h2>PHP logs<a class="headerlink" href="#php-logs" title="Link to this heading"></a></h2>
+<p>If you get “An error occurred!” message, check the PHP logs. All errors should be logged there.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>logs<span class="w"> </span>elabftw<span class="w"> </span><span class="m">1</span>&gt;/dev/null
+</pre></div>
+</div>
+</section>
+<section id="accessing-mysql-database">
+<h2>Accessing MySQL database<a class="headerlink" href="#accessing-mysql-database" title="Link to this heading"></a></h2>
+<p>Sometimes it might be necessary to look directly into the database. You can use <cite>elabctl mysql</cite> to get a MySQL prompt directly.</p>
+</section>
+<section id="clean-everything">
+<h2>Clean everything<a class="headerlink" href="#clean-everything" title="Link to this heading"></a></h2>
+<p>If you’re not sure what to do to fix issues, or you have an error that seems unresolvable. You can try this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># stop everything</span>
+elabctl<span class="w"> </span>stop
+<span class="c1"># check nothing is running</span>
+docker<span class="w"> </span>ps<span class="w"> </span>-a
+<span class="c1"># cleanup everything</span>
+docker<span class="w"> </span>system<span class="w"> </span>prune<span class="w"> </span>-a
+<span class="c1"># start again</span>
+elabctl<span class="w"> </span>start
+</pre></div>
+</div>
+<p>Note that this procedure is safe and won’t impact your data. Upon starting, it will redownload the docker images and start fresh containers.</p>
+</section>
+<section id="resetting-a-password-directly-from-mysql">
+<h2>Resetting a password directly from MySQL<a class="headerlink" href="#resetting-a-password-directly-from-mysql" title="Link to this heading"></a></h2>
+<p>If you can’t reset a password because the mail system doesn’t work and have access to the MySQL database, you can reset it manually.</p>
+<p>First connect to a MySQL prompt:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># docker users</span>
+elabctl<span class="w"> </span>mysql
+</pre></div>
+</div>
+<p>Find out the userid of the user you want to reset the password:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">userid</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">firstname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;XXX&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Replace XXX with the firstname. You can of course also search with “email” or “lastname”. Now that you have the userid, we need to change the <cite>password_hash</cite> column. The <cite>password_hash</cite> column will be:</p>
+<p>$2y$10$KXkB/w1NhLnl1mHbK0yTsuAbgJ8st4qQ2i36KyTk7kwo.G6Oq6LXa</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">password_hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;$2y$10$KXk...&quot;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">userid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Replace X with the correct userid.</p>
+<p>Once this is done, you can login with the password: “totototo”. Make sure to change it again from the Settings page once logged in!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="saml.html" class="btn btn-neutral float-left" title="Configure SAML2 authentication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="thanks.html" class="btn btn-neutral float-right" title="Acknowledgements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012, Nicolas CARPi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+  <a href='https://creativecommons.org/licenses/by-sa/4.0/'><img src='_images/by-sa.png' alt='cc-by-sa' /></a>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

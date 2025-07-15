@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upgrade a normal install to a Docker install &mdash; elabftw 5.1.15 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=6d288cbf"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Configure LDAP authentication" href="ldap.html" />
+    <link rel="prev" title="About Docker" href="docker-doc.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            elabftw
+          </a>
+              <div class="version">
+                5.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install on a GNU/Linux server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-cloud.html">Install in the cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nas.html">Install on a NAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nolinux.html">Install on Mac or Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="generalities.html">Generalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin-guide.html">Admin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin-guide.html">Sysadmin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import-export.html">Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="backup.html">How to backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-update.html">How to update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker-doc.html">About Docker</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Upgrade a normal install to a Docker install</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preparation">Preparation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-docker">Install Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-elabftw-normally">Install elabftw normally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#export-current-install">Export current install</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#editing-the-config-file">Editing the config file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copy-the-uploaded-files">Copy the uploaded files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#about-https-ssl-tls">About HTTPS (SSL/TLS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#starting-the-containers">Starting the containers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ldap.html">Configure LDAP authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="saml.html">Configure SAML2 authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thanks.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">elabftw</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Upgrade a normal install to a Docker install</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/upgrade-to-docker.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="upgrade-a-normal-install-to-a-docker-install">
+<span id="upgrade-to-docker"></span><h1>Upgrade a normal install to a Docker install<a class="headerlink" href="#upgrade-a-normal-install-to-a-docker-install" title="Link to this heading"></a></h1>
+<img alt="docker" class="align-center" src="_images/docker.png" />
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>This guide is aimed at (GNU/Linux) users who have installed eLabFTW the old school way (git clone or zip archive) and want to benefit from Docker.
+If you are not familiar with Docker, take the time to read the documentation on the Docker website. And read also the <a class="reference internal" href="docker-doc.html#docker-doc"><span class="std std-ref">in-depth documentation for eLabFTW with Docker</span></a>.</p>
+</section>
+<section id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Link to this heading"></a></h2>
+<section id="install-docker">
+<h3>Install Docker<a class="headerlink" href="#install-docker" title="Link to this heading"></a></h3>
+<p>We will obviously need to <a class="reference external" href="https://docs.docker.com/engine/installation/linux/">install Docker</a>.</p>
+<p>Once this is done try a:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>hello-world
+</pre></div>
+</div>
+<p>If everything works, you should see a little message explaining what Docker did to print this message.</p>
+</section>
+<section id="install-elabftw-normally">
+<h3>Install elabftw normally<a class="headerlink" href="#install-elabftw-normally" title="Link to this heading"></a></h3>
+<p>Follow the steps described <a class="reference internal" href="install.html#install"><span class="std std-ref">here</span></a>, except the last one. Do not start the containers.</p>
+</section>
+<section id="export-current-install">
+<h3>Export current install<a class="headerlink" href="#export-current-install" title="Link to this heading"></a></h3>
+<p>Before going further, make sure you have backups of the existing installation. Read how to backup <a class="reference internal" href="backup.html#backup"><span class="std std-ref">here</span></a>.</p>
+<p>You should have a <cite>dump.sql</cite> file of the elabftw database. And your <cite>uploads</cite> folder is copied somewhere safe.</p>
+</section>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<p>You now have a configuration file <cite>/etc/elabftw.yml</cite>. Edit it with your favorite editor.</p>
+<section id="editing-the-config-file">
+<h3>Editing the config file<a class="headerlink" href="#editing-the-config-file" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Open the <cite>config.php</cite> file located in your <cite>elabftw</cite> folder of the current install</p></li>
+<li><p>Copy the SECRET_KEY value from the <cite>config.php</cite> file to <cite>/etc/elabftw.yml</cite> file</p></li>
+<li><p>If your webserver (Apache, nginx) is only serving eLabFTW, turn it off now and also make sure it won’t start after reboot.</p></li>
+</ul>
+<p>If you are using your webserver for something else, change the “ports:” value from “443:443” to “8080:443” or “444:443” or “9000:443” because your current server is already using port 443.</p>
+<p>Now, either you open a port on your server’s firewall to accept traffic on the new port you set, or you might also want to use your current webserver as a proxy and forward packets to the docker container: see <a class="reference internal" href="install.html#install"><span class="std std-ref">documentation for unusual setups</span></a>.</p>
+<ul class="simple">
+<li><p>If you are running MySQL 5.5 or 5.6, edit the 5.7 in the <cite>image: mysql:5.7</cite> line to the appropriate version. You can upgrade later.</p></li>
+</ul>
+</section>
+<section id="copy-the-uploaded-files">
+<h3>Copy the uploaded files<a class="headerlink" href="#copy-the-uploaded-files" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Rename your <cite>uploads</cite> folder to <cite>/var/elabftw/web</cite>:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>/var/elabftw/web
+cp<span class="w"> </span>-r<span class="w"> </span>/path/to/uploads/*<span class="w"> </span>/var/elabftw/web
+<span class="c1"># fix permissions</span>
+chown<span class="w"> </span>-R<span class="w"> </span><span class="m">101</span>:101<span class="w"> </span>/var/elabftw/web
+</pre></div>
+</div>
+</section>
+<section id="about-https-ssl-tls">
+<h3>About HTTPS (SSL/TLS)<a class="headerlink" href="#about-https-ssl-tls" title="Link to this heading"></a></h3>
+<p>As you know, eLabFTW can only run with HTTPS. So if you were running it before, there are good chances that you already have a certificate. If it’s a self-signed one, nothing needs to be done. The Docker image will generate a new certificate when the container is created. But your users will get a warning when they access the website, which is not ideal.</p>
+<p>One solution to this is to request a certificate from <a class="reference external" href="https://letsencrypt.org">Let’s Encrypt</a>. It’s free and you get a real proper certificate. See the documentation on Let’s Encrypt website on how to request a certificate for your website. You will need to have a domain name pointing to the server. It doesn’t work if you only have an IP address or if the server is not accessible from outside a company’s network.</p>
+<p>Another solution is to use the certificate you already have.</p>
+<ul class="simple">
+<li><p>Change the value of ENABLE_LETSENCRYPT to true in <cite>/etc/elabftw.yml</cite></p></li>
+<li><p>Uncomment the line <cite>#- /etc/letsencrypt:/ssl</cite> (remove the leading #)</p></li>
+<li><p>If your domain is <cite>elabftw.example.com</cite>, do this:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># as root</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span>/etc/letsencrypt/live/elabftw.example.com/
+cp<span class="w"> </span>/path/to/your/current-cert.pem<span class="w"> </span>/etc/letsencrypt/live/elabftw.example.com/fullchain.pem
+cp<span class="w"> </span>/path/to/your/current-key.pem<span class="w"> </span>/etc/letsencrypt/live/elabftw.example.com/privkey.pem
+</pre></div>
+</div>
+<p>Another way to do this is to <cite>git clone</cite> the <cite>docker-elabftw</cite> repo and edit the <cite>src/run.sh</cite> script to point to the correct directory, but this will not be covered in this guide.</p>
+</section>
+<section id="starting-the-containers">
+<h3>Starting the containers<a class="headerlink" href="#starting-the-containers" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>elabctl<span class="w"> </span>start
+</pre></div>
+</div>
+<p>This will create an empty database in <cite>/var/elabftw/mysql</cite>. But of course, what we want is to have our old database in there! To do that we will copy our <cite>dump.sql</cite> file to the <cite>mysql</cite> container and import it in place of the freshly created database (which is empty!).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>cp<span class="w"> </span>dump.sql<span class="w"> </span>mysql:/
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>mysql<span class="w"> </span>bash
+mysql<span class="w"> </span>-uroot<span class="w"> </span>-p
+<span class="c1"># here you type the password you put in MYSQL_ROOT_PASSWORD in the /etc/elabftw.yml file</span>
+Mysql&gt;<span class="w"> </span>drop<span class="w"> </span>database<span class="w"> </span>elabftw<span class="p">;</span>
+Mysql&gt;<span class="w"> </span>create<span class="w"> </span>database<span class="w"> </span>elabftw<span class="w"> </span>character<span class="w"> </span><span class="nb">set</span><span class="w"> </span>utf8mb4<span class="w"> </span>collate<span class="w"> </span>utf8mb4_0900_ai_ci<span class="p">;</span>
+Mysql&gt;<span class="w"> </span>use<span class="w"> </span>elabftw<span class="p">;</span>
+Mysql&gt;<span class="w"> </span><span class="nb">source</span><span class="w"> </span>dump.sql<span class="p">;</span>
+Mysql&gt;<span class="w"> </span>exit<span class="p">;</span>
+</pre></div>
+</div>
+<p>You should now have your old database running. If you were upgrading from an old version, make sure to read the release note of each version. Specifically the 1.2.1 one where there is a manual step to copy the new SECRET_KEY to <cite>/etc/elabftw.yml</cite>.</p>
+<p>Test everything is working by clicking everything. Report any problem in the present documentation so it can be improved.</p>
+<p>As always, if you need help, open a github issue :)</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="docker-doc.html" class="btn btn-neutral float-left" title="About Docker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ldap.html" class="btn btn-neutral float-right" title="Configure LDAP authentication" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012, Nicolas CARPi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+  <a href='https://creativecommons.org/licenses/by-sa/4.0/'><img src='_images/by-sa.png' alt='cc-by-sa' /></a>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

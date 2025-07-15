@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Install on a GNU/Linux server &mdash; elabftw 5.1.15 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=6d288cbf"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Install in the cloud" href="install-cloud.html" />
+    <link rel="prev" title="Welcome to the documentation for eLabFTW!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            elabftw
+          </a>
+              <div class="version">
+                5.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Install on a GNU/Linux server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dependencies">Dependencies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#absolutely-required-dependencies">Absolutely required dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#strongly-recommended-dependencies">Strongly recommended dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#notes">Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configure-elabftw">Configure eLabFTW</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#with-elabctl-recommended">With elabctl (recommended)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#note-about-tls-certificates">Note about TLS certificates</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#option-a-http-mode">Option A: HTTP mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#option-b-https-mode-with-let-s-encrypt-certificates">Option B: HTTPS mode with Let’s Encrypt certificates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#option-c-https-mode-with-custom-certificates">Option C: HTTPS mode with custom certificates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#option-d-https-mode-with-self-signed-certificate">Option D: HTTPS mode with self-signed certificate</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#using-apache-nginx-haproxy-or-traefik-as-a-reverse-proxy">Using Apache, nginx, HAProxy or traefik as a reverse proxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#start-elabftw">Start eLabFTW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#without-elabctl-advanced-users">Without elabctl (advanced users)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#initialize-your-database">Initialize your database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#register-a-sysadmin-account">Register a Sysadmin account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#post-install">Post install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-configurations">Advanced configurations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#inserting-locally-trusted-root-certificate-authority">Inserting locally trusted root Certificate Authority</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#changing-the-userid-groupid-of-uploaded-files">Changing the userid/groupid of uploaded files</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install-cloud.html">Install in the cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nas.html">Install on a NAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nolinux.html">Install on Mac or Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="generalities.html">Generalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin-guide.html">Admin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin-guide.html">Sysadmin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import-export.html">Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backup.html">How to backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-update.html">How to update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker-doc.html">About Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade-to-docker.html">Upgrade a normal install to a Docker install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ldap.html">Configure LDAP authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="saml.html">Configure SAML2 authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thanks.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">elabftw</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Install on a GNU/Linux server</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/install.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="install-on-a-gnu-linux-server">
+<span id="install"></span><h1>Install on a GNU/Linux server<a class="headerlink" href="#install-on-a-gnu-linux-server" title="Link to this heading"></a></h1>
+<img alt="gnulinux" class="align-center" src="_images/gnulinux.png" />
+<p>These instructions will work for any of the GNU/Linux distributions where Docker is supported and can be installed.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Only 64 bits distributions are supported. Do not try to install on a 32 bits operating system!</p>
+</div>
+<img alt="docker" class="align-right" src="_images/docker.png" />
+<section id="prerequisites">
+<span id="normal-install"></span><h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
+<p>You will need a GNU/Linux server. Because of the use of linux containerization technology, other operating systems (FreeBSD, OpenBSD, and others) are not supported.</p>
+<p>If you do not have a server, look at the documentation to rent one: <a class="reference internal" href="install-cloud.html#install-cloud"><span class="std std-ref">Install in the cloud</span></a> or opt for a managed (SaaS) solution via <a class="reference external" href="https://www.deltablot.com/elabftw/">Deltablot PRO Hosting</a>.</p>
+<p>Be aware that installing <strong>eLabFTW</strong> means it will need to be maintained, by regularly applying updates, configuring the backups properly, and hardening the host operating system. If you do not have GNU/Linux System Administration knowledge, it is recommended to consider the <a class="reference external" href="https://www.deltablot.com/elabftw/">SaaS offering</a>.</p>
+<section id="dependencies">
+<h3>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading"></a></h3>
+<section id="absolutely-required-dependencies">
+<h4>Absolutely required dependencies<a class="headerlink" href="#absolutely-required-dependencies" title="Link to this heading"></a></h4>
+<p>A containerization technology such as <a class="reference external" href="https://docs.docker.com/engine/installation/linux/">docker</a> or <a class="reference external" href="https://podman.io/">podman</a>.</p>
+<p>A <strong>MySQL</strong> service is already declared in the default configuration file, so you don’t have to worry about installing <strong>MySQL</strong>. A container with <strong>MySQL</strong> will get created from the official <strong>MySQL</strong> docker image. Do <strong>NOT</strong> install <code class="docutils literal notranslate"><span class="pre">mysql-server</span></code> package.</p>
+<p>Alternatively, you can use another pre-existing <strong>MySQL</strong> service on your network. Important, it must be <strong>MySQL</strong>, <strong>not MariaDB</strong>. If you do that, make sure to comment out/remove the <code class="docutils literal notranslate"><span class="pre">mysql</span></code> container from the <cite>docker compose</cite> configuration file.</p>
+<p>The following MySQL modes are known to work fine with eLabFTW codebase:</p>
+<ul class="simple">
+<li><p><cite>ERROR_FOR_DIVISION_BY_ZERO</cite></p></li>
+<li><p><cite>IGNORE_SPACE</cite></p></li>
+<li><p><cite>NO_ENGINE_SUBSTITUTION</cite></p></li>
+<li><p><cite>NO_ZERO_DATE</cite></p></li>
+<li><p><cite>NO_ZERO_IN_DATE</cite></p></li>
+<li><p><cite>ONLY_FULL_GROUP_BY</cite></p></li>
+<li><p><cite>PIPES_AS_CONCAT</cite></p></li>
+<li><p><cite>REAL_AS_FLOAT</cite></p></li>
+<li><p><cite>STRICT_ALL_TABLES</cite></p></li>
+</ul>
+</section>
+<section id="strongly-recommended-dependencies">
+<h4>Strongly recommended dependencies<a class="headerlink" href="#strongly-recommended-dependencies" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://curl.haxx.se/">curl</a>, to get files from command line (very likely already installed)</p></li>
+<li><p><a class="reference external" href="https://docs.docker.com/compose/install/">docker compose plugin</a>, the tool to orchestrate containers, required by <cite>elabctl</cite>. It can be installed with the <cite>docker-compose-plugin</cite> package.</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Dialog_(software)">dialog</a>, required by <cite>elabctl install</cite></p></li>
+<li><p><a class="reference external" href="https://borgbackup.readthedocs.io/en/stable/">borgbackup</a>, a backup tool required by <cite>elabctl backup</cite>. Not required during installation.</p></li>
+</ul>
+</section>
+</section>
+<section id="notes">
+<h3>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h3>
+<p>You can have your normal user in the <cite>docker</cite> group to execute docker commands without sudo (see <a class="reference external" href="https://docs.docker.com/engine/install/linux-postinstall/">documentation</a>). This is generally convenient for development environments and not recommended in production.</p>
+<p><strong>Ubuntu users</strong>: Docker as a snap is known to cause issues. Uninstall that and install it without snap. See <a class="reference external" href="https://github.com/elabftw/elabftw/issues/1917">this issue</a>.</p>
+</section>
+</section>
+<section id="configure-elabftw">
+<h2>Configure eLabFTW<a class="headerlink" href="#configure-elabftw" title="Link to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A proper subdomain is required!</p>
+</div>
+<p>We will install <code class="docutils literal notranslate"><span class="pre">elabctl</span></code>, a tool to help you manage the elabftw installation. It is not required to install it but it is quite handy so it is recommended (also it’s just a bash script, nothing fancy). If you you do not wish to use <code class="docutils literal notranslate"><span class="pre">elabctl</span></code> and just want a YAML config to edit, see instructions below for advanced users.</p>
+<section id="with-elabctl-recommended">
+<h3>With elabctl (recommended)<a class="headerlink" href="#with-elabctl-recommended" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># get the program (a bash script) and make it executable</span>
+curl<span class="w"> </span>-sL<span class="w"> </span>https://get.elabftw.net<span class="w"> </span>-o<span class="w"> </span>elabctl<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>elabctl
+<span class="c1"># add it to a directory in your $PATH</span>
+sudo<span class="w"> </span>mv<span class="w"> </span>elabctl<span class="w"> </span>/usr/local/bin/
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Pre-fill the configuration file:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>elabctl<span class="w"> </span>install
+</pre></div>
+</div>
+<ul>
+<li><p>Edit the configuration file (<code class="docutils literal notranslate"><span class="pre">/etc/elabftw.yml</span></code> by default):</p>
+<blockquote>
+<div><p>Edit the YAML configuration to suit your server setup. For instance, you might want to change the port binding (default is 443 but it might be already used by a traditional webserver). See below for using the container with a reverse proxy.</p>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="note-about-tls-certificates">
+<h3>Note about TLS certificates<a class="headerlink" href="#note-about-tls-certificates" title="Link to this heading"></a></h3>
+<p>The eLabFTW container can run an HTTP or HTTPS server. Both will run internally on port 443.</p>
+<section id="option-a-http-mode">
+<h4>Option A: HTTP mode<a class="headerlink" href="#option-a-http-mode" title="Link to this heading"></a></h4>
+<p>You can run the container in HTTP mode (internal port 443) only if you have a reverse proxy in front doing TLS termination and sending X-Forwarded-Proto header.</p>
+<ul class="simple">
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">DISABLE_HTTPS=true</span></code>.</p></li>
+</ul>
+<p>Reverse proxy configurations examples can be found <a class="reference external" href="https://github.com/elabftw/elabdoc/tree/master/config_examples/">here</a>.</p>
+</section>
+<section id="option-b-https-mode-with-let-s-encrypt-certificates">
+<h4>Option B: HTTPS mode with Let’s Encrypt certificates<a class="headerlink" href="#option-b-https-mode-with-let-s-encrypt-certificates" title="Link to this heading"></a></h4>
+<p>In order to request Let’s Encrypt certificates, you need to install <code class="docutils literal notranslate"><span class="pre">certbot</span></code> and have your server publicly accessible. See <a class="reference external" href="https://letsencrypt.org/getting-started/">official Let’s Encrypt documentation</a> for your system. When requesting a new certificate, make sure that port 80 is open (and also port 443 for eLabFTW if it is the one you want to use). Once certbot is installed, the command to use might look like this: <cite>certbot certonly --standalone -d elab.example.org</cite>.</p>
+<ul class="simple">
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">DISABLE_HTTPS=false</span></code>.</p></li>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">ENABLE_LETSENCRYPT=true</span></code>.</p></li>
+<li><p>Uncomment the line <cite>- /etc/letsencrypt:/ssl</cite> in the <cite>volumes:</cite> part of the yml config file.</p></li>
+</ul>
+</section>
+<section id="option-c-https-mode-with-custom-certificates">
+<h4>Option C: HTTPS mode with custom certificates<a class="headerlink" href="#option-c-https-mode-with-custom-certificates" title="Link to this heading"></a></h4>
+<p>Have the private key and certificate in PEM format in the folder <code class="docutils literal notranslate"><span class="pre">/etc/letsencrypt/live/SERVER_NAME/</span></code> where <code class="docutils literal notranslate"><span class="pre">SERVER_NAME</span></code> matches the <code class="docutils literal notranslate"><span class="pre">SERVER_NAME</span></code> configuration variable. The files need to be named <cite>fullchain.pem</cite> and <cite>privkey.pem</cite>. The webserver in the container expects TLS certificates to be in a particular order and format. Make sure that your <cite>fullchain.pem</cite> file contains certificates in this order: &lt;certificate&gt; &lt;intermediate ca&gt; &lt;root ca&gt;, with PEM encoding.</p>
+<ul class="simple">
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">DISABLE_HTTPS=false</span></code>.</p></li>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">ENABLE_LETSENCRYPT=true</span></code>.</p></li>
+<li><p>Uncomment the line <cite>- /etc/letsencrypt:/ssl</cite> in the <cite>volumes:</cite> part of the yml config file.</p></li>
+</ul>
+</section>
+<section id="option-d-https-mode-with-self-signed-certificate">
+<h4>Option D: HTTPS mode with self-signed certificate<a class="headerlink" href="#option-d-https-mode-with-self-signed-certificate" title="Link to this heading"></a></h4>
+<p>The container can generate its own certificate. Only use this if you have no other choice, as users will see a warning that the certificate is invalid because it is self-signed.</p>
+<ul class="simple">
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">DISABLE_HTTPS=false</span></code>.</p></li>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">ENABLE_LETSENCRYPT=false</span></code>.</p></li>
+</ul>
+</section>
+</section>
+<section id="using-apache-nginx-haproxy-or-traefik-as-a-reverse-proxy">
+<h3>Using Apache, nginx, HAProxy or traefik as a reverse proxy<a class="headerlink" href="#using-apache-nginx-haproxy-or-traefik-as-a-reverse-proxy" title="Link to this heading"></a></h3>
+<p>Mandatory if you use Option A above (HTTP mode). All the documentation related to such configurations can be found <a class="reference external" href="https://github.com/elabftw/elabdoc/tree/master/config_examples/">here</a>.</p>
+</section>
+<section id="start-elabftw">
+<h3>Start eLabFTW<a class="headerlink" href="#start-elabftw" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>elabctl<span class="w"> </span>start
+</pre></div>
+</div>
+</section>
+<section id="without-elabctl-advanced-users">
+<h3>Without elabctl (advanced users)<a class="headerlink" href="#without-elabctl-advanced-users" title="Link to this heading"></a></h3>
+<p>Get the config with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-so<span class="w"> </span>docker-compose.yml<span class="w"> </span><span class="s2">&quot;https://get.elabftw.net/?config&quot;</span>
+</pre></div>
+</div>
+<p>Edit this file and <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">up</span> <span class="pre">-d</span></code> to launch the containers.</p>
+</section>
+</section>
+<section id="initialize-your-database">
+<h2>Initialize your database<a class="headerlink" href="#initialize-your-database" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Import the database structure with:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>elabctl<span class="w"> </span>initialize
+<span class="c1"># same as: docker exec -it elabftw bin/init db:install</span>
+</pre></div>
+</div>
+<p>Replace <cite>elabftw</cite> in the command above by the name of the elabftw container if yours is different (for instance if you have several containers running with redis as session handler). You can check this with <code class="docutils literal notranslate"><span class="pre">elabctl</span> <span class="pre">status</span></code> or <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code>.</p>
+</section>
+<section id="register-a-sysadmin-account">
+<h2>Register a Sysadmin account<a class="headerlink" href="#register-a-sysadmin-account" title="Link to this heading"></a></h2>
+<p>Point your browser to <strong>https://&lt;your-elabftw-site.org&gt;/register.php</strong></p>
+</section>
+<section id="post-install">
+<h2>Post install<a class="headerlink" href="#post-install" title="Link to this heading"></a></h2>
+<p>Don’t forget to setup <a class="reference internal" href="backup.html#backup"><span class="std std-ref">backup</span></a>, and subscribe to <a class="reference external" href="http://elabftw.us12.list-manage1.com/subscribe?u=61950c0fcc7a849dbb4ef1b89&amp;id=04086ba197">the newsletter</a>!</p>
+<p>The next step is to read the <a class="reference internal" href="sysadmin-guide.html#sysadmin-guide"><span class="std std-ref">Sysadmin guide</span></a>.</p>
+<p>ENJOY! :D</p>
+</section>
+<section id="advanced-configurations">
+<h2>Advanced configurations<a class="headerlink" href="#advanced-configurations" title="Link to this heading"></a></h2>
+<section id="inserting-locally-trusted-root-certificate-authority">
+<h3>Inserting locally trusted root Certificate Authority<a class="headerlink" href="#inserting-locally-trusted-root-certificate-authority" title="Link to this heading"></a></h3>
+<p>If you need the eLabFTW container to trust your own CA, you will need to create a custom image and run that instead of the official image.</p>
+<p>For this, create a folder, and in that folder, create a <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> with this content:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Dockerfile to include custom trusted Certificate Authority</span>
+<span class="c1"># we use the &quot;stable&quot; tag so this always work and needs no editing between versions</span>
+FROM<span class="w"> </span>elabftw/elabimg:stable
+<span class="c1"># in this example, the file is named &quot;my-cert.pem&quot; and must be present in the same folder is this Dockerfile</span>
+<span class="c1"># we copy it into this folder so it can be picked up by the following command</span>
+COPY<span class="w"> </span>my-cert.pem<span class="w"> </span>/usr/local/share/ca-certificates/my-cert.crt
+RUN<span class="w"> </span>update-ca-certificates
+</pre></div>
+</div>
+<p>Make sure to have your CA cert in the same folder, named <code class="docutils literal notranslate"><span class="pre">my-cert.pem</span></code>, and build the image:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>buildx<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>elabftw/elabimg-custom<span class="w"> </span>.
+</pre></div>
+</div>
+<p>And replace the image name (<cite>elabftw/elabimg</cite>) in the main elabftw configuration YAML file (<cite>/etc/elabftw.yml</cite> by default) with your custom image name (<cite>elabftw/elabimg-custom</cite>).</p>
+</section>
+<section id="changing-the-userid-groupid-of-uploaded-files">
+<h3>Changing the userid/groupid of uploaded files<a class="headerlink" href="#changing-the-userid-groupid-of-uploaded-files" title="Link to this heading"></a></h3>
+<p>By default, the container will run <cite>nginx</cite> user with uid:gid 101:101. As a result, user-uploaded files will be saved on the host with this ownership.</p>
+<p>If you prefer to have a dedicated or specific user own the uploaded files (for instance, an <code class="docutils literal notranslate"><span class="pre">elabftw</span></code> user), you can configure the user and group to be created in the container when it starts. Refer to the section near <code class="docutils literal notranslate"><span class="pre">ELABFTW_USER</span></code> in the configuration file for more details.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to the documentation for eLabFTW!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="install-cloud.html" class="btn btn-neutral float-right" title="Install in the cloud" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012, Nicolas CARPi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+  <a href='https://creativecommons.org/licenses/by-sa/4.0/'><img src='_images/by-sa.png' alt='cc-by-sa' /></a>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

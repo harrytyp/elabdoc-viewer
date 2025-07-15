@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User guide &mdash; elabftw 5.1.15 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=6d288cbf"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Admin guide" href="admin-guide.html" />
+    <link rel="prev" title="Generalities" href="generalities.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            elabftw
+          </a>
+              <div class="version">
+                5.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install on a GNU/Linux server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-cloud.html">Install in the cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nas.html">Install on a NAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nolinux.html">Install on Mac or Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="generalities.html">Generalities</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">User guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#experiments">Experiments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#show-mode">Show mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edit-mode">Edit mode</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#toolbar">Toolbar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#date-started-on">Date (Started on)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id">ID</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#custom-id">Custom ID</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#title">Title</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#category">Category</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#status">Status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tags">Tags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#permissions">Permissions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#experiment-body">Experiment (body)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#inserting-an-image">Inserting an image</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#importing-templates">Importing templates</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#using-markdown">Using markdown</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#tables">Tables</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#using-latex">Using LaTeX</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#steps">Steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#linked-items">Linked items</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#linked-experiments">Linked experiments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#attach-a-file">Attach a file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ellipsis-menu-the-three-dots-on-the-top-right">Ellipsis menu (the three dots on the top right)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#view-mode-of-experiment">View mode of experiment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#go-back">1. Go back</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#edit">2. Edit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#duplicate">3. Duplicate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#timestamp">4. Timestamp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#blockchain-timestamp">5. Blockchain timestamp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#export-button">6. Export button</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toggle-pin">7. Toggle pin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toggle-lock">8. Toggle lock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ellipsis-menu">9. Ellipsis menu</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#elabid">elabid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comments">Comments</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#templates">Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#resources">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#booking-resources">Booking resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#making-a-resource-bookable">Making a resource bookable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adjusting-permissions">Adjusting permissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-the-scheduler">Using the scheduler</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#user-panel">User panel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#preferences-tab">Preferences tab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#account-tab">Account tab</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#what-is-two-factor-authentication">What is two factor authentication?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#templates-tab">Templates tab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api-keys-tab">Api keys tab</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-have-folders-or-projects-grouping-experiments">How to have folders or projects grouping experiments?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Tags</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#favorite-tags">Favorite tags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-projects">Using Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-categories">Using Categories</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#signatures">Signatures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#handwritten-signatures">Handwritten signatures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simple-signatures">Simple signatures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#advanced-cryptographic-signatures">Advanced cryptographic signatures</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#how-does-it-work">How does it work?</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#at-a-high-level">At a high level</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#low-level-overview">Low level overview</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tracking-changes">Tracking changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sharing-with-external-collaborators">Sharing with external collaborators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#option-1-export-and-send">Option 1: Export and send</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#option-2-allow-anonymous-access">Option 2: Allow anonymous access</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="admin-guide.html">Admin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin-guide.html">Sysadmin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import-export.html">Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backup.html">How to backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-update.html">How to update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker-doc.html">About Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade-to-docker.html">Upgrade a normal install to a Docker install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ldap.html">Configure LDAP authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="saml.html">Configure SAML2 authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thanks.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">elabftw</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">User guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/user-guide.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="user-guide">
+<span id="id1"></span><h1>User guide<a class="headerlink" href="#user-guide" title="Link to this heading"></a></h1>
+<p>This guide is aimed to Users, there is also one for <a class="reference internal" href="admin-guide.html"><span class="doc">Admins</span></a> and for <a class="reference internal" href="sysadmin-guide.html"><span class="doc">Sysadmins</span></a>.</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>There are two main entities (objects) types: Experiments and Resources. Experiments are owned by a particular user, whereas Resources belong to a team.</p>
+<p>While similar, they have a few differences:</p>
+<ul class="simple">
+<li><p>Resources can be booked</p></li>
+<li><p>Experiments templates can be created by users</p></li>
+<li><p>Resources templates (Resources Categories) can only be created by Admins</p></li>
+</ul>
+<p>They still share a lot of attributes, such as tags, category, status, links, etc…</p>
+</section>
+<section id="experiments">
+<h2>Experiments<a class="headerlink" href="#experiments" title="Link to this heading"></a></h2>
+<p>Let’s start with the Experiments, because they are the core of a lab notebook. Select Experiments from the main menu. It will display a list of Experiments, this is “Show mode”.</p>
+<img alt="_images/user-experiments-menu.png" src="_images/user-experiments-menu.png" />
+<section id="show-mode">
+<h3>Show mode<a class="headerlink" href="#show-mode" title="Link to this heading"></a></h3>
+<figure class="align-default" id="id4">
+<img alt="elabftw experiments show mode" src="_images/user-show-mode.png" />
+<figcaption>
+<p><span class="caption-text">List of Experiments in Show mode</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>If you prefer to list them with a different, more compact display, click the <strong>Switch layout</strong> button on the top right of the first listed Experiment:</p>
+<figure class="align-default" id="id5">
+<img alt="elabftw switch layout button" src="_images/user-switch-layout.png" />
+<figcaption>
+<p><span class="caption-text">Switch layout button</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>They will appear like this:</p>
+<figure class="align-default" id="id6">
+<img alt="elabftw alternate layout" src="_images/user-alt-layout.png" />
+<figcaption>
+<p><span class="caption-text">Alternate listing layout</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Experiments are listed by default mixed with experiments from other users in your team. To see <strong>only</strong> your experiments on this page, you need to change the <strong>Scope</strong> from the button on the right:</p>
+<img alt="_images/user-scope-button.png" src="_images/user-scope-button.png" />
+<p>Set it to “<em>Self</em>” to only display your own Experiments. Note that this button is independent from the similar ones on the Resources or Templates pages, and your selection is remembered.</p>
+<p>Once logged in, you can create an experiment by clicking the «Create» button on the top right of the screen and selecting a template (or not!). You will then be presented with an «edition» page (you can see ‘mode=edit’ in the URL); the two other modes being ‘view’: display a single experiment, and ‘show’: display a list of experiments.</p>
+<p>An experiment is composed of:</p>
+<ul class="simple">
+<li><p>A title</p></li>
+<li><p>The main text content</p></li>
+</ul>
+<p>These are the two required elements. In fact, only the title is required as the main content can be empty.</p>
+</section>
+<section id="edit-mode">
+<h3>Edit mode<a class="headerlink" href="#edit-mode" title="Link to this heading"></a></h3>
+<section id="toolbar">
+<h4>Toolbar<a class="headerlink" href="#toolbar" title="Link to this heading"></a></h4>
+<p>In edit mode, the top part of the page displays a toolbar with several actions available:</p>
+<img alt="_images/user-guide-toolbar-edit.png" src="_images/user-guide-toolbar-edit.png" />
+<ol class="arabic simple">
+<li><p>Go back to the listing</p></li>
+<li><p>Go into “View” mode</p></li>
+<li><p>Duplicate the experiment: will copy all content except attachments, change the Status to the default one, and set the Date to today’s date</p></li>
+<li><p>Timestamp experiment: create a signed, legally binding snapshot of the experiment and store it alongside the attached files in an immutable archive</p></li>
+<li><p>Export menu: export the experiment in various formats (PDF, ELN, CSV, etc…)</p></li>
+<li><p>Pin the experiment: make it appear on top of the listing at all times</p></li>
+<li><p>Lock/Unlock experiment: prevent further edition. If you’re the one locking it, you’ll be able to unlock it, but if it’s locked by someone else, you won’t</p></li>
+<li><p>Ellipsis menu:
+- See revisions: the revisions system keeps track of changes in the main text of the experiment
+- See changelog: the changelog system keeps track of all the other changes of the experiment
+- Archive/Unarchive: allow hiding the entry from the default listing
+- Delete: perform a soft-deletion of the experiment: mark the experiment as deleted but keep it in the backend database</p></li>
+</ol>
+</section>
+<section id="date-started-on">
+<h4>Date (Started on)<a class="headerlink" href="#date-started-on" title="Link to this heading"></a></h4>
+<p>The date is today’s date by default. You can edit it as you wish. The effective creation timestamp is stored in the backend database in another (read-only) attribute.</p>
+</section>
+<section id="id">
+<h4>ID<a class="headerlink" href="#id" title="Link to this heading"></a></h4>
+<p>This attribute is not editable and corresponds to the unique (scoped to the instance), immutable ID of the entry.</p>
+</section>
+<section id="custom-id">
+<h4>Custom ID<a class="headerlink" href="#custom-id" title="Link to this heading"></a></h4>
+<p>This attribute (<code class="docutils literal notranslate"><span class="pre">null</span></code> by default) can be set as a number, after selecting a Category. This number will then be automatically incremented when a new experiment of that category is created. One can also click the “Get next” button to fetch the next ID available for entries of this Category. The Custom ID is then displayed before the title.</p>
+</section>
+<section id="title">
+<h4>Title<a class="headerlink" href="#title" title="Link to this heading"></a></h4>
+<p>The title of your experiment. A duplicated experiment will have a «I» character appended to the title upon creation.</p>
+</section>
+<section id="category">
+<h4>Category<a class="headerlink" href="#category" title="Link to this heading"></a></h4>
+<p>You can assign a “Category” to your experiments. Only an Admin can define the available categories in your team. They can correspond to projects or types of experiments for instance. It also makes it easier to browse a group of experiments by looking for entries within that category.</p>
+</section>
+<section id="status">
+<h4>Status<a class="headerlink" href="#status" title="Link to this heading"></a></h4>
+<p>This useful feature lets you set the ‘status’ of an experiment. By default you can have:</p>
+<ul class="simple">
+<li><p>Running (selected upon creation)</p></li>
+<li><p>Need to be redone</p></li>
+<li><p>Success</p></li>
+<li><p>Fail</p></li>
+</ul>
+<p>These status can be modified completely by the admin in the admin panel.</p>
+</section>
+<section id="tags">
+<h4>Tags<a class="headerlink" href="#tags" title="Link to this heading"></a></h4>
+<p>The tags allow you to easily group experiments together. You can think of it as folders, but more powerful because each experiment can have many tags, thus allowing you to cross-search efficiently!
+All experiments with the same tag will be accessible by clicking this tag or searching for it. To validate a tag, press Enter or click outside the input field. It is saved immediately. The number of tags is not limited. Click on a tag to remove it (in edit mode). Tags are common to a team. Autocompletion favors the reuse of existing tags.</p>
+<img alt="_images/quick_tags.gif" src="_images/quick_tags.gif" />
+</section>
+<section id="permissions">
+<h4>Permissions<a class="headerlink" href="#permissions" title="Link to this heading"></a></h4>
+<p>The “Visibility” and “Can write” part allow you to control who can access this entry. Click the <cite>Edit</cite> button to display a menu and add or remove permissions.</p>
+</section>
+<section id="experiment-body">
+<h4>Experiment (body)<a class="headerlink" href="#experiment-body" title="Link to this heading"></a></h4>
+<p>This is where you describe your experiment and write your results. It is a rich text editor where you can have formatting, tables, colors, images, links, etc…</p>
+<blockquote>
+<div><img alt="Tinymce editor" src="_images/tinymce-editor.png" />
+</div></blockquote>
+<section id="inserting-an-image">
+<h5>Inserting an image<a class="headerlink" href="#inserting-an-image" title="Link to this heading"></a></h5>
+<p>To insert an image in the main text, simple drag and drop it in the text zone. You can also insert an already uploaded image by selecting “Insert in the text at cursor position” from the uploaded file menu (top right, three vertical dots).</p>
+</section>
+<section id="importing-templates">
+<h5>Importing templates<a class="headerlink" href="#importing-templates" title="Link to this heading"></a></h5>
+<p>You can use the Import &gt; Templates menu to select from existing experiments templates and import them directly in your text, which allows you to compose an experiment by merging several templates.</p>
+</section>
+<section id="using-markdown">
+<h5>Using markdown<a class="headerlink" href="#using-markdown" title="Link to this heading"></a></h5>
+<blockquote>
+<div><img alt="Markdown editor" src="_images/markdown-editor.gif" />
+</div></blockquote>
+<p>You can also use markdown for the main text. Switch editor by clicking the Switch editor button at the bottom right of the main text edition zone. If you’d like the editor to become default, go to your Settings and enable “Disable the rich text editor and write Markdown directly”.</p>
+</section>
+<section id="tables">
+<h5>Tables<a class="headerlink" href="#tables" title="Link to this heading"></a></h5>
+<p>If you add tables you might want to sort the data in the table dynamically. eLabFTW got you covered. Sort icons will be displayed in view mode when so called header cells (<code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code>) are defined and a table is set sortable. The table should have column names in the top row. You can select the top row with the mouse by clicking the left mouse button on the leftmost cell and while keeping the mouse button pressed move the mouse to the rightmost cell. Release the mouse button. The top row should be highlighted now. Next, from the rich text editor menu select «Table» → «Cell» → «Cell properties». In the dialog change «Cell type» from «Cell» (<code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code>) to «Header cell» (<code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code>). Finally, you can activate the sorting by clicking the «sortable table» icon (<a class="reference internal" href="_images/sortable-table-icon.png"><img alt="sortable-table-icon" class="align-middle" src="_images/sortable-table-icon.png" style="height: 24px;" /></a>) in the tool bar. The icon will also indicate whether a selected table is sortable. After you saved the changes you can go to view mode and dynamically sort the table. The changed order is not stored in eLabFTW. Merged cells in the top/header row (colspan) and in columns (rowspan) are not supported.</p>
+<img alt="Sort table demo" class="align-center" src="_images/sort-table.gif" />
+</section>
+<section id="using-latex">
+<h5>Using LaTeX<a class="headerlink" href="#using-latex" title="Link to this heading"></a></h5>
+<p>It is possible to express mathematical/chemical notations in eLabFTW, and they will be rendered properly in view mode but also in the pdf export.</p>
+<p>For this eLabFTW uses Mathjax with ams extension.</p>
+<p>Try this (make sure it is not pasted between <cite>&lt;pre&gt;</cite> tags!):</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nv">\sum</span><span class="nb">_{i</span><span class="o">=</span><span class="m">0</span><span class="nb">}^n i^</span><span class="m">2</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{</span><span class="o">(</span><span class="nb">n^</span><span class="m">2</span><span class="o">+</span><span class="nb">n</span><span class="o">)(</span><span class="m">2</span><span class="nb">n</span><span class="o">+</span><span class="m">1</span><span class="o">)</span><span class="nb">}{</span><span class="m">6</span><span class="nb">}</span><span class="s">$$</span>
+</pre></div>
+</div>
+<p>Use one <cite>$</cite> for inline mode and <cite>$$</cite> for block mode.</p>
+</section>
+<section id="miscellaneous">
+<h5>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Link to this heading"></a></h5>
+<p>You can insert a timestamp by clicking the clock icon or “Ctrl-Shift-d”. You can also insert code snippets with highlighting, special characters, horizontal lines, etc…</p>
+</section>
+</section>
+<section id="steps">
+<h4>Steps<a class="headerlink" href="#steps" title="Link to this heading"></a></h4>
+<p>Steps are a way to list the things one need to do during the experiment. So you can write several steps, and once they are done, click the checkbox to declare them finished. This is quite useful for long experiments spanning over several days, where the “Next step” will be shown in Show mode (index list), so you can see at one glance what is the next thing to do for this particular experiment.</p>
+<p>Note that you can also declare steps in a template.</p>
+</section>
+<section id="linked-items">
+<h4>Linked items<a class="headerlink" href="#linked-items" title="Link to this heading"></a></h4>
+<p>This field allows you to link an item from the database. Just begin to type the name of what you want to link and you will see an autocompletion list appear. Select the one you want and press Enter. The number of links is not limited.</p>
+<p>This feature can also be used to link an experiment to a particular Project. If you have a «Project» Item Type and have a Project item in your database, you will then be able to see all experiments linked to this project by clicking the Link icon.</p>
+</section>
+<section id="linked-experiments">
+<h4>Linked experiments<a class="headerlink" href="#linked-experiments" title="Link to this heading"></a></h4>
+<p>Same as above, but for experiments.</p>
+</section>
+<section id="attach-a-file">
+<h4>Attach a file<a class="headerlink" href="#attach-a-file" title="Link to this heading"></a></h4>
+<img alt="file uploader" class="align-center" src="_images/user-file-uploader.png" />
+<p>You can click this region to open a file browser, or drag-and-drop a file inside. The file size limit depends on the server configuration, but there is no limit on file type. If you upload an image, a thumbnail will be created. There is no limit on the number of files you can attach to an experiment.</p>
+<p>Some files are recognized by eLabFTW:</p>
+<ul class="simple">
+<li><p>molecules files such as cif, pdb, sdf, mol files, they will display the molecule in 2D or 3D</p></li>
+<li><p>DNA files such as fasta, gb, ape, dna, gff, they will display a fully featured viewer</p></li>
+<li><p>images such as png, jpg, gif or tiff will get a thumbnail</p></li>
+<li><p>pdf files also get a thumbnail and can optionally be included in pdf exports</p></li>
+</ul>
+</section>
+<section id="ellipsis-menu-the-three-dots-on-the-top-right">
+<h4>Ellipsis menu (the three dots on the top right)<a class="headerlink" href="#ellipsis-menu-the-three-dots-on-the-top-right" title="Link to this heading"></a></h4>
+<p>The Switch Editor entry will switch from the WYSIWYG editor (TinyMCE) to the markdown editor. And the Delete entry is to remove the experiment.</p>
+<hr class="docutils" />
+<p>When you are done, click the «Save and go back» button.</p>
+<p>You are now in view mode.</p>
+</section>
+</section>
+<section id="view-mode-of-experiment">
+<h3>View mode of experiment<a class="headerlink" href="#view-mode-of-experiment" title="Link to this heading"></a></h3>
+<p>In the view mode, you will find an actions button bar in the upper left part:</p>
+<img alt="view mode numbered" class="align-center" src="_images/user-view-toolbar.png" />
+<section id="go-back">
+<h4>1. Go back<a class="headerlink" href="#go-back" title="Link to this heading"></a></h4>
+<p>Go back to the listing.</p>
+</section>
+<section id="edit">
+<h4>2. Edit<a class="headerlink" href="#edit" title="Link to this heading"></a></h4>
+<p>Switch to edit mode.</p>
+</section>
+<section id="duplicate">
+<h4>3. Duplicate<a class="headerlink" href="#duplicate" title="Link to this heading"></a></h4>
+<p>Duplicating an experiment allows you to quickly create a new entry with the same Title, tags, body and links, but with today’s date and a running status. Uploaded files are not duplicated. A «I» character will be added to the title to denote that it is a replicate.</p>
+</section>
+<section id="timestamp">
+<h4>4. Timestamp<a class="headerlink" href="#timestamp" title="Link to this heading"></a></h4>
+<p>When you click this button, a timestamp archive is created. Timestamping an entry involves generating a full JSON export of the entry and creating a cryptographic hash of that data. This hash is then sent to a trusted third party: the TimeStamping Authority (TSA).</p>
+<p>The TSA acknowledges the existence of the data and sends back a signed token, which serves as proof that the data existed at that specific time. This process follows the <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3161.html"><strong>RFC 3161</strong></a> standard for Trusted Timestamping.</p>
+<p>The timestamped data and its token are then saved in the “Attached Files” section of the experiment as a zip file. This file is initially in an “Archived” state, meaning it is hidden from view by default. To view archived files, click the “Show Archived” button on the right side of the “Uploaded Files” section in edit mode:</p>
+<img alt="timestamp archive" class="align-center" src="_images/show-archived-uploads.png" />
+<p>This timestamp archive is immutable and cannot be modified or deleted.</p>
+<img alt="timestamp archive" class="align-center" src="_images/timestamp-archive.png" />
+</section>
+<section id="blockchain-timestamp">
+<h4>5. Blockchain timestamp<a class="headerlink" href="#blockchain-timestamp" title="Link to this heading"></a></h4>
+<p>This button, representing blocks, will do the same timestamping as above, except it will use the blockchain technology and the service provided by the BloxBerg consortium. You can learn more about it here: <a class="reference external" href="https://bloxberg.org/discover/mission/">BloxBerg website</a>.</p>
+</section>
+<section id="export-button">
+<h4>6. Export button<a class="headerlink" href="#export-button" title="Link to this heading"></a></h4>
+<img alt="view mode export dropdown" class="align-center" src="_images/view-mode-export-dropdown.png" />
+<p>The Export menu allows you to save the entry in different formats. The term “Long term storage” refers to the PDF or the PDF contained in the zip archive being of a particular kind: PDF/A, an ISO-standardized version of the PDF format. It is a PDF format designed for long term storage, but transparent PNG will appear with a black background, so they are no longer the default PDF format, but an option. The PDF/A will also include the changelog, unlike the normal PDF export. It is the PDF format used for timestamping.</p>
+<p>The ELN format is a new file format based on RO-Crate specification, containing a special file (in JSON-LD) describing the contents of the dataset (one or several experiments). It is a format designed and promoted by The ELN Consortium, an association of several ELN vendors that agreed on an interchange format for export/import of datasets. You can learn more about it here: <a class="reference external" href="https://github.com/TheELNConsortium/">TheELNConsortium on GitHub</a>.</p>
+</section>
+<section id="toggle-pin">
+<h4>7. Toggle pin<a class="headerlink" href="#toggle-pin" title="Link to this heading"></a></h4>
+<p>Clicking this icon will make this entry appear on top of the listing (pin entry).</p>
+</section>
+<section id="toggle-lock">
+<h4>8. Toggle lock<a class="headerlink" href="#toggle-lock" title="Link to this heading"></a></h4>
+<p>The lock icon allows you to lock the entry to prevent further editing. If you lock it yourself, you can later unlock it, but if it is locked by an admin, a user won’t be able to unlock it.</p>
+</section>
+<section id="ellipsis-menu">
+<h4>9. Ellipsis menu<a class="headerlink" href="#ellipsis-menu" title="Link to this heading"></a></h4>
+<em>Three dots speak volumes,<br>
+Unveiling hidden options,<br>
+Ellipsis unfolds.</em><br><br><br></section>
+</section>
+<section id="elabid">
+<h3>elabid<a class="headerlink" href="#elabid" title="Link to this heading"></a></h3>
+<p>In the bottom right part of the experiment, you can see something like: «Unique elabid: 20150526-e72646c3ecf59b4f72147a52707629150bca0f91». This number is unique to each experiment, and immutable (won’t ever change). You can use it to reference an experiment with an external database.</p>
+</section>
+<section id="comments">
+<h3>Comments<a class="headerlink" href="#comments" title="Link to this heading"></a></h3>
+<p>People can leave comments on experiments. They cannot edit your experiment, but they can leave a comment. The owner of the experiment will receive an email if someone comment their experiment.</p>
+</section>
+</section>
+<section id="templates">
+<h2>Templates<a class="headerlink" href="#templates" title="Link to this heading"></a></h2>
+<p>In order to save time when creating Experiments, eLabFTW features a Templates system for Experiments.</p>
+<p>It is recommended to create Templates for experiments you often do. You can think of a Template as a skeleton of a real experiment. To create a template, select “Templates” from the User menu.</p>
+<img alt="_images/user-templates-menu.png" src="_images/user-templates-menu.png" />
+<p>Then, click the “Create” button, enter a title, and start editing your template. Once you are satisfied with it, click save. As you can see, you can have different permissions for the template itself, and for the Experiment that will be created from that template.</p>
+<p>By default, the template is “pinned”, which means it will appear in the pop up window when you click “Create” and also in the menu next to the “Create” button on the “Experiments” page. If at some point you do not wish to have this template available in this menu, you can toggle its pinned status by clicking the thumbtack icon:</p>
+<img alt="_images/user-toggle-pin-templates.gif" src="_images/user-toggle-pin-templates.gif" />
+<p>As with Experiments or Resources, use the Scope button to select what you wish to be listed: only your own Templates (<em>Self</em>) or more.</p>
+</section>
+<section id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Link to this heading"></a></h2>
+<p>Resources are similar to Experiments, but serve a different purpose: listing and organizing <em>things</em> that are used in Experiments.</p>
+<p>Only a team Admin can define the Resources Categories from the Admin Panel. Resources Categories could be:</p>
+<ul class="simple">
+<li><p>Antibodies</p></li>
+<li><p>Microscopes</p></li>
+<li><p>Plasmids</p></li>
+<li><p>Drugs</p></li>
+<li><p>Chemicals</p></li>
+<li><p>Equipment</p></li>
+<li><p>Projects</p></li>
+</ul>
+<p>Resources’ default permissions allow anyone from the Team to edit them, but you are free to configure them differently.</p>
+<p>Look at the <a class="reference internal" href="import-export.html#importing-data"><span class="std std-ref">Importing data</span></a> section to learn how to import your Resources from a spreadsheet file or through the API.</p>
+<p>Once you have your Resources present, you can mention them in your Experiments by typing <code class="docutils literal notranslate"><span class="pre">#</span></code> and their title, and selecting the proposed autocompletion, or use directly the Link system to link them to an Experiment.</p>
+<p>Furthermore, Resources can be made bookable, see section below.</p>
+</section>
+<section id="booking-resources">
+<h2>Booking resources<a class="headerlink" href="#booking-resources" title="Link to this heading"></a></h2>
+<p>It is possible to use the scheduler (calendar) present on the Team page’s first tab to book resources.</p>
+<section id="making-a-resource-bookable">
+<h3>Making a resource bookable<a class="headerlink" href="#making-a-resource-bookable" title="Link to this heading"></a></h3>
+<p>In order to book a resource, it needs to be bookable (they are not by default). To do that, go to the resource, and click “Modify booking parameters” from the top right menu with three vertical dots:</p>
+<img alt="modify booking menu" class="align-center" src="_images/modify-booking-menu.png" />
+<p>This will show a modal window with various settings:</p>
+<img alt="modify booking modal" class="align-center" src="_images/modify-booking-modal.png" />
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">Settings description</span><a class="headerlink" href="#id7" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Setting</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Allow booking this resource</p></td>
+<td><p>This is a general toggle to allow booking of the resource</p></td>
+</tr>
+<tr class="row-odd"><td><p>Allow overlapping slots</p></td>
+<td><p>Control whether it is allowed to have more than one booking slot at the same time</p></td>
+</tr>
+<tr class="row-even"><td><p>Maximum slot time (in minutes)</p></td>
+<td><p>Maximum number of minutes allowed for a single booking slot</p></td>
+</tr>
+<tr class="row-odd"><td><p>Maximum per-user future slot allowed</p></td>
+<td><p>Number of future slots allowed for a particular user/resource couple</p></td>
+</tr>
+<tr class="row-even"><td><p>Allow cancelling a booking slot</p></td>
+<td><p>Control whether users are allowed to cancel a booking</p></td>
+</tr>
+<tr class="row-odd"><td><p>Minimum time before a slot can be cancelled (in minutes)</p></td>
+<td><p>If “now” is closer than this number of minutes to the start of the event, it will not be possible to cancel it</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="adjusting-permissions">
+<h3>Adjusting permissions<a class="headerlink" href="#adjusting-permissions" title="Link to this heading"></a></h3>
+<p>When a resource is bookable, a new permission appears: “Can book”:</p>
+<img alt="modify booking permissions" class="align-center" src="_images/can-book-setting.png" />
+<p>By default, it will match who can read the entry, but it can be adjusted to fine tune who exactly has access to this resource for booking it.</p>
+</section>
+<section id="using-the-scheduler">
+<h3>Using the scheduler<a class="headerlink" href="#using-the-scheduler" title="Link to this heading"></a></h3>
+<p>Once all is set, users can click the “Book item” button in the toolbar, or select it from the Scheduler page, and click the calendar to drag a booking slot.</p>
+<img alt="book item toolbar button" class="align-center" src="_images/book-item-button.png" />
+<p>Clicking an existing slot will display a modal window allowing several options such as binding the slot to an experiment or another resource, or cancel booking, with or without sending a notification to users.</p>
+<img alt="book item edit modal" class="align-center" src="_images/book-edit-modal.png" />
+<p>Note: “Past and future users who booked this resource” means all users who booked the resource in the past two months and the ones who booked it in the upcoming month.</p>
+</section>
+</section>
+<section id="user-panel">
+<h2>User panel<a class="headerlink" href="#user-panel" title="Link to this heading"></a></h2>
+<p>The user panel is where you can adjust preferences for your account. You can access it by clicking the link in the bottom left of every page, or through the user menu in the top right.</p>
+<section id="preferences-tab">
+<h3>Preferences tab<a class="headerlink" href="#preferences-tab" title="Link to this heading"></a></h3>
+<p>From here you can select a language, adjust the display settings, change the keyboard shortcuts, modify the PDF settings, select a different text editor and set the default permission settings.</p>
+</section>
+<section id="account-tab">
+<h3>Account tab<a class="headerlink" href="#account-tab" title="Link to this heading"></a></h3>
+<p>This page allows you to modify your email/password, activate multi-factor authentication and change your name or add your <a class="reference external" href="https://orcid.org/">ORCID</a> if you have one.</p>
+<section id="what-is-two-factor-authentication">
+<h4>What is two factor authentication?<a class="headerlink" href="#what-is-two-factor-authentication" title="Link to this heading"></a></h4>
+<p>Multi-factor authentication, MFA (or Two-factor authentication, 2FA) is a mechanism to further protect your account. After logging in with your password, you will need to enter a 6 digits code that changes every 30 seconds. This code will be displayed by a special application on your cellphone. If you have never used such a mechanism, you need to first install a 2FA application on your phone.</p>
+<ul class="simple">
+<li><p>For Android phones, the recommended application is <a class="reference external" href="https://getaegis.app/">Aegis</a> (Open Source).</p></li>
+<li><p>For iPhone, you can use <a class="reference external" href="https://authy.com/download/">Authy</a> (Proprietary but with good features).</p></li>
+</ul>
+<p>If you already have a 2FA application, eLabFTW can work with it: you don’t need to install another application.</p>
+<p>Once this application is installed, on the eLabFTW page, select YES to “Use two-factor authentication?” and click Save. You will then be presented with a QR code, scan it with the application on your phone and enter the code. That’s it, now your account is secured with multi-factor authentication.</p>
+<p><strong>Note</strong>: it is highly recommended to enable 2FA wherever you can.</p>
+</section>
+</section>
+<section id="templates-tab">
+<h3>Templates tab<a class="headerlink" href="#templates-tab" title="Link to this heading"></a></h3>
+<p>Manage your templates. Once a template has been created, you can add tags, steps and links to it. It will then be available from the Create menu.</p>
+</section>
+<section id="api-keys-tab">
+<h3>Api keys tab<a class="headerlink" href="#api-keys-tab" title="Link to this heading"></a></h3>
+<p>Create an API key for your account from this page. An API key is like a username+password for your account. It allows you to interact with eLabFTW programmatically, through the REST API. See <a class="reference internal" href="api.html#api"><span class="std std-ref">API documentation</span></a>.</p>
+</section>
+</section>
+<section id="how-to-have-folders-or-projects-grouping-experiments">
+<h2>How to have folders or projects grouping experiments?<a class="headerlink" href="#how-to-have-folders-or-projects-grouping-experiments" title="Link to this heading"></a></h2>
+<p>There are several options:</p>
+<ol class="arabic simple">
+<li><p>Use Categories for experiments: they are defined by an Admin and are common to the Team.</p></li>
+<li><p>Use tags/favorite tags: user or Admin defined, depending on the Team settings (by default users can create new tags).</p></li>
+<li><p>Use a Resource of Category “Project” and the link system to link Experiments to that Project.</p></li>
+<li><p>Directly link experiments together using the link system.</p></li>
+</ol>
+<p>First, try to go beyond the nested, tree-like structure of hierarchical folders.</p>
+<p>Imagine you have an experiment which is:</p>
+<ul class="simple">
+<li><p>about “Protein MR73”</p></li>
+<li><p>using “Western blot”</p></li>
+<li><p>an external collaboration</p></li>
+<li><p>with “HEK cells”</p></li>
+</ul>
+<p>Now if that experiment was a file, you might want to store it in “Collaborations &gt; Western Blot &gt; MR73” maybe. Or “Project MR73 &gt; Collaborations &gt; HEK”?</p>
+<p>But what if you have another one that is also using HEK cells but has nothing in common with the previous one. How would you go about looking for all the experiments with HEK? And all the experiments related to MR73 that involve a Western Blot?</p>
+<p>In a traditional folder structure, you would need to search for it in almost each sub-folders.</p>
+<p>Enter <strong>tags</strong>.</p>
+</section>
+<section id="id2">
+<h2>Tags<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>Tags are a way to label your experiments (and database objects) with defined keywords and you can have as many as you want!</p>
+<img alt="tags" class="align-center" src="_images/tags-view.png" />
+<p>Now with the experiments correctly tagged, finding them through different search angles becomes easy! You can search for one tag or many tags directly from the main page.</p>
+<section id="favorite-tags">
+<h3>Favorite tags<a class="headerlink" href="#favorite-tags" title="Link to this heading"></a></h3>
+<p>Over time, you will have some tags that become your favorites, as they are always the ones you look for for a set of experiments.</p>
+<p>Since version 4.2.0 it is possible to define “Favorite tags” that will appear in the left pane of the page listing entries. It allows quick overview of related entries. You should try this feature, start by clicking the arrow on the left of the screen to toggle the left pane. Click the + button and start typing a tag to add it to the list of Favorite tags.</p>
+<blockquote>
+<div><img alt="favorite tags" class="align-center" src="_images/favtags.gif" />
+</div></blockquote>
+<p>Note that if you use a “Favorite tag” filter and then create an experiment, it will be tagged automatically with that tag.</p>
+</section>
+<section id="using-projects">
+<h3>Using Projects<a class="headerlink" href="#using-projects" title="Link to this heading"></a></h3>
+<p>There is also another way to group experiments together, that you can use along with tags. It’s using a Resource of category: Project.</p>
+<p>Go to the Admin Panel and create a Resource Category: “Project”. Go to the Resources tab and create a new “Project” entry describing a group of experiments, a project. Go to the Experiments tab and create an experiment. In the field “Linked resources”, type the name of the project and click on the autocompletion field appearing, and press enter (or click outside). This experiment is now linked to the project. So you can easily go to the project description from the experiment, but more importantly, you can from the Project entry, click the “Show related” icon (chainlink) and display all experiments linked to this project!</p>
+<p>Make sure to create experiments templates that already link to that Project so the link will always be here when the experiment is created by a user.</p>
+</section>
+<section id="using-categories">
+<h3>Using Categories<a class="headerlink" href="#using-categories" title="Link to this heading"></a></h3>
+<p>An Admin can define several Experiments Categories, which are then available to users in the Team. It is a quick and easy way to group experiments together.</p>
+</section>
+</section>
+<section id="id3">
+<h2>Miscellaneous<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>You can export experiments in .zip. If the experiment was timestamped you will find in the archive the timestamped pdf and the corresponding .asn1 token.</p>
+<p>You can export and import items from the database (it can be several items).</p>
+<p>Press ‘t’ to have a TODO list.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/maylkcTAarg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>In the editor, press Ctrl+shift+d to get today’s date inserted at cursor position.</p>
+</section>
+<section id="signatures">
+<h2>Signatures<a class="headerlink" href="#signatures" title="Link to this heading"></a></h2>
+<p>Signatures are important in many contexts, such as scientific research.</p>
+<p>A signature can prove that this particular <em>data</em> has been approved by this particular <em>human</em>. It is a different concept than timestamping, which proves that this particular <em>data</em> existed at this particular <em>time</em>.</p>
+<p>eLabFTW allows you to have three different types of signatures.</p>
+<section id="handwritten-signatures">
+<h3>Handwritten signatures<a class="headerlink" href="#handwritten-signatures" title="Link to this heading"></a></h3>
+<p>In your Settings page, check the setting: “Enable french style signature block in PDF Export”, from the “PDF Configuration” section of the “General” tab. Now, when you generate a PDF, there will be a dedicated section at the bottom to allow signatures of the author and an observer.</p>
+</section>
+<section id="simple-signatures">
+<h3>Simple signatures<a class="headerlink" href="#simple-signatures" title="Link to this heading"></a></h3>
+<p>In an authenticated application such as eLabFTW, where all users are identified and vetted, a signature can be clicking a checkbox, leaving a comment, or performing an action such as locking an experiment.</p>
+<p>The level of trust you can associate to this action is reinforced by using multi-factor authentication.</p>
+</section>
+<section id="advanced-cryptographic-signatures">
+<h3>Advanced cryptographic signatures<a class="headerlink" href="#advanced-cryptographic-signatures" title="Link to this heading"></a></h3>
+<p>Since version 5.1, an advanced signature mechanism exists for eLabFTW. It uses the highly secure Ed25519 public-key signature system and is compatible with <a class="reference external" href="https://jedisct1.github.io/minisign/">minisign</a>.</p>
+<section id="how-does-it-work">
+<h4>How does it work?<a class="headerlink" href="#how-does-it-work" title="Link to this heading"></a></h4>
+<section id="at-a-high-level">
+<h5>At a high level<a class="headerlink" href="#at-a-high-level" title="Link to this heading"></a></h5>
+<p>Each user gets a key pair composed of a private and public key. The private key is protected by a passphrase. In order to sign a document, the user provides their passphrase, and the document is cryptographically signed. The signature file is stored alongside the public key and the document being signed. This “Signature archive” also contains a small shell script to verify the signature with <code class="docutils literal notranslate"><span class="pre">minisign</span></code>.</p>
+<p>Before the signature, a meaning is selected (Review, Approval, etc…). The signature involves several actions:</p>
+<ul class="simple">
+<li><p>the cryptographic signature file is created: it signs the data</p></li>
+<li><p>this file is stored in an archived zip file (as an attachment to the entry)</p></li>
+<li><p>an immutable comment is created, to indicate that a signature occurred</p></li>
+</ul>
+<p>If one bit of the document is modified, the signature won’t be valid anymore. This verification can be done at any point in time and doesn’t require access to any external service.</p>
+<p>The important aspect is the level of trust you can have on the association of a key pair and a particular human. If you can verify that a particular human owns a given private key, then the signature verification done with its public part can be trusted fully.</p>
+</section>
+<section id="low-level-overview">
+<h5>Low level overview<a class="headerlink" href="#low-level-overview" title="Link to this heading"></a></h5>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This section is for cryptonerds!</p>
+</div>
+<p>We use <a class="reference external" href="https://ed25519.cr.yp.to/">Ed25519</a> to create a keypair. We also generate 8 bytes of random bits to have the key id, along with a salt that is <cite>SODIUM_CRYPTO_PWHASH_SCRYPTSALSA208SHA256_SALTBYTES</cite> long.</p>
+<p>We also make a checksum using Blake2 of the signature algorithm, the key id, and the private key.
+The salt is combined to the passphrase into a Key Derivation Function (KDF): this allows us to derive a key from that passphrase, and we will use it to XOR the key id, the private key, and the checksum. The Key Derivation Function (KDF) is using scrypt (<cite>sodium_crypto_pwhash_scryptsalsa208sha256</cite>).</p>
+<p>To save this into a human readable format, the private key is serialized into the minisign format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">untrusted</span> <span class="n">comment</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">arbitrary</span> <span class="n">text</span><span class="o">&gt;</span>
+<span class="n">base64</span><span class="p">(</span><span class="o">&lt;</span><span class="n">signature_algorithm</span><span class="o">&gt;</span> <span class="o">||</span> <span class="o">&lt;</span><span class="n">kdf_algorithm</span><span class="o">&gt;</span> <span class="o">||</span> <span class="o">&lt;</span><span class="n">cksum_algorithm</span><span class="o">&gt;</span> <span class="o">||</span>
+       <span class="o">&lt;</span><span class="n">kdf_salt</span><span class="o">&gt;</span> <span class="o">||</span> <span class="o">&lt;</span><span class="n">kdf_opslimit</span><span class="o">&gt;</span> <span class="o">||</span> <span class="o">&lt;</span><span class="n">kdf_memlimit</span><span class="o">&gt;</span> <span class="o">||</span> <span class="o">&lt;</span><span class="n">keynum_sk</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And the public key:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">untrusted</span> <span class="n">comment</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">arbitrary</span> <span class="n">text</span><span class="o">&gt;</span>
+<span class="n">base64</span><span class="p">(</span><span class="o">&lt;</span><span class="n">signature_algorithm</span><span class="o">&gt;</span> <span class="o">||</span> <span class="o">&lt;</span><span class="n">key_id</span><span class="o">&gt;</span> <span class="o">||</span> <span class="o">&lt;</span><span class="n">public_key</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The private and public keys are stored under this form in the MySQL database, attached to a particular user.</p>
+<p>For signature, we extract the private key thanks to the provided passphrase and create a detached signature of the hash of the message (the message being a full json export of en entry here). This is the pre-hashed version of Ed25519: Ed25519ph (see <a class="reference external" href="https://datatracker.ietf.org/doc/html/rfc8032#section-5.1">RFC8032 Section 5.1</a>).</p>
+<p>We add a trusted comment to the signature data. This comment is trusted because we can verify it with its signature. It is a JSON string with metadata about the signature (who, when, why). A signature file can look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">untrusted</span> <span class="n">comment</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">arbitrary</span> <span class="n">text</span><span class="o">&gt;</span>
+<span class="n">base64</span><span class="p">(</span><span class="o">&lt;</span><span class="n">signature_algorithm</span><span class="o">&gt;</span> <span class="o">||</span> <span class="o">&lt;</span><span class="n">key_id</span><span class="o">&gt;</span> <span class="o">||</span> <span class="o">&lt;</span><span class="n">signature</span><span class="o">&gt;</span><span class="p">)</span>
+<span class="n">trusted_comment</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">arbitrary</span> <span class="n">text</span><span class="o">&gt;</span>
+<span class="n">base64</span><span class="p">(</span><span class="o">&lt;</span><span class="n">global_signature</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A real world example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">untrusted</span> <span class="n">comment</span><span class="p">:</span> <span class="n">elabftw</span><span class="o">/</span><span class="mi">50100</span><span class="p">:</span> <span class="n">signature</span> <span class="kn">from</span><span class="w"> </span><span class="nn">key</span> <span class="n">f3690b6554b4f817</span>
+<span class="n">RUTzaQtlVLT4F5C81w4VBNIodngF4Kna0RqfOTY3CGIB</span><span class="o">+</span><span class="mi">6</span><span class="n">AlzsFeX2BPpm49HyIKVnZHHhUQ8C</span><span class="o">/</span><span class="n">osp</span><span class="o">/</span><span class="n">uTyhAo0WrCoASqm2d0w0</span><span class="o">=</span>
+<span class="n">trusted</span> <span class="n">comment</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;firstname&quot;</span><span class="p">:</span><span class="s2">&quot;Toto&quot;</span><span class="p">,</span><span class="s2">&quot;lastname&quot;</span><span class="p">:</span><span class="s2">&quot;Le sysadmin&quot;</span><span class="p">,</span><span class="s2">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;toto@yopmail.com&quot;</span><span class="p">,</span><span class="s2">&quot;created_at&quot;</span><span class="p">:</span><span class="s2">&quot;2024-03-18T00:48:39+01:00&quot;</span><span class="p">,</span><span class="s2">&quot;site_url&quot;</span><span class="p">:</span><span class="s2">&quot;https:\/\/elab.local:3148&quot;</span><span class="p">,</span><span class="s2">&quot;created_by&quot;</span><span class="p">:</span><span class="s2">&quot;eLabFTW 50100&quot;</span><span class="p">,</span><span class="s2">&quot;meaning&quot;</span><span class="p">:</span><span class="s2">&quot;Approval&quot;</span><span class="p">}</span>
+<span class="n">LvN7bwKzaU3GwjJtEou1aZs2F4jeBJl5kQcblNSmW1mbZlBzL7h0RqfvDZeeIvBS3g6cfnybQAP93QzVFrlfBA</span><span class="o">==</span>
+</pre></div>
+</div>
+<p>As you can see, we mention the eLabFTW version and the key id, this is simply a hint about which key has been used (we cannot trust this piece of information).</p>
+<p>But the third line can be trusted, and it contains the metadata.</p>
+<p>Then we bundle:</p>
+<ul class="simple">
+<li><p>the message (<cite>data.json</cite>)</p></li>
+<li><p>the signature file (<cite>data.json.sig</cite>)</p></li>
+<li><p>the public key (<cite>key.pub</cite>)</p></li>
+<li><p>a shell script to verify the signature (<cite>verify.sh</cite>)</p></li>
+</ul>
+<p>The shell script uses <code class="docutils literal notranslate"><span class="pre">minisign</span></code> to verify the data and the signature, allowing anyone to independently verify a signature made by eLabFTW without a need from external tools other than <code class="docutils literal notranslate"><span class="pre">minisign</span></code>.</p>
+<p>This is stored in an immutable <cite>.zip</cite> file, and an immutable comment is added to the entity to make the action more visible.</p>
+<p><code class="docutils literal notranslate"><span class="pre">signify</span></code> from OpenBSD was also considered, and it uses roughly the same format, but doesn’t support trusted comments which is a very useful feature.</p>
+</section>
+</section>
+</section>
+</section>
+<section id="tracking-changes">
+<h2>Tracking changes<a class="headerlink" href="#tracking-changes" title="Link to this heading"></a></h2>
+<p>In eLabFTW, changes are tracked with a different granularity depending on the instance configuration and the type of change.</p>
+<p>For an Experiment or Resource, there are two concepts: the Changelog, and the Revisions. The Revisions only tracks changes of the Main text (body) of the entry. The Changelog tracks all changes, except the content of the main text, as this is handled separately by the Revisions system.</p>
+<p>You can access the Changelog or the Revisions through the ellipsis menu (three dots) in the top right of the view or edit page of an entry. The Revisions also allows you to compare two versions or restore a particular version.</p>
+<p>All administratives changes such as creating a new user, promoting a user to Admin, assigning a user in a team, changing an instance parameter, are logged in the Audit logs database table, and visible to the Sysadmin from the Audit Logs tab in Sysconfig Panel.</p>
+<p>When deleting something, the entry/file is not actually deleted but simply marked as being deleted. This prevents destructive actions and allows for easy restoration of accidentally deleted things. This mechanism is called “soft-delete”.</p>
+</section>
+<section id="sharing-with-external-collaborators">
+<h2>Sharing with external collaborators<a class="headerlink" href="#sharing-with-external-collaborators" title="Link to this heading"></a></h2>
+<p>If you want to share your results with an external collaborator, you have two options:</p>
+<section id="option-1-export-and-send">
+<h3>Option 1: Export and send<a class="headerlink" href="#option-1-export-and-send" title="Link to this heading"></a></h3>
+<p>This option is pretty straightforward, you export your entry into a PDF or ZIP archive and send this by email or other means to your collaborator.</p>
+<p>If course, this option has its limitations, and is not always the best suited approach, but works 100% of the time.</p>
+</section>
+<section id="option-2-allow-anonymous-access">
+<h3>Option 2: Allow anonymous access<a class="headerlink" href="#option-2-allow-anonymous-access" title="Link to this heading"></a></h3>
+<p>It is possible to allow Anonymous access to an eLabFTW installation, but this functionality is disabled by default. The Sysadmin must check this parameter from the Sysconfig Panel:</p>
+<img alt="_images/sysconfig-anonymous.png" src="_images/sysconfig-anonymous.png" />
+<p>Then, users will have the possibility to generate a link with an access key in its URL, from the Visibility permissions window of an entry, near the bottom:</p>
+<img alt="_images/user-anonymous-link.png" src="_images/user-anonymous-link.png" />
+<p>Sharing this link will give read access to the recipient. If the checkbox is unchecked, previously shared links become obsolete. Using this has the advantage that the recipient can follow the evolution of the results over time.</p>
+<p>For this feature to work, the instance must  be accessible from an external network.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="generalities.html" class="btn btn-neutral float-left" title="Generalities" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="admin-guide.html" class="btn btn-neutral float-right" title="Admin guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012, Nicolas CARPi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+  <a href='https://creativecommons.org/licenses/by-sa/4.0/'><img src='_images/by-sa.png' alt='cc-by-sa' /></a>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Import / Export &mdash; elabftw 5.1.15 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=6d288cbf"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Metadata" href="metadata.html" />
+    <link rel="prev" title="Sysadmin guide" href="sysadmin-guide.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            elabftw
+          </a>
+              <div class="version">
+                5.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install on a GNU/Linux server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-cloud.html">Install in the cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nas.html">Install on a NAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nolinux.html">Install on Mac or Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="generalities.html">Generalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin-guide.html">Admin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin-guide.html">Sysadmin guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Import / Export</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#importing-data">Importing data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#importing-a-eln-archive">Importing a .eln archive</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#importing-through-web-interface">Importing through web interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#importing-through-cli">Importing through CLI</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#importing-a-csv-file">Importing a .csv file</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#preparing-the-file">1. Preparing the file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#importing-the-file">2. Importing the file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-the-api-to-control-how-things-are-imported">Using the API to control how things are imported</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#exporting-data">Exporting data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#exporting-through-web-interface">Exporting through web interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exporting-through-cli">Exporting through CLI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backup.html">How to backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-update.html">How to update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker-doc.html">About Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade-to-docker.html">Upgrade a normal install to a Docker install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ldap.html">Configure LDAP authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="saml.html">Configure SAML2 authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thanks.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">elabftw</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Import / Export</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/import-export.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="import-export">
+<span id="id1"></span><h1>Import / Export<a class="headerlink" href="#import-export" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>When users add information into systems like eLabFTW, that information can get trapped in this system. We do not want that. We want information to flow freely.</p>
+<p>As such, eLabFTW allows users to freely export and import data, in different file formats, as well as accessing it through a <a class="reference internal" href="api.html#api"><span class="std std-ref">public API</span></a>, for automation tools.</p>
+<p>This page describes the Import and Export features available in eLabFTW.</p>
+</section>
+<section id="importing-data">
+<span id="id2"></span><h2>Importing data<a class="headerlink" href="#importing-data" title="Link to this heading"></a></h2>
+<p>Data import can be used to facilitate ingestion of multiple records into the current system. It can also be a convenient way to transfer data between systems. For instance, a research group leaving an institution can export all their team’s data and import it into the new institution.</p>
+<p>Import can be done from the web interface, accessible to all users, but also from the Command Line Interface (CLI), which is only accessible to Sysadmins with console access to the container. CLI import is the recommended way to import big files (such as a full team export), as it prevents issues such as timeouts, if the import takes too long.</p>
+<p>Two filetypes are currently supported for import: <cite>.eln</cite> (vnd.eln+zip) and <cite>.csv</cite> (text/csv).</p>
+<section id="importing-a-eln-archive">
+<h3>Importing a .eln archive<a class="headerlink" href="#importing-a-eln-archive" title="Link to this heading"></a></h3>
+<p>You can import data from a <cite>.eln</cite> archive generated by any ELN software conforming to the <a class="reference external" href="https://github.com/TheELNConsortium/TheELNFileFormat/blob/master/SPECIFICATION.md">specification</a>.</p>
+<p>Importing a <cite>.eln</cite> file created by an eLabFTW instance will produce the best results. This documentation focuses on these.</p>
+<p>A <cite>.eln</cite> can contain any type of data:</p>
+<ul class="simple">
+<li><p>Experiments</p></li>
+<li><p>Experiments templates</p></li>
+<li><p>Resources</p></li>
+<li><p>Resources categories</p></li>
+</ul>
+<p>eLabFTW will pick up the type of each entry through its <a class="reference external" href="https://schema.org/genre">genre</a> attribute. Alternatively, you can force the type of entry by selecting one from the dropdown menu (web UI) or using the <cite>–type</cite> option (CLI). The same logic applies to selecting the appropriate category.</p>
+<section id="importing-through-web-interface">
+<h4>Importing through web interface<a class="headerlink" href="#importing-through-web-interface" title="Link to this heading"></a></h4>
+<p>Head to the “Import” tab of your Profile page by selecting “Import” from the top right menu.</p>
+<p>Select a <cite>.eln</cite> file to display import options. Then click Import.</p>
+</section>
+<section id="importing-through-cli">
+<h4>Importing through CLI<a class="headerlink" href="#importing-through-cli" title="Link to this heading"></a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This approach is only available to Sysadmins wish shell access.</p>
+</div>
+<p>If you wish to import a rather large <cite>.eln</cite> archive (such as a full team export), the CLI is the better approach. Display the help with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>-u<span class="w"> </span>nginx:nginx<span class="w"> </span>elabftw<span class="w"> </span>bin/console<span class="w"> </span>import:eln<span class="w"> </span>-h
+</pre></div>
+</div>
+<p>As you can see, there are two mandatory arguments, the path to the file, and the Team ID where the import will be performed. The first thing to do is to copy the file in the right place in the container. It must be in <cite>/elabftw/cache/elab</cite> folder. Copy it with a command similar to this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>cp<span class="w"> </span>your.eln<span class="w"> </span>elabftw:/elabftw/cache/elab/
+</pre></div>
+</div>
+<p>Figure out the Team ID by looking at the Team from the Sysconfig panel, where the ID will be displayed next to the Team. Next, import your file with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># import in team 12 and be verbose</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>-u<span class="w"> </span>nginx:nginx<span class="w"> </span>elabftw<span class="w"> </span>bin/console<span class="w"> </span>import:eln<span class="w"> </span>-vv<span class="w"> </span>your.eln<span class="w"> </span><span class="m">12</span>
+<span class="c1"># import in team 25, force everything to be owned by user 5 and be extra verbose</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>-u<span class="w"> </span>nginx:nginx<span class="w"> </span>elabftw<span class="w"> </span>bin/console<span class="w"> </span>import:eln<span class="w"> </span>-vvv<span class="w"> </span>your.eln<span class="w"> </span><span class="m">25</span><span class="w"> </span>--userid<span class="w"> </span><span class="m">5</span>
+<span class="c1"># import in team 42, force everything to be of type &quot;Resources&quot; with category &quot;6&quot;</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>-u<span class="w"> </span>nginx:nginx<span class="w"> </span>elabftw<span class="w"> </span>bin/console<span class="w"> </span>import:eln<span class="w"> </span>--type<span class="w"> </span>items<span class="w"> </span>--category<span class="w"> </span><span class="m">6</span><span class="w"> </span>your.eln<span class="w"> </span><span class="m">42</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="importing-a-csv-file">
+<span id="csvimport"></span><h3>Importing a .csv file<a class="headerlink" href="#importing-a-csv-file" title="Link to this heading"></a></h3>
+<p>If you already have some Resources catalogued in an Excel file or File Maker database, you can import them in eLabFTW with a .csv file.
+A .csv file is a very simple file format. You can save a .xlsx or .ods file into this format. If using Microsoft Office, make sure to select “CSV UTF-8” in the dropdown menu. It needs to be “flat”, meaning the first row is the column names, and all subsequent rows correspond to one entry.</p>
+<p>To achieve a successful import, make sure to follow these instructions:</p>
+<section id="preparing-the-file">
+<h4>1. Preparing the file<a class="headerlink" href="#preparing-the-file" title="Link to this heading"></a></h4>
+<p>It is important to make sure that the file you are going to import is “clean”. Open your file (.xls/.xlsx/.ods/.csv) in an editor like LibreOffice Calc or Microsoft Excel.</p>
+<p>Make sure that there are no empty rows or extra information outside the main data. And that you don’t have columns with the same name, or columns with no useful information.</p>
+<p>You should have a number of columns and rows, looking something like that:</p>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Example antibodies dataset</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Host</p></th>
+<th class="head"><p>Target</p></th>
+<th class="head"><p>Reference</p></th>
+<th class="head"><p>Seller</p></th>
+<th class="head"><p>Storage</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Anti α-actin</p></td>
+<td><p>Mouse</p></td>
+<td><p>Human</p></td>
+<td><p>AB3148</p></td>
+<td><p>Abcam</p></td>
+<td><p>-20°C</p></td>
+</tr>
+<tr class="row-odd"><td><p>Anti γ-tubulin</p></td>
+<td><p>Rabbit</p></td>
+<td><p>Human</p></td>
+<td><p>AB1337</p></td>
+<td><p>Abcam</p></td>
+<td><p>+4°C</p></td>
+</tr>
+</tbody>
+</table>
+<p>Now you need to have a column named <strong>title</strong>. This is the column that will be picked up as the title of the eLabFTW entry once imported. This column doesn’t necessarily needs to be the first one, but it needs to be there. Here we’re going to change the “Name” column. So now it looks like this:</p>
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">Example antibodies dataset modified</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>title</p></th>
+<th class="head"><p>Host</p></th>
+<th class="head"><p>Target</p></th>
+<th class="head"><p>Reference</p></th>
+<th class="head"><p>Seller</p></th>
+<th class="head"><p>Storage</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Anti α-actin</p></td>
+<td><p>Mouse</p></td>
+<td><p>Human</p></td>
+<td><p>AB3148</p></td>
+<td><p>Abcam</p></td>
+<td><p>-20°C</p></td>
+</tr>
+<tr class="row-odd"><td><p>Anti γ-tubulin</p></td>
+<td><p>Rabbit</p></td>
+<td><p>Human</p></td>
+<td><p>AB1337</p></td>
+<td><p>Abcam</p></td>
+<td><p>+4°C</p></td>
+</tr>
+</tbody>
+</table>
+<p>If you wish to include tags during the import, specify a column “tags” that will contain the tags separated by a “|” character. You can also have a “metadata” column containing JSON. The same logic applies to “metadata” column which can contain JSON that will be included in the metadata of the created entry.</p>
+<p>Once you are satisfied with the file, export it as a <strong>.csv</strong> (in File &gt; Save as…). Make a copy of only the first 3 rows and export that too as csv, this will be our test file.</p>
+</section>
+<section id="importing-the-file">
+<h4>2. Importing the file<a class="headerlink" href="#importing-the-file" title="Link to this heading"></a></h4>
+<p>Select “Import” from the main top right user menu. If you haven’t done it already, create first a Resource Category that corresponds to your data type (or ask your Admin to do it). Here we will use an “Antibody” category as that’s what we are importing.</p>
+<p>Start by selecting your <cite>.csv</cite> file. Options to select the type (Resource) and category (Antibody in our case) appear. Select the appropriate options and click “Import”.</p>
+<p>In the import window, select the correct category (Antibody in this example). Then select the visibility. Now select your <strong>test</strong> CSV file (with a few rows only) and click the “Import” button.</p>
+<p>Every row will correspond to an entry in the correct category of Resources. All the columns (except title, tags, metadata, date, custom_id, and other picked up special columns) will be imported in the body of each entry.</p>
+<p>If the import looks good, you can now delete these newly imported items and import your complete file.</p>
+</section>
+<section id="using-the-api-to-control-how-things-are-imported">
+<h4>Using the API to control how things are imported<a class="headerlink" href="#using-the-api-to-control-how-things-are-imported" title="Link to this heading"></a></h4>
+<p>If you want to have complete control over the import process, you can use a few lines of python to do the import.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Important</strong>: the scripts linked below will import automatically all the rows present in your CSV file. Try first with a few rows before importing everything, so you have a chance to correct errors easily!</p>
+</div>
+<p>We will use the <cite>elabapi-python</cite> library to make things easy. See <a class="reference external" href="https://github.com/elabftw/elabapi-python#installation">installation instructions</a>.</p>
+<p>You can then have a look at <a class="reference external" href="https://github.com/elabftw/elabapi-python/blob/master/examples/09-import-csv.py">this example to import CSV using the API and metadata/extra fields</a>.</p>
+</section>
+</section>
+</section>
+<section id="exporting-data">
+<span id="id3"></span><h2>Exporting data<a class="headerlink" href="#exporting-data" title="Link to this heading"></a></h2>
+<section id="exporting-through-web-interface">
+<h3>Exporting through web interface<a class="headerlink" href="#exporting-through-web-interface" title="Link to this heading"></a></h3>
+<p>The Export tab from your Profile allows full export of all your data, in several formats. Click “Create new export” to configure how you want the data to be exported. A “File is not ready” entry will be displayed. Wait a few seconds and click “Refresh”. Once you see a link to the file, you can click it and download the exported file.</p>
+<p>Very long exports will still be processed if you close your browser or navigate away.</p>
+<p>Note to Sysadmins: on a given instance, export jobs are processed only one at a time. Users can each keep only 6 exported files. They are stored in <cite>cache</cite> and will disappear if the container is destroyed.</p>
+</section>
+<section id="exporting-through-cli">
+<h3>Exporting through CLI<a class="headerlink" href="#exporting-through-cli" title="Link to this heading"></a></h3>
+<p>As a Sysadmin with shell access, you can export an entire team, which can be useful if that team migrates out of your instance for instance. Use <cite>bin/console export:eln -h</cite>. The only argument is the team ID that you wish to export.</p>
+<p>It will export everything into a .eln file, that you need to copy out of the container. This file can later be re-imported on another instance.</p>
+<p>Important note: Import/Export is only supported between instances of the same version, preferably the latest version!</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sysadmin-guide.html" class="btn btn-neutral float-left" title="Sysadmin guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="metadata.html" class="btn btn-neutral float-right" title="Metadata" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012, Nicolas CARPi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+  <a href='https://creativecommons.org/licenses/by-sa/4.0/'><img src='_images/by-sa.png' alt='cc-by-sa' /></a>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

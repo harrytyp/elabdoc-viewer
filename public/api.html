@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API &mdash; elabftw 5.1.15 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=6d288cbf"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="How to backup" href="backup.html" />
+    <link rel="prev" title="Metadata" href="metadata.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            elabftw
+          </a>
+              <div class="version">
+                5.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install on a GNU/Linux server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-cloud.html">Install in the cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nas.html">Install on a NAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-nolinux.html">Install on Mac or Windows</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="generalities.html">Generalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin-guide.html">Admin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysadmin-guide.html">Sysadmin guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import-export.html">Import / Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-s-that">What’s that?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#generating-a-key">Generating a key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-request">Basic request</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#read-the-doc">Read the doc</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backup.html">How to backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-update.html">How to update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker-doc.html">About Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade-to-docker.html">Upgrade a normal install to a Docker install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ldap.html">Configure LDAP authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="saml.html">Configure SAML2 authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debug</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thanks.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">elabftw</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">API</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="api">
+<span id="id1"></span><h1>API<a class="headerlink" href="#api" title="Link to this heading"></a></h1>
+<section id="what-s-that">
+<h2>What’s that?<a class="headerlink" href="#what-s-that" title="Link to this heading"></a></h2>
+<p>It’s a way to read or write data to eLabFTW from an external program (like a Python script).</p>
+<p>For instance, instead of using a web browser to access the web interface and create an experiment,
+you make a call to the API saying “hey, create an experiment for me”, and the api will reply with the ID of the newly created experiment.</p>
+<p>It can be used to directly feed data to eLabFTW, coming from a piece of equipment for instance.</p>
+</section>
+<section id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
+<section id="generating-a-key">
+<h3>Generating a key<a class="headerlink" href="#generating-a-key" title="Link to this heading"></a></h3>
+<p>In order to use the API, you need to generate an API key. Head to the Settings page and create a new key by giving it a name and access level:</p>
+<img alt="api key generation" class="align-center" src="_images/api-keygen.png" />
+<p>Protect this key like you would do with a password, as it gives access to your account!</p>
+</section>
+<section id="basic-request">
+<h3>Basic request<a class="headerlink" href="#basic-request" title="Link to this heading"></a></h3>
+<p>The public API works with HTTP requests, so you are free to use any technology capable to make HTTP requests, which basically includes everything under the sun.</p>
+<p>A simple tool to get started is <cite>curl</cite> (most likely already available if using a GNU/Linux system). Here is how to fetch data of experiment with ID 42:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">KEY</span><span class="o">=</span><span class="m">3</span>-cb2314b00d2845a...
+curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: </span><span class="nv">$KEY</span><span class="s2">&quot;</span><span class="w"> </span>https://eln.example.org/api/v2/experiments/42
+</pre></div>
+</div>
+<p>What we’ve done is use <code class="docutils literal notranslate"><span class="pre">curl</span></code> to make a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to eLabFTW api v2 endpoint. Sending the key in the <code class="docutils literal notranslate"><span class="pre">Authorization</span></code> header, and specifying that we want the experiment with id 42 in the URL. The response is a JSON object.</p>
+<p>Mainly, the API is using HTTP verbs for different actions. <code class="docutils literal notranslate"><span class="pre">GET</span></code> to read things (will not modify anything), <code class="docutils literal notranslate"><span class="pre">POST</span></code> to create things, <code class="docutils literal notranslate"><span class="pre">PATCH</span></code> to modify things, <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> to, you guessed it, delete things.</p>
+<p>For instance, to create an experiment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-I<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: </span><span class="nv">$KEY</span><span class="s2">&quot;</span><span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://eln.example.org/api/v2/experiments
+</pre></div>
+</div>
+<p>The response headers contain the URL to the created resource in the <code class="docutils literal notranslate"><span class="pre">location</span></code> header:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>HTTP/2 201
+content-type: text/html; charset=UTF-8
+location: https://eln.example.org/api/v2/experiments/321
+...other headers...
+</pre></div>
+</div>
+<p>You can then <code class="docutils literal notranslate"><span class="pre">PATCH</span></code> that newly created entry with whatever attributes you wish to change (title, date, main text, tags, etc…):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: </span><span class="nv">$KEY</span><span class="s2">&quot;</span><span class="w"> </span>-X<span class="w"> </span>PATCH<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;title&quot;: &quot;created from api&quot;, &quot;date&quot;: &quot;2024-02-15&quot;, &quot;body&quot;: &quot;main text content&quot;}&#39;</span><span class="w"> </span>https://eln.example.org/api/v2/experiments/321
+</pre></div>
+</div>
+<p>Everything is described in the <a class="reference external" href="https://doc.elabftw.net/api/v2/">documentation</a> generated from the specification.</p>
+<p>You’ll probably want to use python or a shell language to build a more meaningful script. Fortunately, a <a class="reference external" href="https://github.com/elabftw/elabapi-python">python library</a> is available to make things easy for you (look at the <cite>examples</cite> folder!).</p>
+</section>
+</section>
+<section id="read-the-doc">
+<h2>Read the doc<a class="headerlink" href="#read-the-doc" title="Link to this heading"></a></h2>
+<p>The complete documentation of all endpoints with code examples is available here: <a class="reference external" href="https://doc.elabftw.net/api/">elabftw’s API documentation</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="metadata.html" class="btn btn-neutral float-left" title="Metadata" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="backup.html" class="btn btn-neutral float-right" title="How to backup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2012, Nicolas CARPi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+  <a href='https://creativecommons.org/licenses/by-sa/4.0/'><img src='_images/by-sa.png' alt='cc-by-sa' /></a>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
